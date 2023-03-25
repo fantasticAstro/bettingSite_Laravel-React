@@ -1,0 +1,17 @@
+.custom-tab .nav-tabs .active{
+    background: white !important ; 
+    color: black;
+}
+.custom-tab .nav-tabs {
+    border: none ;
+}
+
+.custom-tab .nav-tabs a {
+    color: black; 
+    width: 50%;
+    text-align: center;
+}
+.custom-tab .nav-tabs .nav-item {
+    border: none ;
+    background: #D9D9D9 ;
+}

@@ -1,0 +1,184 @@
+.page-header {
+    width: 100%;
+    height: 157px;
+    background: #3F7E68 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.page-header .now-time {
+    font-weight: 800;
+    font-size: 16px;
+    color: white ;
+    padding-top: 10px;
+}
+.page-header .desktop-header {
+    width: 1270px;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.page-menu {
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: white;
+}
+
+.page-menu .item {
+    font-weight: 700;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+}
+
+.page-content {
+    padding: 28px 15px 163px 15px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+.page-content .left-part {
+    width: 315px;
+}
+.page-content .right-part {
+    width: 284px;
+}
+.page-content .main-content {
+    width: 580px;
+
+}
+.page-content .left-part .page-list .item {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    border-bottom: 1px solid #B1B1B1;
+    padding: 15px 0px; 
+    cursor: pointer;
+}
+.page-content .left-part .page-list .item .icon {
+    width: 30% ;
+    padding-left: 25px;
+    text-align: center;
+}
+.page-content .left-part .page-list .item .name {
+    width: 60% ;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+.page-content .left-part .page-list .item:hover {
+    transform:scale(1.12);
+}
+.page-content .left-part .create-instant {
+    margin-top: 70px;
+    padding: 15px;
+    width: 100%;
+}
+.page-content .left-part .create-instant {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+.page-content .left-part .create-instant .item {
+    cursor: pointer;
+}
+.page-content .left-part .create-instant .content{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 45px;
+    cursor: pointer;
+}
+
+.page-content .left-part .google-play {
+    text-align: center;
+    margin-top: 82px;
+
+}
+.page-content .right-part .report-dlg {
+    width: 100%;
+    background: #FFFFFF;   
+}
+
+.page-content .right-part .report-dlg .title {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding: 7px;
+    background: #3F7E68;
+    color: white ;
+}
+
+.page-content .right-part .report-dlg .content {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);   
+}
+.page-content .right-part .available-credit{
+    margin-bottom: 27px;
+}
+.page-content .right-part .available-credit .content {
+    width: 100%;
+    padding: 5px 18px;   
+}
+
+.page-content .right-part .available-credit .content .item {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 18px;
+    
+}
+.page-content .right-part .available-credit .content .item .name {
+    width: 70%;
+}
+.page-content .right-part .available-credit .content .item .value {
+    width: 30%;
+    padding-left: 10px;
+}
+
+.page-content .right-part .bid-history .content {
+    min-height: 265px;
+    width: 100%;
+}
+
+.page-footer {
+    width: 100%;
+    background: #3F7E68 ;
+
+}
+.page-footer .desktop-footer {
+    background: #3F7E68 ;
+    color: white ;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 43px 110px 23px 110px;
+}
+
+.page-footer .desktop-footer .companies-logo{
+    display: flex ;
+    justify-content: space-around;
+    padding-top: 35px;
+    
+}
+
+.page-footer .desktop-footer .policy-group {
+    display: flex ;
+    justify-content: space-around;
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.page-footer .desktop-footer .version {
+    text-align: center;
+    margin-top: 55px;
+    font-size: 12px;
+}
+@media screen and (min-width: 1366px){
+    .headerDesktop-content {
+        width: 100%;
+        max-width: 1270px;
+        margin: 0 auto;
+    }
+}

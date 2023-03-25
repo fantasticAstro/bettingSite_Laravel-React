@@ -1,0 +1,29 @@
+.dash-board .live-result {
+    margin-top: 18px;
+    width: 100%; 
+}
+
+.dash-board .live-result .title {
+    font-size: 22px;
+    padding: 18px 28px;
+    display: flex;
+    justify-content: flex-start;
+    background: #3F7E68 ;
+    border-radius: 4px;
+    color: white ;
+}
+.dash-board .live-result .title .name {
+    margin-left: 15px;
+}
+.dash-board .live-result .content {
+    margin-top: 10px;
+    
+}
+.dash-board .live-result .content .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0px ;
+    font-size: 22px;
+    border-bottom: 1px solid #B1B1B1;
+}
