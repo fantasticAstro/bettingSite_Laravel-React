@@ -1,0 +1,5 @@
+.slick-list {margin: 0 -5px;}
+.slick-slide>div {padding: 0 15px;}
+.slick-list img{
+    border-radius: 10px;
+}

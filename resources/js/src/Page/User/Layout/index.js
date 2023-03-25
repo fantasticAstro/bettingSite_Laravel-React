@@ -15,7 +15,8 @@ import Header from './Header' ;
 import Footer from './Footer' ;
 import UserMenu from './Menu' ;
 import Content from './Content' ;
-import { ProSidebarProvider } from 'react-pro-sidebar';
+
+import Sidebar from '../../../Component/SideBar' ;
 
 class UserLayout extends Component {
 
@@ -60,6 +61,8 @@ class UserLayout extends Component {
 
         return (
             <Aux>
+                <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+
                     <Fullscreen enabled={this.props.isFullScreen}>
                         <div className="app-user-page" onClick={() => this.mobileOutClickHandler}>
                             <Header />
