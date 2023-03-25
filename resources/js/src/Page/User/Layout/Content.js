@@ -13,6 +13,7 @@ class Content extends Component {
                     }
                 </div>
                 <RightPart />
+                
             </div>
         ) ;
     }

@@ -1,4 +1,5 @@
 import '../../../../../css/user/dashboard/live_result.css' ;
+import CButton from '../../../Component/CButton' ;
 function LiveResult(props){
     return(
         <div className='live-result'>
@@ -19,7 +20,77 @@ function LiveResult(props){
                         XXX-XX-XXX
                     </div>
                     <div className='setting'>
-
+                        <CButton 
+                            text='JODI'
+                            background='#3F7E68'
+                            color='white'
+                            padding='7px 11px'
+                            hoverBackground='rgb(24, 62, 49)'
+                            hoverColor='white'
+                        />
+                        <CButton 
+                            text='PANEL'
+                            background='#3F7E68'
+                            color='white'
+                            padding='7px 11px'
+                            hoverBackground='rgb(24, 62, 49)'
+                            hoverColor='white'
+                            marginLeft='25px'
+                        />
+                    </div>
+                </div>
+                <div className='item'>
+                    <div className='name'>
+                        MADHURI
+                    </div>
+                    <div className='number'>
+                        XXX-XX-XXX
+                    </div>
+                    <div className='setting'>
+                        <CButton 
+                            text='JODI'
+                            background='#3F7E68'
+                            color='white'
+                            padding='7px 11px'
+                            hoverBackground='rgb(24, 62, 49)'
+                            hoverColor='white'
+                        />
+                        <CButton 
+                            text='PANEL'
+                            background='#3F7E68'
+                            color='white'
+                            padding='7px 11px'
+                            hoverBackground='rgb(24, 62, 49)'
+                            hoverColor='white'
+                            marginLeft='25px'
+                        />
+                    </div>
+                </div>
+                <div className='item'>
+                    <div className='name'>
+                        SRIDEVI
+                    </div>
+                    <div className='number'>
+                        XXX-XX-XXX
+                    </div>
+                    <div className='setting'>
+                        <CButton 
+                            text='JODI'
+                            background='#3F7E68'
+                            color='white'
+                            padding='7px 11px'
+                            hoverBackground='rgb(24, 62, 49)'
+                            hoverColor='white'
+                        />
+                        <CButton 
+                            text='PANEL'
+                            background='#3F7E68'
+                            color='white'
+                            padding='7px 11px'
+                            hoverBackground='rgb(24, 62, 49)'
+                            hoverColor='white'
+                            marginLeft='25px'
+                        />
                     </div>
                 </div>
             </div>

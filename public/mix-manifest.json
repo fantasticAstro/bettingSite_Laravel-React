@@ -35,6 +35,14 @@
     "/images/user/companies-icosn/ecogra.png": "/images/user/companies-icosn/ecogra.png",
     "/images/user/companies-icosn/gambling.png": "/images/user/companies-icosn/gambling.png",
     "/images/user/companies-icosn/mga.png": "/images/user/companies-icosn/mga.png",
+    "/images/user/dash-sliders/KajolNew.png": "/images/user/dash-sliders/KajolNew.png",
+    "/images/user/dashboard/game_rate_btn_bg.png": "/images/user/dashboard/game_rate_btn_bg.png",
+    "/images/user/dashboard/how_paly_btn_bg.png": "/images/user/dashboard/how_paly_btn_bg.png",
+    "/images/user/dashboard/jodi_bet_btn_bg.png": "/images/user/dashboard/jodi_bet_btn_bg.png",
+    "/images/user/dashboard/live_result_title_icon.png": "/images/user/dashboard/live_result_title_icon.png",
+    "/images/user/dashboard/patti_bet_btn_bg.png": "/images/user/dashboard/patti_bet_btn_bg.png",
+    "/images/user/dashboard/single_bet_btn_bg.png": "/images/user/dashboard/single_bet_btn_bg.png",
+    "/images/user/dashboard/Vector.png": "/images/user/dashboard/Vector.png",
     "/images/user/google_play.png": "/images/user/google_play.png",
     "/images/user/lock.png": "/images/user/lock.png",
     "/images/user/menu-icons/double_patti.png": "/images/user/menu-icons/double_patti.png",
@@ -54,6 +62,7 @@
     "/images/user-1.png": "/images/user-1.png",
     "/images/user-2.png": "/images/user-2.png",
     "/images/user.png": "/images/user.png",
+    "/images/vendor/slick-carousel/slick/ajax-loader.gif": "/images/vendor/slick-carousel/slick/ajax-loader.gif",
     "/images/widget/dashborad-1.jpg": "/images/widget/dashborad-1.jpg",
     "/images/widget/dashborad-2.jpg": "/images/widget/dashborad-2.jpg",
     "/images/widget/dashborad-3.jpg": "/images/widget/dashborad-3.jpg",
@@ -71,9 +80,5 @@
     "/images/widget/shape5.png": "/images/widget/shape5.png",
     "/images/widget/shape6.png": "/images/widget/shape6.png",
     "/images/widget/visa-background.png": "/images/widget/visa-background.png",
-    "/images/widget/visa-logo.png": "/images/widget/visa-logo.png",
-    "/images/vendor/slick-carousel/slick/ajax-loader.gif": "/images/vendor/slick-carousel/slick/ajax-loader.gif",
-    "/images/user/dash-sliders/KajolNew.png": "/images/user/dash-sliders/KajolNew.png",
-    "/images/user/dashboard/live_result_title_icon.png": "/images/user/dashboard/live_result_title_icon.png",
-    "/images/user/dashboard/Vector.png": "/images/user/dashboard/Vector.png"
+    "/images/widget/visa-logo.png": "/images/widget/visa-logo.png"
 }

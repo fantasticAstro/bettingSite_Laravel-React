@@ -1,11 +1,11 @@
 .dash-board .live-result {
-    margin-top: 18px;
+    margin-top: 25px;
     width: 100%; 
 }
 
 .dash-board .live-result .title {
     font-size: 22px;
-    padding: 18px 28px;
+    padding: 12px 28px;
     display: flex;
     justify-content: flex-start;
     background: #3F7E68 ;
@@ -14,6 +14,7 @@
 }
 .dash-board .live-result .title .name {
     margin-left: 15px;
+    padding-top: 3px;
 }
 .dash-board .live-result .content {
     margin-top: 10px;
@@ -23,7 +24,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 0px ;
+    padding: 27px 0px ;
     font-size: 22px;
     border-bottom: 1px solid #B1B1B1;
+    cursor: pointer;
+}
+.dash-board .live-result .content .item .name {
+    width: 36%;
+    font-weight: 600;
+    padding-left: 20px;
+}
+.dash-board .live-result .content .item .number {
+    width: 23%;
+    font-weight: 700;
+}
+
+.dash-board .live-result .content .item .setting {
+    width: 33%;
+    text-align: center;
 }

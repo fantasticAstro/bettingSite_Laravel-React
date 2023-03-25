@@ -12,13 +12,13 @@ function Header(props) {
     return(
         <div className='page-header'>
             <div className='desktop-header'>
-                <div class='header-mark'>
+                <div className='header-mark'>
                     <img src="/images/mark.png"/>
                 </div>
-                <div class='now-time'>
+                <div className='now-time'>
                     Mar 
                 </div>
-                <div class='sign-field'>
+                <div className='sign-field'>
                     <CButton 
                         text='Log In'
                         background='#F5E04D'

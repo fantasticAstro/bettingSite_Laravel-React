@@ -13,8 +13,9 @@ import '../../../../../css/user/layout.css' ;
 
 import Header from './Header' ;
 import Footer from './Footer' ;
-import Menu from './Menu' ;
+import UserMenu from './Menu' ;
 import Content from './Content' ;
+import { ProSidebarProvider } from 'react-pro-sidebar';
 
 class UserLayout extends Component {
 
@@ -59,22 +60,22 @@ class UserLayout extends Component {
 
         return (
             <Aux>
-                <Fullscreen enabled={this.props.isFullScreen}>
-                    <div className="app-user-page" onClick={() => this.mobileOutClickHandler}>
-                        <Header />
-                        
-                        <Menu />
-                        <Content >
-                            <Suspense fallback={<Loader/>}>
-                                <Switch>
-                                    {menu}
-                                    <Redirect from="/" to={this.props.defaultPath} />
-                                </Switch>
-                            </Suspense>
-                        </Content>
-                        <Footer />
-                    </div>
-                </Fullscreen>
+                    <Fullscreen enabled={this.props.isFullScreen}>
+                        <div className="app-user-page" onClick={() => this.mobileOutClickHandler}>
+                            <Header />
+                            
+                            <UserMenu />
+                            <Content >
+                                <Suspense fallback={<Loader/>}>
+                                    <Switch>
+                                        {menu}
+                                        <Redirect from="/" to={this.props.defaultPath} />
+                                    </Switch>
+                                </Suspense>
+                            </Content>
+                            <Footer />
+                        </div>
+                    </Fullscreen>
             </Aux>
         );
     }

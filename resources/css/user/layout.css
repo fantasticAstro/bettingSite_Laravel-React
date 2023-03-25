@@ -40,13 +40,13 @@
     margin-top: 5px;
 }
 .page-content .left-part {
-    width: 315px;
+    width: 24%;
 }
 .page-content .right-part {
-    width: 284px;
+    width: 22%;
 }
 .page-content .main-content {
-    width: 580px;
+    width: 50%;
 
 }
 .page-content .left-part .page-list .item {
@@ -175,10 +175,31 @@
     margin-top: 55px;
     font-size: 12px;
 }
-@media screen and (min-width: 1366px){
-    .headerDesktop-content {
+@media screen and (max-width: 1280px){
+    .page-container {
         width: 100%;
-        max-width: 1270px;
-        margin: 0 auto;
+    }
+    .page-content {
+        display: block;
+    }
+    .page-content .main-content{
+        width: 100%;
+    }
+    .page-content .left-part {
+        display: none;
+    }
+    .page-content .right-part {
+        display: none;
+    }
+    .page-menu {
+        display: none;
+    }
+    .page-footer .desktop-footer {
+        padding: 15px;
+    }
+    .page-footer .desktop-footer .companies-logo {
+        align-self: center ;
+        justify-self: start;
     }
 }
+

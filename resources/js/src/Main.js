@@ -16,7 +16,7 @@ const UserLayout = Loadable({
     loading: Loader
 });
 
-class Content extends Component {
+class Main extends Component {
     render() {
         return (
             <Aux>
@@ -32,4 +32,4 @@ class Content extends Component {
     }
 }
 
-export default Content;
+export default Main;
