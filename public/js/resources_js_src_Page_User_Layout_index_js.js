@@ -219,6 +219,7 @@ function CButton(props) {
     border: props.border ? props.border : 'none',
     lineHeight: '100%',
     marginLeft: props.marginLeft ? props.marginLeft : "0px",
+    marginRight: props.marginRight ? props.marginRight : "0px",
     // backgroundImage:
     //     isHover?
     //         props.hoverBackgroundImage?
@@ -284,6 +285,93 @@ function CTab(props) {
 
 /***/ }),
 
+/***/ "./resources/js/src/Component/SearchBar.js":
+/*!*************************************************!*\
+  !*** ./resources/js/src/Component/SearchBar.js ***!
+  \*************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _css_component_search_bar_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../css/component/search_bar.css */ "./resources/css/component/search_bar.css");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+function SearchBar(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    is_show_mobile = _useState2[0],
+    setShowMobile = _useState2[1];
+  var showMobileSearchForm = function showMobileSearchForm() {
+    setShowMobile(!is_show_mobile);
+    if (is_show_mobile) {
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()(".page-header .header-mark").css("display", "none");
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()(".page-header .sign-field").css("display", "none");
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()(".header-mobile-search-field .sign-icon").css("display", "none");
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()(".mobile-search-field").css("display", "block");
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()(".page-header .header-mark").css("display", "block");
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()(".page-header .sign-field").css("display", "block");
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()(".header-mobile-search-field .sign-icon").css("display", "block");
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()(".mobile-search-field").css("display", "none");
+      jquery__WEBPACK_IMPORTED_MODULE_1___default()(".mobile-search-field input").focus();
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      "class": "header-desktop-search-field",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        placeholder: "Search Events"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        "class": "icon",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+          className: "fa fa-search"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      "class": "header-mobile-search-field",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        onClick: function onClick() {
+          return showMobileSearchForm();
+        },
+        "class": "sign-icon",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+          "class": "fa fa-search"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        "class": "mobile-search-field",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+          placeholder: "Search Events"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          "class": "icon",
+          onClick: function onClick() {
+            return showMobileSearchForm();
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+            className: "fa fa-close"
+          })
+        })]
+      })]
+    })]
+  });
+}
+/* harmony default export */ __webpack_exports__["default"] = (SearchBar);
+
+/***/ }),
+
 /***/ "./resources/js/src/Component/SideBar.js":
 /*!***********************************************!*\
   !*** ./resources/js/src/Component/SideBar.js ***!
@@ -295,32 +383,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_burger_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-burger-menu */ "./node_modules/react-burger-menu/lib/BurgerMenu.js");
 /* harmony import */ var react_burger_menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_burger_menu__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _css_component_sidebar_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../css/component/sidebar.css */ "./resources/css/component/sidebar.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../config */ "./resources/js/config.js");
+/* harmony import */ var _css_component_sidebar_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/component/sidebar.css */ "./resources/css/component/sidebar.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_burger_menu__WEBPACK_IMPORTED_MODULE_1__.slide, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-      className: "menu-item",
-      href: "/",
-      children: "Home"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-      className: "menu-item",
-      href: "/salads",
-      children: "Salads"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-      className: "menu-item",
-      href: "/pizzas",
-      children: "Pizzas"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-      className: "menu-item",
-      href: "/desserts",
-      children: "Desserts"
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_burger_menu__WEBPACK_IMPORTED_MODULE_1__.slide, {
+    children: _config__WEBPACK_IMPORTED_MODULE_2__["default"].menuList.map(function (item, index) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "menu-item",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "icon",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              src: "images/user/menu-icons/".concat(item.icon, ".png")
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "name",
+            children: item.name
+          })]
+        })
+      });
+    })
   });
 });
 
@@ -466,7 +555,9 @@ function Footer(props) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Component_CButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Component/CButton */ "./resources/js/src/Component/CButton.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Component_SearchBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Component/SearchBar */ "./resources/js/src/Component/SearchBar.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -474,31 +565,34 @@ __webpack_require__.r(__webpack_exports__);
 function Header(props) {
   var Login = function Login() {};
   var Signup = function Signup() {};
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "page-header",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "desktop-header",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "header-mark",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: "/images/mark.png"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "now-time",
         children: "Mar"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Component_SearchBar__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "sign-field",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Component_CButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Component_CButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
           text: "Log In",
           background: "#F5E04D",
           color: "black",
+          fontSize: "12px",
           callBack: Login
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Component_CButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Component_CButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
           text: "Sign Up",
           background: "white",
           color: "black",
           callBack: Signup,
-          marginLeft: "24px"
+          marginLeft: "5px",
+          fontSize: "12px",
+          marginRight: "10px"
         })]
       })]
     })
@@ -550,16 +644,15 @@ function LeftPart(props) {
         children: "CREATE INSTANT I'D"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "content",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "item",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-            src: "images/user/whatsapp.png"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "item",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-            src: "images/user/telegram.png"
-          })
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: "images/user/whatsapp.png",
+          width: "50px"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: "images/user/telegram_1.png",
+          width: "37px",
+          style: {
+            marginLeft: '10px'
+          }
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -931,7 +1024,28 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".custom-tab .nav-tabs .active{\r\n    background: white !important ; \r\n    color: black;\r\n}\r\n.custom-tab .nav-tabs {\r\n    border: none ;\r\n}\r\n\r\n.custom-tab .nav-tabs a {\r\n    color: black; \r\n    width: 50%;\r\n    text-align: center;\r\n}\r\n.custom-tab .nav-tabs .nav-item {\r\n    border: none ;\r\n    background: #D9D9D9 ;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".custom-tab .nav-tabs .active{\r\n    background: white !important ; \r\n    color: black;\r\n}\r\n.custom-tab .nav-tabs {\r\n    border: none ;\r\n}\r\n\r\n.custom-tab .nav-tabs a {\r\n    color: black; \r\n    text-align: center;\r\n    font-size: 12px;    \r\n}\r\n.custom-tab .nav-tabs .nav-item {\r\n    border: none ;\r\n    background: #D9D9D9 ;\r\n}\r\n", ""]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/search_bar.css":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/search_bar.css ***!
+  \**********************************************************************************************************************************************************************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".header-desktop-search-field{\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.header-search-field input::-webkit-input-placeholder {\r\n    font: 12px/3 sans-serif;\r\n}\r\n\r\n.header-search-field input::placeholder {\r\n    font: 12px/3 sans-serif;\r\n}\r\n\r\n.header-desktop-search-field input:focus{\r\n    outline: none;\r\n}\r\n\r\n.header-desktop-search-field input {\r\n    padding-left: 25px;\r\n    margin-top: 10px;\r\n    border-radius: 2px;\r\n    border-color: transparent;\r\n    height: 35px;\r\n}\r\n\r\n.header-desktop-search-field .icon {\r\n    position: absolute;\r\n    left: 5px;\r\n    color: rgb(211, 208, 208) ;\r\n    top: 15px;\r\n}\r\n.header-mobile-search-field {\r\n    display: none;\r\n}\r\n.header-mobile-search-field i{\r\n    color: white ;\r\n}\r\n\r\n.header-mobile-search-field .mobile-search-field {\r\n    display: none;\r\n}\r\n\r\n.header-desktop-search-field{\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.mobile-search-field input::-webkit-input-placeholder {\r\n    font: 16px;\r\n    color: white ;\r\n}\r\n\r\n.mobile-search-field input::placeholder {\r\n    font: 16px;\r\n    color: white ;\r\n}\r\n\r\n.mobile-search-field input {\r\n    padding-left: 0px;\r\n    height: 60px;\r\n    width: 300px;\r\n    background: transparent;\r\n    border: none;\r\n    color: white ;\r\n}\r\n\r\n.mobile-search-field .icon {\r\n    position: absolute;\r\n    right: 30px;\r\n    color: rgb(211, 208, 208) ;\r\n    top: 2px;\r\n    font-size: 20px;\r\n}\r\n.mobile-search-field input:focus{\r\n    outline: none;\r\n}", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -952,7 +1066,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".bm-item {\r\n    display: inline-block;\r\n  \r\n    color: #d1d1d1;\r\n    margin-bottom: 10px;\r\n    text-align: left;\r\n    text-decoration: none;\r\n    transition: color 0.2s;\r\n  }\r\n  \r\n  .bm-item:hover {\r\n    color: #ffffff;\r\n  }\r\n\r\n  .bm-menu-wrap .menu-item {\r\n    color: black; \r\n  }\r\n\r\n  .bm-burger-button button {\r\n    color: black !important;\r\n  }\r\n\r\n  .bm-burger-button {\r\n    position: fixed;\r\n    width: 36px;\r\n    height: 30px;\r\n    left: 36px;\r\n    top: 36px;\r\n  }\r\n  \r\n  /* Color/shape of burger icon bars */\r\n  .bm-burger-bars {\r\n    background: #373a47;\r\n  }\r\n  \r\n  /* Color/shape of burger icon bars on hover*/\r\n  .bm-burger-bars-hover {\r\n    background: #a90000;\r\n  }\r\n  \r\n  /* Position and sizing of clickable cross button */\r\n  .bm-cross-button {\r\n    height: 24px;\r\n    width: 24px;\r\n  }\r\n  \r\n  /* Color/shape of close button cross */\r\n  .bm-cross {\r\n    background: #bdc3c7;\r\n  }\r\n  \r\n  /*\r\n  Sidebar wrapper styles\r\n  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases\r\n  */\r\n  .bm-menu-wrap {\r\n    position: fixed;\r\n    height: 100%;\r\n  }\r\n  \r\n  /* General sidebar styles */\r\n  .bm-menu {\r\n    background: #373a47;\r\n    padding: 2.5em 1.5em 0;\r\n    font-size: 1.15em;\r\n  }\r\n  \r\n  /* Morph shape necessary with bubble or elastic */\r\n  .bm-morph-shape {\r\n    fill: #373a47;\r\n  }\r\n  \r\n  /* Wrapper for item list */\r\n  .bm-item-list {\r\n    color: #b8b7ad;\r\n    padding: 0.8em;\r\n  }\r\n  \r\n  /* Individual item */\r\n  .bm-item {\r\n    display: inline-block;\r\n  }\r\n  \r\n  /* Styling of overlay */\r\n  .bm-overlay {\r\n    background: rgba(0, 0, 0, 0.3);\r\n  }", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".bm-item {\r\n    display: inline-block ;\r\n    color: #d1d1d1;\r\n    text-align: left;\r\n    text-decoration: none;\r\n    transition: color 0.2s;\r\n  }\r\n  \r\n  .bm-item:hover {\r\n    color: #ffffff;\r\n  }\r\n\r\n  .bm-menu-wrap .menu-item {\r\n    color: black; \r\n    border-bottom: 1px solid #ddd;\r\n    display: flex;\r\n    align-items: center;\r\n    padding: 5px;\r\n  }\r\n\r\n  .bm-menu-wrap .menu-item .name{\r\n    padding-left: 5px ;\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n  }\r\n  .bm-menu-wrap .menu-item .icon img {\r\n    width: 20px;\r\n  }\r\n  .bm-menu-wrap .menu-item  .icon{\r\n    width: 25px;\r\n  }\r\n  .bm-burger-button button {\r\n    color: white !important;\r\n  }\r\n\r\n  .bm-burger-button {\r\n    position: absolute;\r\n    width: 20px;\r\n    height: 15px;\r\n    left: 10px;\r\n    top: 25px;\r\n}\r\n\r\n/* Color/shape of burger icon bars */\r\n.bm-burger-bars {\r\n  background: white;\r\n}\r\n\r\n/* Color/shape of burger icon bars on hover*/\r\n.bm-burger-bars-hover {\r\n  background: #a90000;\r\n}\r\n\r\n/* Position and sizing of clickable cross button */\r\n.bm-cross-button {\r\n  height: 24px;\r\n  width: 24px;\r\n  top: -3px !important;\r\n  right: 0px !important ;\r\n}\r\n\r\n/* Color/shape of close button cross */\r\n.bm-cross {\r\n  background: #bdc3c7;\r\n}\r\n\r\n/*\r\nSidebar wrapper styles\r\nNote: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases\r\n*/\r\n.bm-menu-wrap {\r\n  position: fixed;\r\n  height: 100%;\r\n  width:240px  !important;\r\n}\r\n\r\n/* General sidebar styles */\r\n.bm-menu {\r\n  background: #373a47;\r\n  padding: 2.5em 1.5em 0;\r\n  font-size: 1.15em;\r\n}\r\n\r\n/* Morph shape necessary with bubble or elastic */\r\n.bm-morph-shape {\r\n  fill: #373a47;\r\n}\r\n\r\n/* Wrapper for item list */\r\n.bm-item-list {\r\n  color: #b8b7ad;\r\n}\r\n\r\n/* Individual item */\r\n.bm-item {\r\n  display: inline-block;\r\n}\r\n\r\n/* Styling of overlay */\r\n.bm-menu {\r\n  background: white ;\r\n  padding: 10px; \r\n}", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -973,7 +1087,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".page-header {\r\n    width: 100%;\r\n    height: 157px;\r\n    background: #3F7E68 ;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n.page-header .now-time {\r\n    font-weight: 800;\r\n    font-size: 16px;\r\n    color: white ;\r\n    padding-top: 10px;\r\n}\r\n.page-header .desktop-header {\r\n    width: 1270px;\r\n    padding: 40px 20px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: auto;\r\n}\r\n\r\n.page-menu {\r\n    width: 100%;\r\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\r\n    background: white;\r\n}\r\n\r\n.page-menu .item {\r\n    font-weight: 700;\r\n    font-size: 16px;\r\n    color: black;\r\n    cursor: pointer;\r\n}\r\n\r\n.page-content {\r\n    padding: 28px 15px 163px 15px;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    margin-top: 5px;\r\n}\r\n.page-content .left-part {\r\n    width: 24%;\r\n}\r\n.page-content .right-part {\r\n    width: 22%;\r\n}\r\n.page-content .main-content {\r\n    width: 50%;\r\n\r\n}\r\n.page-content .left-part .page-list .item {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-content: center;\r\n    border-bottom: 1px solid #B1B1B1;\r\n    padding: 15px 0px; \r\n    cursor: pointer;\r\n}\r\n.page-content .left-part .page-list .item .icon {\r\n    width: 30% ;\r\n    padding-left: 25px;\r\n    text-align: center;\r\n}\r\n.page-content .left-part .page-list .item .name {\r\n    width: 60% ;\r\n    text-align: left;\r\n    font-size: 18px;\r\n    font-weight: 600;\r\n    padding-top: 10px;\r\n}\r\n.page-content .left-part .page-list .item:hover {\r\n    -webkit-transform:scale(1.12);\r\n            transform:scale(1.12);\r\n}\r\n.page-content .left-part .create-instant {\r\n    margin-top: 70px;\r\n    padding: 15px;\r\n    width: 100%;\r\n}\r\n.page-content .left-part .create-instant {\r\n    font-size: 20px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n}\r\n.page-content .left-part .create-instant .item {\r\n    cursor: pointer;\r\n}\r\n.page-content .left-part .create-instant .content{\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    margin-top: 45px;\r\n    cursor: pointer;\r\n}\r\n\r\n.page-content .left-part .google-play {\r\n    text-align: center;\r\n    margin-top: 82px;\r\n\r\n}\r\n.page-content .right-part .report-dlg {\r\n    width: 100%;\r\n    background: #FFFFFF;   \r\n}\r\n\r\n.page-content .right-part .report-dlg .title {\r\n    font-size: 18px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n    padding: 7px;\r\n    background: #3F7E68;\r\n    color: white ;\r\n}\r\n\r\n.page-content .right-part .report-dlg .content {\r\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);   \r\n}\r\n.page-content .right-part .available-credit{\r\n    margin-bottom: 27px;\r\n}\r\n.page-content .right-part .available-credit .content {\r\n    width: 100%;\r\n    padding: 5px 18px;   \r\n}\r\n\r\n.page-content .right-part .available-credit .content .item {\r\n    margin-top: 14px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-weight: 500;\r\n    font-size: 18px;\r\n    \r\n}\r\n.page-content .right-part .available-credit .content .item .name {\r\n    width: 70%;\r\n}\r\n.page-content .right-part .available-credit .content .item .value {\r\n    width: 30%;\r\n    padding-left: 10px;\r\n}\r\n\r\n.page-content .right-part .bid-history .content {\r\n    min-height: 265px;\r\n    width: 100%;\r\n}\r\n\r\n.page-footer {\r\n    width: 100%;\r\n    background: #3F7E68 ;\r\n\r\n}\r\n.page-footer .desktop-footer {\r\n    background: #3F7E68 ;\r\n    color: white ;\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    padding: 43px 110px 23px 110px;\r\n}\r\n\r\n.page-footer .desktop-footer .companies-logo{\r\n    display: flex ;\r\n    justify-content: space-around;\r\n    padding-top: 35px;\r\n    \r\n}\r\n\r\n.page-footer .desktop-footer .policy-group {\r\n    display: flex ;\r\n    justify-content: space-around;\r\n    margin-top: 30px;\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n}\r\n.page-footer .desktop-footer .version {\r\n    text-align: center;\r\n    margin-top: 55px;\r\n    font-size: 12px;\r\n}\r\n.bm-burger-button {\r\n    display: none !important;\r\n}\r\n@media screen and (max-width: 1280px){\r\n    .page-container {\r\n        width: 100%;\r\n    }\r\n    .page-content {\r\n        display: block;\r\n    }\r\n    .page-content .main-content{\r\n        width: 100%;\r\n    }\r\n    .page-content .left-part {\r\n        display: none;\r\n    }\r\n    .page-content .right-part {\r\n        display: none;\r\n    }\r\n    .page-menu {\r\n        display: none;\r\n    }\r\n    .page-footer .desktop-footer {\r\n        padding: 15px;\r\n    }\r\n    .page-footer .desktop-footer .companies-logo {\r\n        align-self: center ;\r\n        justify-self: start;\r\n    }\r\n    .bm-burger-button {\r\n        display: block !important;\r\n    }\r\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".page-header {\r\n    width: 100%;\r\n    height: 157px;\r\n    background: #3F7E68 ;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n.page-header .now-time {\r\n    font-weight: 800;\r\n    font-size: 16px;\r\n    color: white ;\r\n    padding-top: 10px;\r\n}\r\n.page-header .desktop-header {\r\n    width: 1270px;\r\n    /* padding: 40px 20px; */\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: auto;\r\n}\r\n\r\n.page-menu {\r\n    width: 100%;\r\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\r\n    background: white;\r\n}\r\n\r\n.page-menu .item {\r\n    font-weight: 700;\r\n    font-size: 12px;\r\n    color: black;\r\n    cursor: pointer;\r\n}\r\n\r\n.page-content {\r\n    padding: 0px 15px 163px 15px;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    margin-top: 5px;\r\n}\r\n.page-content .left-part {\r\n    width: 175px;\r\n    background: white ;\r\n    height: 100%;\r\n    border: 1px solid #ddd ;\r\n    padding-bottom: 10px;\r\n}\r\n.page-content .right-part {\r\n    width: 23%;\r\n    position: relative;\r\n}\r\n.page-content .main-content {\r\n    width: 59%;\r\n    padding: 0px 15px;\r\n    padding-bottom: 20px;\r\n}\r\n.page-content .left-part .page-list .item {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-content: center;\r\n    border: 0.5px solid #ddd ;\r\n    padding: 15px 0px; \r\n    cursor: pointer;\r\n}\r\n.page-content .left-part .page-list .item:hover {\r\n    background: #ecebeb;\r\n    width: 90%;\r\n    height: 90%;\r\n    margin-left: 5%;\r\n    transition: .2s ease;\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n}\r\n\r\n.page-content .left-part .page-list .item .icon {\r\n    width: 30% ;\r\n    padding-left: 25px;\r\n    text-align: center;\r\n}\r\n.page-content .left-part .page-list .item .icon img {\r\n    width: 30px;\r\n}\r\n.page-content .left-part .page-list .item .name {\r\n    width: 60% ;\r\n    text-align: left;\r\n    font-size: 12px;\r\n    font-weight: 600;\r\n    padding-top: 5px;\r\n}\r\n/* .page-content .left-part .page-list .item:hover {\r\n    transform:scale(1.12);\r\n} */\r\n.page-content .left-part .create-instant {\r\n    margin-top: 20px;\r\n    padding: 15px;\r\n    width: 100%;\r\n}\r\n.page-content .left-part .create-instant {\r\n    font-size: 12px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n}\r\n.page-content .left-part .create-instant .item {\r\n    cursor: pointer;\r\n}\r\n.page-content .left-part .create-instant .content{\r\n    margin-top: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n.page-content .left-part .google-play {\r\n    text-align: center;\r\n    margin-top: 30px;\r\n    width: 100%;\r\n}\r\n.page-content .left-part .google-play img {\r\n    width: 90%;\r\n    margin: auto;\r\n}\r\n.page-content .right-part .report-dlg {\r\n    width: 100%;\r\n    background: #FFFFFF;   \r\n}\r\n\r\n.page-content .right-part .report-dlg .title {\r\n    font-size: 14px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n    padding: 7px;\r\n    background: #3F7E68;\r\n    color: white ;\r\n}\r\n\r\n.page-content .right-part .report-dlg .content {\r\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);   \r\n}\r\n.page-content .right-part .available-credit{\r\n    margin-bottom: 27px;\r\n}\r\n.page-content .right-part .available-credit .content {\r\n    width: 100%;\r\n    padding: 5px 18px;   \r\n}\r\n\r\n.page-content .right-part .available-credit .content .item {\r\n    margin-top: 14px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-weight: 500;\r\n    font-size: 12px;\r\n    \r\n}\r\n.page-content .right-part .available-credit .content .item .name {\r\n    width: 70%;\r\n}\r\n.page-content .right-part .available-credit .content .item .value {\r\n    width: 30%;\r\n    padding-left: 10px;\r\n}\r\n\r\n.page-content .right-part .bid-history .content {\r\n    min-height: 265px;\r\n    width: 100%;\r\n}\r\n\r\n.page-footer {\r\n    width: 100%;\r\n    background: #3F7E68 ;\r\n\r\n}\r\n.page-footer .desktop-footer {\r\n    background: #3F7E68 ;\r\n    color: white ;\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    /* padding: 43px 110px 23px 110px; */\r\n}\r\n.page-footer .desktop-footer .company-info {\r\n    padding: 20px;\r\n}\r\n.page-footer .desktop-footer .companies-logo{\r\n    display: grid;\r\n    grid-template-columns: repeat(8,1fr);\r\n    grid-column-gap: 11px;\r\n    margin-top: 30px;\r\n}\r\n\r\n.page-footer .desktop-footer .companies-logo .item{\r\n    align-self: center;\r\n    justify-self: center;\r\n}\r\n.page-footer .desktop-footer .policy-group {\r\n    display: flex ;\r\n    justify-content: space-around;\r\n    margin-top: 30px;\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n}\r\n.page-footer .desktop-footer .version {\r\n    text-align: center;\r\n    margin-top: 55px;\r\n    font-size: 12px;\r\n}\r\n.bm-burger-button {\r\n    display: none !important;\r\n}\r\n\r\n\r\n@media screen and (max-width: 1280px){\r\n    .page-container {\r\n        width: 100%;\r\n    }\r\n    .page-content {\r\n        display: block;\r\n        padding: 0px;\r\n    }\r\n    .page-content .main-content{\r\n        width: 100%;\r\n    }\r\n    .page-content .left-part {\r\n        display: none;\r\n    }\r\n    .page-content .right-part {\r\n        display: none;\r\n    }\r\n    .page-menu {\r\n        display: none;\r\n    }\r\n    .page-footer .desktop-footer {\r\n        padding: 15px;\r\n    }\r\n    \r\n    .bm-burger-button {\r\n        display: block !important;\r\n    }\r\n    .page-header {\r\n        height: 60px;\r\n        line-height: 60px;\r\n    }\r\n    .page-header .desktop-header {\r\n        padding-left: 50px;\r\n    }\r\n    .page-header .header-mark img {\r\n        width: 120px;\r\n    }\r\n    .page-header .now-time {\r\n        display: none;\r\n    }\r\n    .dash-board .bet-buttons .item {    \r\n        height: 30px !important;\r\n        line-height: 30px !important;\r\n    }\r\n\r\n    .page-footer .desktop-footer .companies-logo{\r\n        grid-template-columns: repeat(2,1fr);\r\n        grid-row-gap: 27px;\r\n        grid-column-gap: unset;\r\n    }   \r\n    .page-footer .desktop-footer .company-info {\r\n        padding: 20px 10px;\r\n    }\r\n    .page-footer .desktop-footer .policy-group {\r\n        display: none   ;\r\n    }\r\n    .header-desktop-search-field {\r\n        display: none !important;\r\n    }\r\n    .header-mobile-search-field {\r\n        display: block !important; \r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -25388,6 +25502,33 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ctab_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/css/component/search_bar.css":
+/*!************************************************!*\
+  !*** ./resources/css/component/search_bar.css ***!
+  \************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_search_bar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./search_bar.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/search_bar.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_search_bar_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_search_bar_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

@@ -7,37 +7,18 @@ import '../../../css/component/slick-slider.css' ;
 
 function CSlickSlider(props) {
     const settings = {
-        dots: true,
-        infinite: true,
+        dots: false,
+        infinite: false,
         speed: 500,
-        offset: 20,
+        offset: 0,
         slidesToShow: 2,
         slidesToScroll: 2,
-        cenderPadding: '20px'
+        autoplaySpeed: 2000,
+        autoplay: true,
       };
       return (
         <Slider {...settings} >
-            <div style={{marginLeft: "20px"}}>
-                <img src='images/user/dash-sliders/KajolNew.png' width='100%'/>
-            </div>
-            <div  style={{marginLeft: "20px"}}>
-                <img src='images/user/dash-sliders/KajolNew.png' width='100%'/>
-            </div>
-            <div  style={{marginLeft: "20px"}}>
-                <img src='images/user/dash-sliders/KajolNew.png' width='100%'/>
-            </div>
-            <div  style={{marginLeft: "20px"}}>
-                <img src='images/user/dash-sliders/KajolNew.png' width='100%'/>
-            </div>
-            <div  style={{marginLeft: "20px"}}>
-                <img src='images/user/dash-sliders/KajolNew.png' width='100%'/>
-            </div>
-            <div  style={{marginLeft: "20px"}}>
-                <img src='images/user/dash-sliders/KajolNew.png' width='100%'/>
-            </div>
-            <div  style={{marginLeft: "20px"}}>
-                <img src='images/user/dash-sliders/KajolNew.png' width='100%'/>
-            </div>
+            {props.children}
         </Slider>
       );
 }

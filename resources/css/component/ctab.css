@@ -8,8 +8,8 @@
 
 .custom-tab .nav-tabs a {
     color: black; 
-    width: 50%;
     text-align: center;
+    font-size: 12px;    
 }
 .custom-tab .nav-tabs .nav-item {
     border: none ;

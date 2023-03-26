@@ -20,13 +20,14 @@ function LiveResult(props){
                         XXX-XX-XXX
                     </div>
                     <div className='setting'>
-                        <CButton 
+                        {/* <CButton 
                             text='JODI'
                             background='#3F7E68'
                             color='white'
                             padding='7px 11px'
                             hoverBackground='rgb(24, 62, 49)'
                             hoverColor='white'
+                            fontSize='12px'
                         />
                         <CButton 
                             text='PANEL'
@@ -36,7 +37,8 @@ function LiveResult(props){
                             hoverBackground='rgb(24, 62, 49)'
                             hoverColor='white'
                             marginLeft='25px'
-                        />
+                            fontSize='12px'
+                        /> */}
                     </div>
                 </div>
                 <div className='item'>
@@ -47,23 +49,25 @@ function LiveResult(props){
                         XXX-XX-XXX
                     </div>
                     <div className='setting'>
-                        <CButton 
+                        {/* <CButton 
                             text='JODI'
                             background='#3F7E68'
                             color='white'
                             padding='7px 11px'
                             hoverBackground='rgb(24, 62, 49)'
                             hoverColor='white'
+                            fontSize='12px'
                         />
                         <CButton 
                             text='PANEL'
                             background='#3F7E68'
                             color='white'
+                            fontSize='12px'
                             padding='7px 11px'
                             hoverBackground='rgb(24, 62, 49)'
                             hoverColor='white'
                             marginLeft='25px'
-                        />
+                        /> */}
                     </div>
                 </div>
                 <div className='item'>
@@ -74,13 +78,15 @@ function LiveResult(props){
                         XXX-XX-XXX
                     </div>
                     <div className='setting'>
-                        <CButton 
+                        {/* <CButton 
                             text='JODI'
                             background='#3F7E68'
                             color='white'
                             padding='7px 11px'
                             hoverBackground='rgb(24, 62, 49)'
                             hoverColor='white'
+                            fontSize='12px'
+
                         />
                         <CButton 
                             text='PANEL'
@@ -90,7 +96,8 @@ function LiveResult(props){
                             hoverBackground='rgb(24, 62, 49)'
                             hoverColor='white'
                             marginLeft='25px'
-                        />
+                            fontSize='12px'
+                        /> */}
                     </div>
                 </div>
             </div>

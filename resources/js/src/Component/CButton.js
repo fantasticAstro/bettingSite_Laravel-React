@@ -25,6 +25,7 @@ function CButton(props) {
         border: props.border?props.border:'none',
         lineHeight:'100%',
         marginLeft: props.marginLeft?props.marginLeft: "0px",
+        marginRight: props.marginRight?props.marginRight: "0px",
 
         // backgroundImage:
         //     isHover?

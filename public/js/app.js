@@ -618,7 +618,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".app-user-page {\r\n    width: 100%;\r\n}\r\nbody {\r\n    margin: 0px;\r\n    background:#D9D9D9;\r\n}\r\n\r\ndiv,span,li,ul,table,tr,td,ol,h1,h2,h3,h4,h5,h6,p,br,tspan {\r\n    font-family: 'Lato';\r\n}\r\n.page-container {\r\n    width: 1280px;\r\n    background: white ;\r\n    margin: auto ;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".app-user-page {\r\n    width: 100%;\r\n}\r\nbody {\r\n    margin: 0px;\r\n    background:#eceaea;\r\n}\r\n\r\ndiv,span,li,ul,table,tr,td,ol,h1,h2,h3,h4,h5,h6,p,br,tspan {\r\n    font-family: 'Lato';\r\n}\r\n.page-container {\r\n    width: 1280px;\r\n    margin: auto ;\r\n}", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

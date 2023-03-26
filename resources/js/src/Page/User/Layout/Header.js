@@ -1,6 +1,7 @@
 
 import {Row, Col} from 'react-bootstrap' ;
 import CButton from '../../../Component/CButton' ;
+import SearchBar from '../../../Component/SearchBar' ;
 
 function Header(props) {
     const Login = () => {
@@ -9,6 +10,8 @@ function Header(props) {
     const Signup = () => {
 
     }
+
+
     return(
         <div className='page-header'>
             <div className='desktop-header'>
@@ -18,11 +21,13 @@ function Header(props) {
                 <div className='now-time'>
                     Mar 
                 </div>
+                <SearchBar />
                 <div className='sign-field'>
                     <CButton 
                         text='Log In'
                         background='#F5E04D'
                         color='black'
+                        fontSize='12px'
                         callBack={Login}
                     />
                     <CButton 
@@ -30,7 +35,9 @@ function Header(props) {
                         background='white'
                         color='black'
                         callBack={Signup}
-                        marginLeft='24px'
+                        marginLeft='5px'
+                        fontSize='12px'
+                        marginRight='10px'
                     />
 
                 </div>

@@ -24,75 +24,19 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 
 
 
-
 function CSlickSlider(props) {
   var settings = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
-    offset: 20,
+    offset: 0,
     slidesToShow: 2,
     slidesToScroll: 2,
-    cenderPadding: '20px'
+    autoplaySpeed: 2000,
+    autoplay: true
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_slick__WEBPACK_IMPORTED_MODULE_0__["default"], _objectSpread(_objectSpread({}, settings), {}, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      style: {
-        marginLeft: "20px"
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-        src: "images/user/dash-sliders/KajolNew.png",
-        width: "100%"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      style: {
-        marginLeft: "20px"
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-        src: "images/user/dash-sliders/KajolNew.png",
-        width: "100%"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      style: {
-        marginLeft: "20px"
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-        src: "images/user/dash-sliders/KajolNew.png",
-        width: "100%"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      style: {
-        marginLeft: "20px"
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-        src: "images/user/dash-sliders/KajolNew.png",
-        width: "100%"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      style: {
-        marginLeft: "20px"
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-        src: "images/user/dash-sliders/KajolNew.png",
-        width: "100%"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      style: {
-        marginLeft: "20px"
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-        src: "images/user/dash-sliders/KajolNew.png",
-        width: "100%"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      style: {
-        marginLeft: "20px"
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-        src: "images/user/dash-sliders/KajolNew.png",
-        width: "100%"
-      })
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_slick__WEBPACK_IMPORTED_MODULE_0__["default"], _objectSpread(_objectSpread({}, settings), {}, {
+    children: props.children
   }));
 }
 /* harmony default export */ __webpack_exports__["default"] = (CSlickSlider);
@@ -107,8 +51,8 @@ function CSlickSlider(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Component_CButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Component/CButton */ "./resources/js/src/Component/CButton.js");
-/* harmony import */ var _css_user_dashboard_bet_buttons_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/user/dashboard/bet_buttons.css */ "./resources/css/user/dashboard/bet_buttons.css");
+/* harmony import */ var _css_user_dashboard_bet_buttons_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../css/user/dashboard/bet_buttons.css */ "./resources/css/user/dashboard/bet_buttons.css");
+/* harmony import */ var _Component_CSlickSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Component/CSlickSlider */ "./resources/js/src/Component/CSlickSlider.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -123,45 +67,58 @@ function BetButtons(props) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "item",
           style: {
-            width: '38%',
+            width: '30%',
             backgroundImage: "url(images/user/dashboard/single_bet_btn_bg.png)"
           },
           children: "SINGLE"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "item",
           style: {
-            width: '38%',
+            width: '30%',
             backgroundImage: "url(images/user/dashboard/jodi_bet_btn_bg.png)"
           },
           children: "JODI"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "item",
           style: {
-            width: '20%',
+            width: '30%',
             backgroundImage: "url(images/user/dashboard/PATTI_bet_btn_bg.png)"
           },
           children: "PATTI"
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_Component_CSlickSlider__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "bet-buttons",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "item",
           style: {
-            width: '48%',
+            width: '100%',
+            backgroundImage: "url(images/user/dashboard/single_bet_btn_bg.png)"
+          },
+          children: "CREATE REATES"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "bet-buttons",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "item",
+          style: {
+            width: '100%',
+            backgroundImage: "url(images/user/dashboard/single_bet_btn_bg.png)"
+          },
+          children: "HOW TO PLAY?"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "bet-buttons",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "item",
+          style: {
+            width: '100%',
             backgroundImage: "url(images/user/dashboard/single_bet_btn_bg.png)"
           },
           children: "SINGLE"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "item",
-          style: {
-            width: '48%',
-            backgroundImage: "url(images/user/dashboard/single_bet_btn_bg.png)"
-          },
-          children: "JODI"
-        })]
-      })
+        })
+      })]
     })]
   });
 }
@@ -208,24 +165,8 @@ function LiveResult(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "number",
           children: "XXX-XX-XXX"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "setting",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Component_CButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            text: "JODI",
-            background: "#3F7E68",
-            color: "white",
-            padding: "7px 11px",
-            hoverBackground: "rgb(24, 62, 49)",
-            hoverColor: "white"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Component_CButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            text: "PANEL",
-            background: "#3F7E68",
-            color: "white",
-            padding: "7px 11px",
-            hoverBackground: "rgb(24, 62, 49)",
-            hoverColor: "white",
-            marginLeft: "25px"
-          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "setting"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "item",
@@ -235,24 +176,8 @@ function LiveResult(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "number",
           children: "XXX-XX-XXX"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "setting",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Component_CButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            text: "JODI",
-            background: "#3F7E68",
-            color: "white",
-            padding: "7px 11px",
-            hoverBackground: "rgb(24, 62, 49)",
-            hoverColor: "white"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Component_CButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            text: "PANEL",
-            background: "#3F7E68",
-            color: "white",
-            padding: "7px 11px",
-            hoverBackground: "rgb(24, 62, 49)",
-            hoverColor: "white",
-            marginLeft: "25px"
-          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "setting"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "item",
@@ -262,24 +187,8 @@ function LiveResult(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "number",
           children: "XXX-XX-XXX"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "setting",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Component_CButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            text: "JODI",
-            background: "#3F7E68",
-            color: "white",
-            padding: "7px 11px",
-            hoverBackground: "rgb(24, 62, 49)",
-            hoverColor: "white"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Component_CButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            text: "PANEL",
-            background: "#3F7E68",
-            color: "white",
-            padding: "7px 11px",
-            hoverBackground: "rgb(24, 62, 49)",
-            hoverColor: "white",
-            marginLeft: "25px"
-          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "setting"
         })]
       })]
     })]
@@ -309,7 +218,33 @@ __webpack_require__.r(__webpack_exports__);
 function DashBoard(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "dash-board",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Component_CSlickSlider__WEBPACK_IMPORTED_MODULE_0__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_BetButtons__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_LiveResult__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_Component_CSlickSlider__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        style: {
+          marginLeft: "20px"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          src: "images/user/dash-sliders/KajolNew.png",
+          width: "100%"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        style: {
+          marginLeft: "20px"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          src: "images/user/dash-sliders/KajolNew.png",
+          width: "100%"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        style: {
+          marginLeft: "20px"
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          src: "images/user/dash-sliders/KajolNew.png",
+          width: "100%"
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_BetButtons__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_LiveResult__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
   });
 }
 /* harmony default export */ __webpack_exports__["default"] = (DashBoard);
@@ -391,7 +326,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".slick-list {margin: 0 -5px;}\r\n.slick-slide>div {padding: 0 15px;}\r\n.slick-list img{\r\n    border-radius: 10px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".slick-list {margin: 0 -10px;}\r\n.slick-slide {padding: 0 10px;}\r\n.slick-list img{\r\n    border-radius: 10px;\r\n}\r\n.slick-arrow{\r\n    display: none !important;\r\n}\r\n.slick-slider {\r\n    background: #eceaea ;\r\n}", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -412,7 +347,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".dash-board .bet-buttons {\r\n    display: flex;\r\n    margin-top: 20px;\r\n    justify-content: space-between;\r\n}\r\n\r\n.dash-board .bet-buttons .item {\r\n    text-align: left;\r\n    color: white ;\r\n    font-size: 22px;\r\n    background-size: cover ;\r\n    background-repeat: no-repeat ;\r\n    cursor: pointer;\r\n    padding: 13px;\r\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".dash-board .bet-buttons {\r\n    display: flex;\r\n    margin-top: 10px;\r\n    justify-content: space-between;\r\n}\r\n\r\n.dash-board .bet-buttons .item {\r\n    text-align: left;\r\n    color: white ;\r\n    font-size: 12px;\r\n    cursor: pointer;\r\n    padding-left: 8px;\r\n    background-size: cover;\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n    height: 50px;\r\n    line-height: 50px;\r\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -433,7 +368,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".dash-board .live-result {\r\n    margin-top: 25px;\r\n    width: 100%; \r\n}\r\n\r\n.dash-board .live-result .title {\r\n    /* font-size: 22px; */\r\n    font-size: calc(22px + (10) * ((100vw - 768px) / (1920 - 768))) ;\r\n\r\n    padding: 12px 28px;\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    background: #3F7E68 ;\r\n    border-radius: 4px;\r\n    color: white ;\r\n}\r\n.dash-board .live-result .title .name {\r\n    margin-left: 15px;\r\n    padding-top: 3px;\r\n}\r\n.dash-board .live-result .content {\r\n    margin-top: 10px;\r\n    \r\n}\r\n.dash-board .live-result .content .item {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding: 27px 0px ;\r\n    font-size: 22px;\r\n    border-bottom: 1px solid #B1B1B1;\r\n    cursor: pointer;\r\n}\r\n.dash-board .live-result .content .item .name {\r\n    width: 36%;\r\n    font-weight: 600;\r\n    padding-left: 20px;\r\n}\r\n.dash-board .live-result .content .item .number {\r\n    width: 23%;\r\n    font-weight: 700;\r\n}\r\n\r\n.dash-board .live-result .content .item .setting {\r\n    width: 33%;\r\n    text-align: center;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".dash-board .live-result {\r\n    margin-top: 20px;\r\n    width: 100%; \r\n    background: white ;\r\n}\r\n\r\n.dash-board .live-result .title {\r\n    /* font-size: 22px; */\r\n    font-size: 18px ;\r\n    height: 42px;\r\n    line-height: 42px;\r\n    padding-left: 20px;\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    background: #3F7E68 ;\r\n    border-top-right-radius: 3px;\r\n    border-top-left-radius: 3px;\r\n    color: white ;\r\n}\r\n.dash-board .live-result .title .name {\r\n    margin-left: 15px;\r\n}\r\n\r\n.dash-board .live-result .content .item {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    font-size: 12px;\r\n    border-bottom: 1px solid #B1B1B1;\r\n    cursor: pointer;\r\n    border-top: 1px solid #ddd;\r\n    border-left: 1px solid #ddd;\r\n    border-right: 1px solid #ddd;\r\n    height: 43px;\r\n}\r\n.dash-board .live-result .content .item:hover {\r\n    background: #ecebeb ;\r\n}\r\n.dash-board .live-result .content .item .name {\r\n    width: 36%;\r\n    font-weight: 600;\r\n    padding-left: 20px;\r\n}\r\n.dash-board .live-result .content .item .number {\r\n    width: 23%;\r\n    font-weight: 700;\r\n}\r\n\r\n.dash-board .live-result .content .item .setting {\r\n    width: 33%;\r\n    text-align: center;\r\n}", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

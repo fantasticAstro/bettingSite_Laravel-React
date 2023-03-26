@@ -1,21 +1,26 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
+import Config from '../../config' ;
 import '../../../css/component/sidebar.css' ;
 export default props => {
   return (
     <Menu>
-      <a className="menu-item" href="/">
-        Home
-      </a>
-      <a className="menu-item" href="/salads">
-        Salads
-      </a>
-      <a className="menu-item" href="/pizzas">
-        Pizzas
-      </a>
-      <a className="menu-item" href="/desserts">
-        Desserts
-      </a>
+        {
+          Config.menuList.map((item, index) =>
+            <a>
+              <div className='menu-item'>
+                <div className='icon'>
+                  <img src={`images/user/menu-icons/${item.icon}.png`}/>
+                </div>
+                <div className='name'>
+                  {
+                    item.name
+                  }
+                </div>
+              </div>
+            </a>
+          )
+        }
     </Menu>
   );
 };

@@ -1,35 +1,40 @@
 .dash-board .live-result {
-    margin-top: 25px;
+    margin-top: 20px;
     width: 100%; 
+    background: white ;
 }
 
 .dash-board .live-result .title {
     /* font-size: 22px; */
-    font-size: calc(22px + (10) * ((100vw - 768px) / (1920 - 768))) ;
-
-    padding: 12px 28px;
+    font-size: 18px ;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 20px;
     display: flex;
     justify-content: flex-start;
     background: #3F7E68 ;
-    border-radius: 4px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
     color: white ;
 }
 .dash-board .live-result .title .name {
     margin-left: 15px;
-    padding-top: 3px;
 }
-.dash-board .live-result .content {
-    margin-top: 10px;
-    
-}
+
 .dash-board .live-result .content .item {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 27px 0px ;
-    font-size: 22px;
+    font-size: 12px;
     border-bottom: 1px solid #B1B1B1;
     cursor: pointer;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    height: 43px;
+}
+.dash-board .live-result .content .item:hover {
+    background: #ecebeb ;
 }
 .dash-board .live-result .content .item .name {
     width: 36%;

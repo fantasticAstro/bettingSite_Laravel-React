@@ -1,16 +1,19 @@
 .dash-board .bet-buttons {
     display: flex;
-    margin-top: 20px;
+    margin-top: 10px;
     justify-content: space-between;
 }
 
 .dash-board .bet-buttons .item {
     text-align: left;
     color: white ;
-    font-size: 22px;
-    background-size: cover ;
-    background-repeat: no-repeat ;
+    font-size: 12px;
     cursor: pointer;
-    padding: 13px;
+    padding-left: 8px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50px;
+    line-height: 50px;
 }
 

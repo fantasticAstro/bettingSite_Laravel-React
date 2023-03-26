@@ -27,6 +27,7 @@
     "react-window-size": "^1.2.2",
     "redux": "^4.0.1",
     "sass": "^1.60.0",
+    "search-app": "^1.0.0",
     "sidebar": "^1.0.2",
     "slick-carousel": "^1.8.1"
   },

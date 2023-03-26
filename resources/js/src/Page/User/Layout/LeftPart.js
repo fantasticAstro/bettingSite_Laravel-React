@@ -28,12 +28,10 @@ function LeftPart(props) {
                     CREATE INSTANT I'D
                 </div>
                 <div className='content'>
-                    <div className='item'>
-                        <img src='images/user/whatsapp.png'/>
-                    </div>
-                    <div className='item'>
-                        <img src='images/user/telegram.png'/>
-                    </div>
+             
+                    <img src='images/user/whatsapp.png' width='50px'/>
+                    <img src='images/user/telegram_1.png' width='37px' style={{marginLeft: '10px'}}/>
+             
                 </div>
             </div>
             <div className='google-play'>
