@@ -14,7 +14,6 @@
 }
 .page-header .desktop-header {
     width: 1270px;
-    /* padding: 40px 20px; */
     display: flex;
     justify-content: space-between;
     margin: auto;
@@ -48,7 +47,9 @@
 }
 .page-content .right-part {
     width: 23%;
-    position: relative;
+    position: sticky;
+    top: 0px;
+    height: 100px;
 }
 .page-content .main-content {
     width: 59%;
@@ -86,11 +87,8 @@
     text-align: left;
     font-size: 12px;
     font-weight: 600;
-    padding-top: 5px;
+    padding-top: 10px;
 }
-/* .page-content .left-part .page-list .item:hover {
-    transform:scale(1.12);
-} */
 .page-content .left-part .create-instant {
     margin-top: 20px;
     padding: 15px;
@@ -118,6 +116,7 @@
     width: 90%;
     margin: auto;
 }
+
 .page-content .right-part .report-dlg {
     width: 100%;
     background: #FFFFFF;   
@@ -160,7 +159,7 @@
 }
 
 .page-content .right-part .bid-history .content {
-    min-height: 265px;
+    min-height: 100px;
     width: 100%;
 }
 
@@ -178,6 +177,7 @@
 }
 .page-footer .desktop-footer .company-info {
     padding: 20px;
+    font-weight: 400;
 }
 .page-footer .desktop-footer .companies-logo{
     display: grid;
@@ -201,11 +201,12 @@
     text-align: center;
     margin-top: 55px;
     font-size: 12px;
+    font-weight: 400;
+
 }
 .bm-burger-button {
     display: none !important;
 }
-
 
 @media screen and (max-width: 1280px){
     .page-container {
