@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Fullscreen from "react-full-screen";
 import windowSize from 'react-window-size';
 
-import Loader from "../../../Layout/Loader";
+import Loader from "../Layout/Loader";
 import routes from "../../../../routes";
 import Aux from "../../../../hoc/_Aux";
 import * as actionTypes from "../../../../store/actions";
@@ -15,8 +15,13 @@ import Header from './Header' ;
 import Footer from './Footer' ;
 import UserMenu from './Menu' ;
 import Content from './Content' ;
+import ScrollToTop from '../Layout/ScrollToTop' ;
 
 import Sidebar from '../../../Component/SideBar' ;
+import Config from '../../../../config' ;
+
+import '../../../../../../node_modules/loaders.css';
+import '../../../../../../node_modules/react-block-ui/lib/style.css' ;
 
 class UserLayout extends Component {
 
@@ -39,14 +44,19 @@ class UserLayout extends Component {
     }
 
     render() {
-
+        const fullScreenExitHandler = () => {
+            if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
+                this.props.onFullScreenExit();
+            }
+        };
+        
         /* full screen exit call */
         document.addEventListener('fullscreenchange', this.fullScreenExitHandler);
         document.addEventListener('webkitfullscreenchange', this.fullScreenExitHandler);
         document.addEventListener('mozfullscreenchange', this.fullScreenExitHandler);
         document.addEventListener('MSFullscreenChange', this.fullScreenExitHandler);
-
-        const menu = routes.map((route, index) => {
+        
+        const menu = routes.user.map((route, index) => {
             return (route.component) ? (
                 <Route
                     key={index}
@@ -61,8 +71,25 @@ class UserLayout extends Component {
 
         return (
             <Aux>
-                <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
-
+                <ScrollToTop>
+                    <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}>
+                        {
+                            Config.userMenuList.map((item, index) =>
+                                <a>
+                                <div className='menu-item'>
+                                    <div className='icon'>
+                                    <img src={`images/user/menu-icons/${item.icon}.png`}/>
+                                    </div>
+                                    <div className='name'>
+                                    {
+                                        item.name
+                                    }
+                                    </div>
+                                </div>
+                                </a>
+                            )
+                        }
+                    </Sidebar>
                     <Fullscreen enabled={this.props.isFullScreen}>
                         <div className="app-user-page" onClick={() => this.mobileOutClickHandler}>
                             <Header />
@@ -72,13 +99,14 @@ class UserLayout extends Component {
                                 <Suspense fallback={<Loader/>}>
                                     <Switch>
                                         {menu}
-                                        <Redirect from="/" to={this.props.defaultPath} />
+                                        <Redirect from="/" to={this.props.userDefaultPath} />
                                     </Switch>
                                 </Suspense>
                             </Content>
                             <Footer />
                         </div>
                     </Fullscreen>
+                </ScrollToTop>
             </Aux>
         );
     }

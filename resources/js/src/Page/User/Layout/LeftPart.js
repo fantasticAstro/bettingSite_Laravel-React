@@ -4,7 +4,7 @@ function LeftPart(props) {
         <div className='left-part'>
             <div className="page-list">
             {
-                Config.menuList.map((item, index) =>
+                Config.userMenuList.map((item, index) =>
                     <>
                         {
                              item.is_left ?

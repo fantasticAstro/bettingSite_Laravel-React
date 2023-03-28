@@ -154,6 +154,21 @@ function useMergedRefs(refA, refB) {
 
 /***/ }),
 
+/***/ "./resources/js/hoc/_Aux/index.js":
+/*!****************************************!*\
+  !*** ./resources/js/hoc/_Aux/index.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var Aux = function Aux(props) {
+  return props.children;
+};
+/* harmony default export */ __webpack_exports__["default"] = (Aux);
+
+/***/ }),
+
 /***/ "./resources/js/routes.js":
 /*!********************************!*\
   !*** ./resources/js/routes.js ***!
@@ -170,15 +185,37 @@ __webpack_require__.r(__webpack_exports__);
 window.jQuery = (jquery__WEBPACK_IMPORTED_MODULE_1___default());
 window.$ = (jquery__WEBPACK_IMPORTED_MODULE_1___default());
 __webpack_require__.g.jQuery = (jquery__WEBPACK_IMPORTED_MODULE_1___default());
+/*USER */
 var userDashBoard = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
   return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_DashBoard_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/DashBoard */ "./resources/js/src/Page/User/DashBoard/index.js"));
 });
-var routes = [{
-  path: '/',
-  exact: true,
-  name: 'Default',
-  component: userDashBoard
-}];
+var singleBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_SingleBet_index_js").then(__webpack_require__.t.bind(__webpack_require__, /*! ./src/Page/User/SingleBet */ "./resources/js/src/Page/User/SingleBet/index.js", 23));
+});
+
+/*ADMIN */
+var adminDashBoard = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_DashBoard_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/DashBoard */ "./resources/js/src/Page/Admin/DashBoard/index.js"));
+});
+var routes = {
+  user: [{
+    path: '/',
+    exact: true,
+    name: 'Default',
+    component: userDashBoard
+  }],
+  admin: [{
+    path: '/admin',
+    exact: true,
+    name: 'adminDashBoard',
+    component: adminDashBoard
+  }, {
+    path: '/single',
+    exact: true,
+    name: 'singleBet',
+    component: singleBet
+  }]
+};
 /* harmony default export */ __webpack_exports__["default"] = (routes);
 
 /***/ }),
@@ -206,7 +243,6 @@ function CButton(props) {
     _useState2 = _slicedToArray(_useState, 2),
     isHover = _useState2[0],
     setIsHover = _useState2[1];
-  console.log(props);
   var style = {
     background: isHover ? props.hoverBackground ? props.hoverBackground : 'white' : props.background ? props.background : 'black',
     borderRadius: props.radius ? props.radius : '4px',
@@ -383,62 +419,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_burger_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-burger-menu */ "./node_modules/react-burger-menu/lib/BurgerMenu.js");
 /* harmony import */ var react_burger_menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_burger_menu__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../config */ "./resources/js/config.js");
-/* harmony import */ var _css_component_sidebar_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../css/component/sidebar.css */ "./resources/css/component/sidebar.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
+/* harmony import */ var _css_component_sidebar_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../css/component/sidebar.css */ "./resources/css/component/sidebar.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_burger_menu__WEBPACK_IMPORTED_MODULE_1__.slide, {
-    children: _config__WEBPACK_IMPORTED_MODULE_2__["default"].menuList.map(function (item, index) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: "menu-item",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "icon",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-              src: "images/user/menu-icons/".concat(item.icon, ".png")
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "name",
-            children: item.name
-          })]
-        })
-      });
-    })
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_burger_menu__WEBPACK_IMPORTED_MODULE_1__.slide, {
+    children: props.children
   });
 });
-
-/***/ }),
-
-/***/ "./resources/js/src/Layout/Loader/index.js":
-/*!*************************************************!*\
-  !*** ./resources/js/src/Layout/Loader/index.js ***!
-  \*************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-var loader = function loader() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "loader-bg",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "loader-track",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "loader-fill"
-      })
-    })
-  });
-};
-/* harmony default export */ __webpack_exports__["default"] = (loader);
 
 /***/ }),
 
@@ -621,7 +612,7 @@ function LeftPart(props) {
     className: "left-part",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "page-list",
-      children: _config__WEBPACK_IMPORTED_MODULE_0__["default"].menuList.map(function (item, index) {
+      children: _config__WEBPACK_IMPORTED_MODULE_0__["default"].userMenuList.map(function (item, index) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
           children: item.is_left ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "item",
@@ -693,7 +684,7 @@ function Menu(props) {
           margin: 'auto',
           height: '35px'
         },
-        children: _config__WEBPACK_IMPORTED_MODULE_0__["default"].menuList.map(function (item, index) {
+        children: _config__WEBPACK_IMPORTED_MODULE_0__["default"].userMenuList.map(function (item, index) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "item",
             children: item.name
@@ -775,6 +766,57 @@ function RightPart(props) {
 
 /***/ }),
 
+/***/ "./resources/js/src/Page/User/Layout/ScrollToTop/index.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/src/Page/User/Layout/ScrollToTop/index.js ***!
+  \****************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/es/withRouter.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+var ScrollToTop = /*#__PURE__*/function (_React$Component) {
+  _inherits(ScrollToTop, _React$Component);
+  var _super = _createSuper(ScrollToTop);
+  function ScrollToTop() {
+    _classCallCheck(this, ScrollToTop);
+    return _super.apply(this, arguments);
+  }
+  _createClass(ScrollToTop, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.location !== prevProps.location) {
+        window.scrollTo(0, 0);
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return this.props.children;
+    }
+  }]);
+  return ScrollToTop;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+/* harmony default export */ __webpack_exports__["default"] = ((0,react_router__WEBPACK_IMPORTED_MODULE_1__["default"])(ScrollToTop));
+
+/***/ }),
+
 /***/ "./resources/js/src/Page/User/Layout/index.js":
 /*!****************************************************!*\
   !*** ./resources/js/src/Page/User/Layout/index.js ***!
@@ -784,14 +826,14 @@ function RightPart(props) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/Route.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/Switch.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/Redirect.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/Route.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/Switch.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/Redirect.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_full_screen__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-full-screen */ "./node_modules/react-full-screen/dist/index.js");
 /* harmony import */ var react_window_size__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-window-size */ "./node_modules/react-window-size/index.js");
 /* harmony import */ var react_window_size__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_window_size__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Layout_Loader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Layout/Loader */ "./resources/js/src/Layout/Loader/index.js");
+/* harmony import */ var _Layout_Loader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Layout/Loader */ "./resources/js/src/Page/User/Layout/Loader/index.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../routes */ "./resources/js/routes.js");
 /* harmony import */ var _hoc_Aux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../hoc/_Aux */ "./resources/js/hoc/_Aux/index.js");
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../store/actions */ "./resources/js/store/actions.js");
@@ -800,8 +842,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Footer */ "./resources/js/src/Page/User/Layout/Footer.js");
 /* harmony import */ var _Menu__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Menu */ "./resources/js/src/Page/User/Layout/Menu.js");
 /* harmony import */ var _Content__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Content */ "./resources/js/src/Page/User/Layout/Content.js");
-/* harmony import */ var _Component_SideBar__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../Component/SideBar */ "./resources/js/src/Component/SideBar.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Layout_ScrollToTop__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../Layout/ScrollToTop */ "./resources/js/src/Page/User/Layout/ScrollToTop/index.js");
+/* harmony import */ var _Component_SideBar__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../Component/SideBar */ "./resources/js/src/Component/SideBar.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../../../config */ "./resources/js/config.js");
+/* harmony import */ var _node_modules_loaders_css__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../../../../../node_modules/loaders.css */ "./node_modules/loaders.css/loaders.css");
+/* harmony import */ var _node_modules_react_block_ui_lib_style_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../../../../../node_modules/react-block-ui/lib/style.css */ "./node_modules/react-block-ui/lib/style.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -818,6 +864,10 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+
+
+
+
 
 
 
@@ -870,45 +920,69 @@ var UserLayout = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this2 = this;
+      var fullScreenExitHandler = function fullScreenExitHandler() {
+        if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
+          _this2.props.onFullScreenExit();
+        }
+      };
+
       /* full screen exit call */
       document.addEventListener('fullscreenchange', this.fullScreenExitHandler);
       document.addEventListener('webkitfullscreenchange', this.fullScreenExitHandler);
       document.addEventListener('mozfullscreenchange', this.fullScreenExitHandler);
       document.addEventListener('MSFullscreenChange', this.fullScreenExitHandler);
-      var menu = _routes__WEBPACK_IMPORTED_MODULE_5__["default"].map(function (route, index) {
-        return route.component ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__["default"], {
+      var menu = _routes__WEBPACK_IMPORTED_MODULE_5__["default"].user.map(function (route, index) {
+        return route.component ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__["default"], {
           path: route.path,
           exact: route.exact,
           name: route.name,
           render: function render(props) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(route.component, _objectSpread({}, props));
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(route.component, _objectSpread({}, props));
           }
         }, index) : null;
       });
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(_hoc_Aux__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Component_SideBar__WEBPACK_IMPORTED_MODULE_13__["default"], {
-          pageWrapId: 'page-wrap',
-          outerContainerId: 'outer-container'
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_full_screen__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          enabled: this.props.isFullScreen,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
-            className: "app-user-page",
-            onClick: function onClick() {
-              return _this2.mobileOutClickHandler;
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Header__WEBPACK_IMPORTED_MODULE_9__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Menu__WEBPACK_IMPORTED_MODULE_11__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Content__WEBPACK_IMPORTED_MODULE_12__["default"], {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
-                fallback: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Layout_Loader__WEBPACK_IMPORTED_MODULE_4__["default"], {}),
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__["default"], {
-                  children: [menu, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__["default"], {
-                    from: "/",
-                    to: this.props.defaultPath
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_hoc_Aux__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(_Layout_ScrollToTop__WEBPACK_IMPORTED_MODULE_13__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_Component_SideBar__WEBPACK_IMPORTED_MODULE_14__["default"], {
+            pageWrapId: 'page-wrap',
+            outerContainerId: 'outer-container',
+            children: _config__WEBPACK_IMPORTED_MODULE_15__["default"].userMenuList.map(function (item, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("a", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+                  className: "menu-item",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                    className: "icon",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("img", {
+                      src: "images/user/menu-icons/".concat(item.icon, ".png")
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)("div", {
+                    className: "name",
+                    children: item.name
                   })]
                 })
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Footer__WEBPACK_IMPORTED_MODULE_10__["default"], {})]
-          })
-        })]
+              });
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_full_screen__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            enabled: this.props.isFullScreen,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)("div", {
+              className: "app-user-page",
+              onClick: function onClick() {
+                return _this2.mobileOutClickHandler;
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_Header__WEBPACK_IMPORTED_MODULE_9__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_Menu__WEBPACK_IMPORTED_MODULE_11__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_Content__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
+                  fallback: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_Layout_Loader__WEBPACK_IMPORTED_MODULE_4__["default"], {}),
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__["default"], {
+                    children: [menu, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__["default"], {
+                      from: "/",
+                      to: this.props.userDefaultPath
+                    })]
+                  })
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_Footer__WEBPACK_IMPORTED_MODULE_10__["default"], {})]
+            })
+          })]
+        })
       });
     }
   }]);
@@ -1006,90 +1080,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else {}
 }());
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/ctab.css":
-/*!****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/ctab.css ***!
-  \****************************************************************************************************************************************************************************************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".custom-tab .nav-tabs .active{\r\n    background: white !important ; \r\n    color: black;\r\n}\r\n.custom-tab .nav-tabs {\r\n    border: none ;\r\n}\r\n\r\n.custom-tab .nav-tabs a {\r\n    color: black; \r\n    text-align: center;\r\n    font-size: 12px;    \r\n}\r\n.custom-tab .nav-tabs .nav-item {\r\n    border: none ;\r\n    background: #D9D9D9 ;\r\n}\r\n", ""]);
-// Exports
-/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/search_bar.css":
-/*!**********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/search_bar.css ***!
-  \**********************************************************************************************************************************************************************************************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".header-desktop-search-field{\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.header-search-field input::-webkit-input-placeholder {\r\n    font: 12px/3 sans-serif;\r\n}\r\n\r\n.header-search-field input::placeholder {\r\n    font: 12px/3 sans-serif;\r\n}\r\n\r\n.header-desktop-search-field input:focus{\r\n    outline: none;\r\n}\r\n\r\n.header-desktop-search-field input {\r\n    padding-left: 25px;\r\n    margin-top: 10px;\r\n    border-radius: 2px;\r\n    border-color: transparent;\r\n    height: 35px;\r\n}\r\n\r\n.header-desktop-search-field .icon {\r\n    position: absolute;\r\n    left: 5px;\r\n    color: rgb(211, 208, 208) ;\r\n    top: 15px;\r\n}\r\n.header-mobile-search-field {\r\n    display: none;\r\n}\r\n.header-mobile-search-field i{\r\n    color: white ;\r\n}\r\n\r\n.header-mobile-search-field .mobile-search-field {\r\n    display: none;\r\n}\r\n\r\n.header-desktop-search-field{\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.mobile-search-field input::-webkit-input-placeholder {\r\n    font: 16px;\r\n    color: white ;\r\n}\r\n\r\n.mobile-search-field input::placeholder {\r\n    font: 16px;\r\n    color: white ;\r\n}\r\n\r\n.mobile-search-field input {\r\n    padding-left: 0px;\r\n    height: 60px;\r\n    width: 300px;\r\n    background: transparent;\r\n    border: none;\r\n    color: white ;\r\n}\r\n\r\n.mobile-search-field .icon {\r\n    position: absolute;\r\n    right: 30px;\r\n    color: rgb(211, 208, 208) ;\r\n    top: 2px;\r\n    font-size: 20px;\r\n}\r\n.mobile-search-field input:focus{\r\n    outline: none;\r\n}", ""]);
-// Exports
-/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/sidebar.css":
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/sidebar.css ***!
-  \*******************************************************************************************************************************************************************************************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".bm-item {\r\n    display: inline-block ;\r\n    color: #d1d1d1;\r\n    text-align: left;\r\n    text-decoration: none;\r\n    transition: color 0.2s;\r\n  }\r\n  \r\n  .bm-item:hover {\r\n    color: #ffffff;\r\n  }\r\n\r\n  .bm-menu-wrap .menu-item {\r\n    color: black; \r\n    border-bottom: 1px solid #ddd;\r\n    display: flex;\r\n    align-items: center;\r\n    padding: 5px;\r\n  }\r\n\r\n  .bm-menu-wrap .menu-item .name{\r\n    padding-left: 5px ;\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n  }\r\n  .bm-menu-wrap .menu-item .icon img {\r\n    width: 20px;\r\n  }\r\n  .bm-menu-wrap .menu-item  .icon{\r\n    width: 25px;\r\n  }\r\n  .bm-burger-button button {\r\n    color: white !important;\r\n  }\r\n\r\n  .bm-burger-button {\r\n    position: absolute;\r\n    width: 20px;\r\n    height: 15px;\r\n    left: 10px;\r\n    top: 25px;\r\n}\r\n\r\n/* Color/shape of burger icon bars */\r\n.bm-burger-bars {\r\n  background: white;\r\n}\r\n\r\n/* Color/shape of burger icon bars on hover*/\r\n.bm-burger-bars-hover {\r\n  background: #a90000;\r\n}\r\n\r\n/* Position and sizing of clickable cross button */\r\n.bm-cross-button {\r\n  height: 24px;\r\n  width: 24px;\r\n  top: -3px !important;\r\n  right: 0px !important ;\r\n}\r\n\r\n/* Color/shape of close button cross */\r\n.bm-cross {\r\n  background: #bdc3c7;\r\n}\r\n\r\n/*\r\nSidebar wrapper styles\r\nNote: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases\r\n*/\r\n.bm-menu-wrap {\r\n  position: fixed;\r\n  height: 100%;\r\n  width:240px  !important;\r\n}\r\n\r\n/* General sidebar styles */\r\n.bm-menu {\r\n  background: #373a47;\r\n  padding: 2.5em 1.5em 0;\r\n  font-size: 1.15em;\r\n}\r\n\r\n/* Morph shape necessary with bubble or elastic */\r\n.bm-morph-shape {\r\n  fill: #373a47;\r\n}\r\n\r\n/* Wrapper for item list */\r\n.bm-item-list {\r\n  color: #b8b7ad;\r\n}\r\n\r\n/* Individual item */\r\n.bm-item {\r\n  display: inline-block;\r\n}\r\n\r\n/* Styling of overlay */\r\n.bm-menu {\r\n  background: white ;\r\n  padding: 10px; \r\n}", ""]);
-// Exports
-/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/user/layout.css":
-/*!*************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/user/layout.css ***!
-  \*************************************************************************************************************************************************************************************************/
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".page-header {\r\n    width: 100%;\r\n    height: 157px;\r\n    background: #3F7E68 ;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n.page-header .now-time {\r\n    font-weight: 800;\r\n    font-size: 16px;\r\n    color: white ;\r\n    padding-top: 10px;\r\n}\r\n.page-header .desktop-header {\r\n    width: 1270px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: auto;\r\n}\r\n\r\n.page-menu {\r\n    width: 100%;\r\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\r\n    background: white;\r\n}\r\n\r\n.page-menu .item {\r\n    font-weight: 700;\r\n    font-size: 12px;\r\n    color: black;\r\n    cursor: pointer;\r\n}\r\n\r\n.page-content {\r\n    padding: 0px 15px 163px 15px;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    margin-top: 5px;\r\n}\r\n.page-content .left-part {\r\n    width: 175px;\r\n    background: white ;\r\n    height: 100%;\r\n    border: 1px solid #ddd ;\r\n    padding-bottom: 10px;\r\n}\r\n.page-content .right-part {\r\n    width: 23%;\r\n    position: -webkit-sticky;\r\n    position: sticky;\r\n    top: 0px;\r\n    height: 100px;\r\n}\r\n.page-content .main-content {\r\n    width: 59%;\r\n    padding: 0px 15px;\r\n    padding-bottom: 20px;\r\n}\r\n.page-content .left-part .page-list .item {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-content: center;\r\n    border: 0.5px solid #ddd ;\r\n    padding: 15px 0px; \r\n    cursor: pointer;\r\n}\r\n.page-content .left-part .page-list .item:hover {\r\n    background: #ecebeb;\r\n    width: 90%;\r\n    height: 90%;\r\n    margin-left: 5%;\r\n    transition: .2s ease;\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n}\r\n\r\n.page-content .left-part .page-list .item .icon {\r\n    width: 30% ;\r\n    padding-left: 25px;\r\n    text-align: center;\r\n}\r\n.page-content .left-part .page-list .item .icon img {\r\n    width: 30px;\r\n}\r\n.page-content .left-part .page-list .item .name {\r\n    width: 60% ;\r\n    text-align: left;\r\n    font-size: 12px;\r\n    font-weight: 600;\r\n    padding-top: 10px;\r\n}\r\n.page-content .left-part .create-instant {\r\n    margin-top: 20px;\r\n    padding: 15px;\r\n    width: 100%;\r\n}\r\n.page-content .left-part .create-instant {\r\n    font-size: 12px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n}\r\n.page-content .left-part .create-instant .item {\r\n    cursor: pointer;\r\n}\r\n.page-content .left-part .create-instant .content{\r\n    margin-top: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n.page-content .left-part .google-play {\r\n    text-align: center;\r\n    margin-top: 30px;\r\n    width: 100%;\r\n}\r\n.page-content .left-part .google-play img {\r\n    width: 90%;\r\n    margin: auto;\r\n}\r\n\r\n.page-content .right-part .report-dlg {\r\n    width: 100%;\r\n    background: #FFFFFF;   \r\n}\r\n\r\n.page-content .right-part .report-dlg .title {\r\n    font-size: 14px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n    padding: 7px;\r\n    background: #3F7E68;\r\n    color: white ;\r\n}\r\n\r\n.page-content .right-part .report-dlg .content {\r\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);   \r\n}\r\n.page-content .right-part .available-credit{\r\n    margin-bottom: 27px;\r\n}\r\n.page-content .right-part .available-credit .content {\r\n    width: 100%;\r\n    padding: 5px 18px;   \r\n}\r\n\r\n.page-content .right-part .available-credit .content .item {\r\n    margin-top: 14px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-weight: 500;\r\n    font-size: 12px;\r\n    \r\n}\r\n.page-content .right-part .available-credit .content .item .name {\r\n    width: 70%;\r\n}\r\n.page-content .right-part .available-credit .content .item .value {\r\n    width: 30%;\r\n    padding-left: 10px;\r\n}\r\n\r\n.page-content .right-part .bid-history .content {\r\n    min-height: 100px;\r\n    width: 100%;\r\n}\r\n\r\n.page-footer {\r\n    width: 100%;\r\n    background: #3F7E68 ;\r\n\r\n}\r\n.page-footer .desktop-footer {\r\n    background: #3F7E68 ;\r\n    color: white ;\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    /* padding: 43px 110px 23px 110px; */\r\n}\r\n.page-footer .desktop-footer .company-info {\r\n    padding: 20px;\r\n    font-weight: 400;\r\n}\r\n.page-footer .desktop-footer .companies-logo{\r\n    display: grid;\r\n    grid-template-columns: repeat(8,1fr);\r\n    grid-column-gap: 11px;\r\n    margin-top: 30px;\r\n}\r\n\r\n.page-footer .desktop-footer .companies-logo .item{\r\n    align-self: center;\r\n    justify-self: center;\r\n}\r\n.page-footer .desktop-footer .policy-group {\r\n    display: flex ;\r\n    justify-content: space-around;\r\n    margin-top: 30px;\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n}\r\n.page-footer .desktop-footer .version {\r\n    text-align: center;\r\n    margin-top: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n\r\n}\r\n.bm-burger-button {\r\n    display: none !important;\r\n}\r\n\r\n@media screen and (max-width: 1280px){\r\n    .page-container {\r\n        width: 100%;\r\n    }\r\n    .page-content {\r\n        display: block;\r\n        padding: 0px;\r\n    }\r\n    .page-content .main-content{\r\n        width: 100%;\r\n    }\r\n    .page-content .left-part {\r\n        display: none;\r\n    }\r\n    .page-content .right-part {\r\n        display: none;\r\n    }\r\n    .page-menu {\r\n        display: none;\r\n    }\r\n    .page-footer .desktop-footer {\r\n        padding: 15px;\r\n    }\r\n    \r\n    .bm-burger-button {\r\n        display: block !important;\r\n    }\r\n    .page-header {\r\n        height: 60px;\r\n        line-height: 60px;\r\n    }\r\n    .page-header .desktop-header {\r\n        padding-left: 50px;\r\n    }\r\n    .page-header .header-mark img {\r\n        width: 120px;\r\n    }\r\n    .page-header .now-time {\r\n        display: none;\r\n    }\r\n    .dash-board .bet-buttons .item {    \r\n        height: 30px !important;\r\n        line-height: 30px !important;\r\n    }\r\n\r\n    .page-footer .desktop-footer .companies-logo{\r\n        grid-template-columns: repeat(2,1fr);\r\n        grid-row-gap: 27px;\r\n        grid-column-gap: unset;\r\n    }   \r\n    .page-footer .desktop-footer .company-info {\r\n        padding: 20px 10px;\r\n    }\r\n    .page-footer .desktop-footer .policy-group {\r\n        display: none   ;\r\n    }\r\n    .header-desktop-search-field {\r\n        display: none !important;\r\n    }\r\n    .header-mobile-search-field {\r\n        display: block !important; \r\n    }\r\n}", ""]);
-// Exports
-/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
@@ -13026,6 +13016,294 @@ return jQuery;
 
 /***/ }),
 
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/loaders.css/loaders.css":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/loaders.css/loaders.css ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "/**\n *\n * All animations must live in their own file\n * in the animations directory and be included\n * here.\n *\n */\n/**\n * Styles shared by multiple animations\n */\n/**\n * Dots\n */\n@-webkit-keyframes scale {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; }\n  45% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 0.7; }\n  80% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; } }\n@keyframes scale {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; }\n  45% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 0.7; }\n  80% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; } }\n\n.ball-pulse > div:nth-child(0) {\n  -webkit-animation: scale 0.75s -0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s -0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.ball-pulse > div:nth-child(1) {\n  -webkit-animation: scale 0.75s -0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s -0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.ball-pulse > div:nth-child(2) {\n  -webkit-animation: scale 0.75s -0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s -0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.ball-pulse > div:nth-child(3) {\n  -webkit-animation: scale 0.75s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: scale 0.75s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.ball-pulse > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block; }\n\n@-webkit-keyframes ball-pulse-sync {\n  33% {\n    -webkit-transform: translateY(10px);\n            transform: translateY(10px); }\n  66% {\n    -webkit-transform: translateY(-10px);\n            transform: translateY(-10px); }\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0); } }\n\n@keyframes ball-pulse-sync {\n  33% {\n    -webkit-transform: translateY(10px);\n            transform: translateY(10px); }\n  66% {\n    -webkit-transform: translateY(-10px);\n            transform: translateY(-10px); }\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0); } }\n\n.ball-pulse-sync > div:nth-child(0) {\n  -webkit-animation: ball-pulse-sync 0.6s -0.21s infinite ease-in-out;\n          animation: ball-pulse-sync 0.6s -0.21s infinite ease-in-out; }\n\n.ball-pulse-sync > div:nth-child(1) {\n  -webkit-animation: ball-pulse-sync 0.6s -0.14s infinite ease-in-out;\n          animation: ball-pulse-sync 0.6s -0.14s infinite ease-in-out; }\n\n.ball-pulse-sync > div:nth-child(2) {\n  -webkit-animation: ball-pulse-sync 0.6s -0.07s infinite ease-in-out;\n          animation: ball-pulse-sync 0.6s -0.07s infinite ease-in-out; }\n\n.ball-pulse-sync > div:nth-child(3) {\n  -webkit-animation: ball-pulse-sync 0.6s 0s infinite ease-in-out;\n          animation: ball-pulse-sync 0.6s 0s infinite ease-in-out; }\n\n.ball-pulse-sync > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block; }\n\n@-webkit-keyframes ball-scale {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0); }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0; } }\n\n@keyframes ball-scale {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0); }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0; } }\n\n.ball-scale > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  height: 60px;\n  width: 60px;\n  -webkit-animation: ball-scale 1s 0s ease-in-out infinite;\n          animation: ball-scale 1s 0s ease-in-out infinite; }\n\n@keyframes ball-scale {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0); }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0; } }\n\n.ball-scale > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  height: 60px;\n  width: 60px;\n  -webkit-animation: ball-scale 1s 0s ease-in-out infinite;\n          animation: ball-scale 1s 0s ease-in-out infinite; }\n\n.ball-scale-random {\n  width: 37px;\n  height: 40px; }\n  .ball-scale-random > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    display: inline-block;\n    height: 30px;\n    width: 30px;\n    -webkit-animation: ball-scale 1s 0s ease-in-out infinite;\n            animation: ball-scale 1s 0s ease-in-out infinite; }\n    .ball-scale-random > div:nth-child(1) {\n      margin-left: -7px;\n      -webkit-animation: ball-scale 1s 0.2s ease-in-out infinite;\n              animation: ball-scale 1s 0.2s ease-in-out infinite; }\n    .ball-scale-random > div:nth-child(3) {\n      margin-left: -2px;\n      margin-top: 9px;\n      -webkit-animation: ball-scale 1s 0.5s ease-in-out infinite;\n              animation: ball-scale 1s 0.5s ease-in-out infinite; }\n\n@-webkit-keyframes rotate {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n@keyframes rotate {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n.ball-rotate {\n  position: relative; }\n  .ball-rotate > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: relative; }\n    .ball-rotate > div:first-child {\n      -webkit-animation: rotate 1s 0s cubic-bezier(0.7, -0.13, 0.22, 0.86) infinite;\n              animation: rotate 1s 0s cubic-bezier(0.7, -0.13, 0.22, 0.86) infinite; }\n    .ball-rotate > div:before, .ball-rotate > div:after {\n      background-color: #fff;\n      width: 15px;\n      height: 15px;\n      border-radius: 100%;\n      margin: 2px;\n      content: \"\";\n      position: absolute;\n      opacity: 0.8; }\n    .ball-rotate > div:before {\n      top: 0px;\n      left: -28px; }\n    .ball-rotate > div:after {\n      top: 0px;\n      left: 25px; }\n\n@keyframes rotate {\n  0% {\n    -webkit-transform: rotate(0deg) scale(1);\n            transform: rotate(0deg) scale(1); }\n  50% {\n    -webkit-transform: rotate(180deg) scale(0.6);\n            transform: rotate(180deg) scale(0.6); }\n  100% {\n    -webkit-transform: rotate(360deg) scale(1);\n            transform: rotate(360deg) scale(1); } }\n\n.ball-clip-rotate > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  border: 2px solid #fff;\n  border-bottom-color: transparent;\n  height: 25px;\n  width: 25px;\n  background: transparent !important;\n  display: inline-block;\n  -webkit-animation: rotate 0.75s 0s linear infinite;\n          animation: rotate 0.75s 0s linear infinite; }\n\n@keyframes rotate {\n  0% {\n    -webkit-transform: rotate(0deg) scale(1);\n            transform: rotate(0deg) scale(1); }\n  50% {\n    -webkit-transform: rotate(180deg) scale(0.6);\n            transform: rotate(180deg) scale(0.6); }\n  100% {\n    -webkit-transform: rotate(360deg) scale(1);\n            transform: rotate(360deg) scale(1); } }\n\n@keyframes scale {\n  30% {\n    -webkit-transform: scale(0.3);\n            transform: scale(0.3); }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n.ball-clip-rotate-pulse {\n  position: relative;\n  -webkit-transform: translateY(-15px);\n          transform: translateY(-15px); }\n  .ball-clip-rotate-pulse > div {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    border-radius: 100%; }\n    .ball-clip-rotate-pulse > div:first-child {\n      background: #fff;\n      height: 16px;\n      width: 16px;\n      top: 7px;\n      left: -7px;\n      -webkit-animation: scale 1s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;\n              animation: scale 1s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite; }\n    .ball-clip-rotate-pulse > div:last-child {\n      position: absolute;\n      border: 2px solid #fff;\n      width: 30px;\n      height: 30px;\n      left: -16px;\n      top: -2px;\n      background: transparent;\n      border: 2px solid;\n      border-color: #fff transparent #fff transparent;\n      -webkit-animation: rotate 1s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;\n              animation: rotate 1s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;\n      -webkit-animation-duration: 1s;\n              animation-duration: 1s; }\n\n@keyframes rotate {\n  0% {\n    -webkit-transform: rotate(0deg) scale(1);\n            transform: rotate(0deg) scale(1); }\n  50% {\n    -webkit-transform: rotate(180deg) scale(0.6);\n            transform: rotate(180deg) scale(0.6); }\n  100% {\n    -webkit-transform: rotate(360deg) scale(1);\n            transform: rotate(360deg) scale(1); } }\n\n.ball-clip-rotate-multiple {\n  position: relative; }\n  .ball-clip-rotate-multiple > div {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    left: -20px;\n    top: -20px;\n    border: 2px solid #fff;\n    border-bottom-color: transparent;\n    border-top-color: transparent;\n    border-radius: 100%;\n    height: 35px;\n    width: 35px;\n    -webkit-animation: rotate 1s 0s ease-in-out infinite;\n            animation: rotate 1s 0s ease-in-out infinite; }\n    .ball-clip-rotate-multiple > div:last-child {\n      display: inline-block;\n      top: -10px;\n      left: -10px;\n      width: 15px;\n      height: 15px;\n      -webkit-animation-duration: 0.5s;\n              animation-duration: 0.5s;\n      border-color: #fff transparent #fff transparent;\n      -webkit-animation-direction: reverse;\n              animation-direction: reverse; }\n\n@-webkit-keyframes ball-scale-ripple {\n  0% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 1; }\n  70% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0.7; }\n  100% {\n    opacity: 0.0; } }\n\n@keyframes ball-scale-ripple {\n  0% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 1; }\n  70% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0.7; }\n  100% {\n    opacity: 0.0; } }\n\n.ball-scale-ripple > div {\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  height: 50px;\n  width: 50px;\n  border-radius: 100%;\n  border: 2px solid #fff;\n  -webkit-animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);\n          animation: ball-scale-ripple 1s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8); }\n\n@-webkit-keyframes ball-scale-ripple-multiple {\n  0% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 1; }\n  70% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0.7; }\n  100% {\n    opacity: 0.0; } }\n\n@keyframes ball-scale-ripple-multiple {\n  0% {\n    -webkit-transform: scale(0.1);\n            transform: scale(0.1);\n    opacity: 1; }\n  70% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0.7; }\n  100% {\n    opacity: 0.0; } }\n\n.ball-scale-ripple-multiple {\n  position: relative;\n  -webkit-transform: translateY(-25px);\n          transform: translateY(-25px); }\n  .ball-scale-ripple-multiple > div:nth-child(0) {\n    -webkit-animation-delay: -0.8s;\n            animation-delay: -0.8s; }\n  .ball-scale-ripple-multiple > div:nth-child(1) {\n    -webkit-animation-delay: -0.6s;\n            animation-delay: -0.6s; }\n  .ball-scale-ripple-multiple > div:nth-child(2) {\n    -webkit-animation-delay: -0.4s;\n            animation-delay: -0.4s; }\n  .ball-scale-ripple-multiple > div:nth-child(3) {\n    -webkit-animation-delay: -0.2s;\n            animation-delay: -0.2s; }\n  .ball-scale-ripple-multiple > div {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    top: -2px;\n    left: -26px;\n    width: 50px;\n    height: 50px;\n    border-radius: 100%;\n    border: 2px solid #fff;\n    -webkit-animation: ball-scale-ripple-multiple 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);\n            animation: ball-scale-ripple-multiple 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8); }\n\n@-webkit-keyframes ball-beat {\n  50% {\n    opacity: 0.2;\n    -webkit-transform: scale(0.75);\n            transform: scale(0.75); }\n  100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n@keyframes ball-beat {\n  50% {\n    opacity: 0.2;\n    -webkit-transform: scale(0.75);\n            transform: scale(0.75); }\n  100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n.ball-beat > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  -webkit-animation: ball-beat 0.7s 0s infinite linear;\n          animation: ball-beat 0.7s 0s infinite linear; }\n  .ball-beat > div:nth-child(2n-1) {\n    -webkit-animation-delay: -0.35s !important;\n            animation-delay: -0.35s !important; }\n\n@-webkit-keyframes ball-scale-multiple {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    opacity: 0; }\n  5% {\n    opacity: 1; }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0; } }\n\n@keyframes ball-scale-multiple {\n  0% {\n    -webkit-transform: scale(0);\n            transform: scale(0);\n    opacity: 0; }\n  5% {\n    opacity: 1; }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 0; } }\n\n.ball-scale-multiple {\n  position: relative;\n  -webkit-transform: translateY(-30px);\n          transform: translateY(-30px); }\n  .ball-scale-multiple > div:nth-child(2) {\n    -webkit-animation-delay: -0.4s;\n            animation-delay: -0.4s; }\n  .ball-scale-multiple > div:nth-child(3) {\n    -webkit-animation-delay: -0.2s;\n            animation-delay: -0.2s; }\n  .ball-scale-multiple > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    left: -30px;\n    top: 0px;\n    opacity: 0;\n    margin: 0;\n    width: 60px;\n    height: 60px;\n    -webkit-animation: ball-scale-multiple 1s 0s linear infinite;\n            animation: ball-scale-multiple 1s 0s linear infinite; }\n\n@-webkit-keyframes ball-triangle-path-1 {\n  33% {\n    -webkit-transform: translate(25px, -50px);\n            transform: translate(25px, -50px); }\n  66% {\n    -webkit-transform: translate(50px, 0px);\n            transform: translate(50px, 0px); }\n  100% {\n    -webkit-transform: translate(0px, 0px);\n            transform: translate(0px, 0px); } }\n\n@keyframes ball-triangle-path-1 {\n  33% {\n    -webkit-transform: translate(25px, -50px);\n            transform: translate(25px, -50px); }\n  66% {\n    -webkit-transform: translate(50px, 0px);\n            transform: translate(50px, 0px); }\n  100% {\n    -webkit-transform: translate(0px, 0px);\n            transform: translate(0px, 0px); } }\n\n@-webkit-keyframes ball-triangle-path-2 {\n  33% {\n    -webkit-transform: translate(25px, 50px);\n            transform: translate(25px, 50px); }\n  66% {\n    -webkit-transform: translate(-25px, 50px);\n            transform: translate(-25px, 50px); }\n  100% {\n    -webkit-transform: translate(0px, 0px);\n            transform: translate(0px, 0px); } }\n\n@keyframes ball-triangle-path-2 {\n  33% {\n    -webkit-transform: translate(25px, 50px);\n            transform: translate(25px, 50px); }\n  66% {\n    -webkit-transform: translate(-25px, 50px);\n            transform: translate(-25px, 50px); }\n  100% {\n    -webkit-transform: translate(0px, 0px);\n            transform: translate(0px, 0px); } }\n\n@-webkit-keyframes ball-triangle-path-3 {\n  33% {\n    -webkit-transform: translate(-50px, 0px);\n            transform: translate(-50px, 0px); }\n  66% {\n    -webkit-transform: translate(-25px, -50px);\n            transform: translate(-25px, -50px); }\n  100% {\n    -webkit-transform: translate(0px, 0px);\n            transform: translate(0px, 0px); } }\n\n@keyframes ball-triangle-path-3 {\n  33% {\n    -webkit-transform: translate(-50px, 0px);\n            transform: translate(-50px, 0px); }\n  66% {\n    -webkit-transform: translate(-25px, -50px);\n            transform: translate(-25px, -50px); }\n  100% {\n    -webkit-transform: translate(0px, 0px);\n            transform: translate(0px, 0px); } }\n\n.ball-triangle-path {\n  position: relative;\n  -webkit-transform: translate(-29.994px, -37.50938px);\n          transform: translate(-29.994px, -37.50938px); }\n  .ball-triangle-path > div:nth-child(1) {\n    -webkit-animation-name: ball-triangle-path-1;\n            animation-name: ball-triangle-path-1;\n    -webkit-animation-delay: 0;\n            animation-delay: 0;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-timing-function: ease-in-out;\n            animation-timing-function: ease-in-out;\n    -webkit-animation-iteration-count: infinite;\n            animation-iteration-count: infinite; }\n  .ball-triangle-path > div:nth-child(2) {\n    -webkit-animation-name: ball-triangle-path-2;\n            animation-name: ball-triangle-path-2;\n    -webkit-animation-delay: 0;\n            animation-delay: 0;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-timing-function: ease-in-out;\n            animation-timing-function: ease-in-out;\n    -webkit-animation-iteration-count: infinite;\n            animation-iteration-count: infinite; }\n  .ball-triangle-path > div:nth-child(3) {\n    -webkit-animation-name: ball-triangle-path-3;\n            animation-name: ball-triangle-path-3;\n    -webkit-animation-delay: 0;\n            animation-delay: 0;\n    -webkit-animation-duration: 2s;\n            animation-duration: 2s;\n    -webkit-animation-timing-function: ease-in-out;\n            animation-timing-function: ease-in-out;\n    -webkit-animation-iteration-count: infinite;\n            animation-iteration-count: infinite; }\n  .ball-triangle-path > div {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 100%;\n    border: 1px solid #fff; }\n    .ball-triangle-path > div:nth-of-type(1) {\n      top: 50px; }\n    .ball-triangle-path > div:nth-of-type(2) {\n      left: 25px; }\n    .ball-triangle-path > div:nth-of-type(3) {\n      top: 50px;\n      left: 50px; }\n\n@-webkit-keyframes ball-pulse-rise-even {\n  0% {\n    -webkit-transform: scale(1.1);\n            transform: scale(1.1); }\n  25% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px); }\n  50% {\n    -webkit-transform: scale(0.4);\n            transform: scale(0.4); }\n  75% {\n    -webkit-transform: translateY(30px);\n            transform: translateY(30px); }\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n@keyframes ball-pulse-rise-even {\n  0% {\n    -webkit-transform: scale(1.1);\n            transform: scale(1.1); }\n  25% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px); }\n  50% {\n    -webkit-transform: scale(0.4);\n            transform: scale(0.4); }\n  75% {\n    -webkit-transform: translateY(30px);\n            transform: translateY(30px); }\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n@-webkit-keyframes ball-pulse-rise-odd {\n  0% {\n    -webkit-transform: scale(0.4);\n            transform: scale(0.4); }\n  25% {\n    -webkit-transform: translateY(30px);\n            transform: translateY(30px); }\n  50% {\n    -webkit-transform: scale(1.1);\n            transform: scale(1.1); }\n  75% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px); }\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n    -webkit-transform: scale(0.75);\n            transform: scale(0.75); } }\n\n@keyframes ball-pulse-rise-odd {\n  0% {\n    -webkit-transform: scale(0.4);\n            transform: scale(0.4); }\n  25% {\n    -webkit-transform: translateY(30px);\n            transform: translateY(30px); }\n  50% {\n    -webkit-transform: scale(1.1);\n            transform: scale(1.1); }\n  75% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px); }\n  100% {\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n    -webkit-transform: scale(0.75);\n            transform: scale(0.75); } }\n\n.ball-pulse-rise > div {\n  background-color: #fff;\n  width: 15px;\n  height: 15px;\n  border-radius: 100%;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  -webkit-animation-duration: 1s;\n          animation-duration: 1s;\n  -webkit-animation-timing-function: cubic-bezier(0.15, 0.46, 0.9, 0.6);\n          animation-timing-function: cubic-bezier(0.15, 0.46, 0.9, 0.6);\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-delay: 0;\n          animation-delay: 0; }\n  .ball-pulse-rise > div:nth-child(2n) {\n    -webkit-animation-name: ball-pulse-rise-even;\n            animation-name: ball-pulse-rise-even; }\n  .ball-pulse-rise > div:nth-child(2n-1) {\n    -webkit-animation-name: ball-pulse-rise-odd;\n            animation-name: ball-pulse-rise-odd; }\n\n@-webkit-keyframes ball-grid-beat {\n  50% {\n    opacity: 0.7; }\n  100% {\n    opacity: 1; } }\n\n@keyframes ball-grid-beat {\n  50% {\n    opacity: 0.7; }\n  100% {\n    opacity: 1; } }\n\n.ball-grid-beat {\n  width: 57px; }\n  .ball-grid-beat > div:nth-child(1) {\n    -webkit-animation-delay: 0.44s;\n            animation-delay: 0.44s;\n    -webkit-animation-duration: 1.27s;\n            animation-duration: 1.27s; }\n  .ball-grid-beat > div:nth-child(2) {\n    -webkit-animation-delay: 0.2s;\n            animation-delay: 0.2s;\n    -webkit-animation-duration: 1.52s;\n            animation-duration: 1.52s; }\n  .ball-grid-beat > div:nth-child(3) {\n    -webkit-animation-delay: 0.14s;\n            animation-delay: 0.14s;\n    -webkit-animation-duration: 0.61s;\n            animation-duration: 0.61s; }\n  .ball-grid-beat > div:nth-child(4) {\n    -webkit-animation-delay: 0.15s;\n            animation-delay: 0.15s;\n    -webkit-animation-duration: 0.82s;\n            animation-duration: 0.82s; }\n  .ball-grid-beat > div:nth-child(5) {\n    -webkit-animation-delay: -0.01s;\n            animation-delay: -0.01s;\n    -webkit-animation-duration: 1.24s;\n            animation-duration: 1.24s; }\n  .ball-grid-beat > div:nth-child(6) {\n    -webkit-animation-delay: -0.07s;\n            animation-delay: -0.07s;\n    -webkit-animation-duration: 1.35s;\n            animation-duration: 1.35s; }\n  .ball-grid-beat > div:nth-child(7) {\n    -webkit-animation-delay: 0.29s;\n            animation-delay: 0.29s;\n    -webkit-animation-duration: 1.44s;\n            animation-duration: 1.44s; }\n  .ball-grid-beat > div:nth-child(8) {\n    -webkit-animation-delay: 0.63s;\n            animation-delay: 0.63s;\n    -webkit-animation-duration: 1.19s;\n            animation-duration: 1.19s; }\n  .ball-grid-beat > div:nth-child(9) {\n    -webkit-animation-delay: -0.18s;\n            animation-delay: -0.18s;\n    -webkit-animation-duration: 1.48s;\n            animation-duration: 1.48s; }\n  .ball-grid-beat > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    display: inline-block;\n    float: left;\n    -webkit-animation-name: ball-grid-beat;\n            animation-name: ball-grid-beat;\n    -webkit-animation-iteration-count: infinite;\n            animation-iteration-count: infinite;\n    -webkit-animation-delay: 0;\n            animation-delay: 0; }\n\n@-webkit-keyframes ball-grid-pulse {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1); }\n  50% {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5);\n    opacity: 0.7; }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; } }\n\n@keyframes ball-grid-pulse {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1); }\n  50% {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5);\n    opacity: 0.7; }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    opacity: 1; } }\n\n.ball-grid-pulse {\n  width: 57px; }\n  .ball-grid-pulse > div:nth-child(1) {\n    -webkit-animation-delay: 0.58s;\n            animation-delay: 0.58s;\n    -webkit-animation-duration: 0.9s;\n            animation-duration: 0.9s; }\n  .ball-grid-pulse > div:nth-child(2) {\n    -webkit-animation-delay: 0.01s;\n            animation-delay: 0.01s;\n    -webkit-animation-duration: 0.94s;\n            animation-duration: 0.94s; }\n  .ball-grid-pulse > div:nth-child(3) {\n    -webkit-animation-delay: 0.25s;\n            animation-delay: 0.25s;\n    -webkit-animation-duration: 1.43s;\n            animation-duration: 1.43s; }\n  .ball-grid-pulse > div:nth-child(4) {\n    -webkit-animation-delay: -0.03s;\n            animation-delay: -0.03s;\n    -webkit-animation-duration: 0.74s;\n            animation-duration: 0.74s; }\n  .ball-grid-pulse > div:nth-child(5) {\n    -webkit-animation-delay: 0.21s;\n            animation-delay: 0.21s;\n    -webkit-animation-duration: 0.68s;\n            animation-duration: 0.68s; }\n  .ball-grid-pulse > div:nth-child(6) {\n    -webkit-animation-delay: 0.25s;\n            animation-delay: 0.25s;\n    -webkit-animation-duration: 1.17s;\n            animation-duration: 1.17s; }\n  .ball-grid-pulse > div:nth-child(7) {\n    -webkit-animation-delay: 0.46s;\n            animation-delay: 0.46s;\n    -webkit-animation-duration: 1.41s;\n            animation-duration: 1.41s; }\n  .ball-grid-pulse > div:nth-child(8) {\n    -webkit-animation-delay: 0.02s;\n            animation-delay: 0.02s;\n    -webkit-animation-duration: 1.56s;\n            animation-duration: 1.56s; }\n  .ball-grid-pulse > div:nth-child(9) {\n    -webkit-animation-delay: 0.13s;\n            animation-delay: 0.13s;\n    -webkit-animation-duration: 0.78s;\n            animation-duration: 0.78s; }\n  .ball-grid-pulse > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    display: inline-block;\n    float: left;\n    -webkit-animation-name: ball-grid-pulse;\n            animation-name: ball-grid-pulse;\n    -webkit-animation-iteration-count: infinite;\n            animation-iteration-count: infinite;\n    -webkit-animation-delay: 0;\n            animation-delay: 0; }\n\n@-webkit-keyframes ball-spin-fade-loader {\n  50% {\n    opacity: 0.3;\n    -webkit-transform: scale(0.4);\n            transform: scale(0.4); }\n  100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n@keyframes ball-spin-fade-loader {\n  50% {\n    opacity: 0.3;\n    -webkit-transform: scale(0.4);\n            transform: scale(0.4); }\n  100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n.ball-spin-fade-loader {\n  position: relative;\n  top: -10px;\n  left: -10px; }\n  .ball-spin-fade-loader > div:nth-child(1) {\n    top: 25px;\n    left: 0;\n    -webkit-animation: ball-spin-fade-loader 1s -0.96s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.96s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(2) {\n    top: 17.04545px;\n    left: 17.04545px;\n    -webkit-animation: ball-spin-fade-loader 1s -0.84s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.84s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(3) {\n    top: 0;\n    left: 25px;\n    -webkit-animation: ball-spin-fade-loader 1s -0.72s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.72s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(4) {\n    top: -17.04545px;\n    left: 17.04545px;\n    -webkit-animation: ball-spin-fade-loader 1s -0.6s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.6s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(5) {\n    top: -25px;\n    left: 0;\n    -webkit-animation: ball-spin-fade-loader 1s -0.48s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.48s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(6) {\n    top: -17.04545px;\n    left: -17.04545px;\n    -webkit-animation: ball-spin-fade-loader 1s -0.36s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.36s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(7) {\n    top: 0;\n    left: -25px;\n    -webkit-animation: ball-spin-fade-loader 1s -0.24s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.24s infinite linear; }\n  .ball-spin-fade-loader > div:nth-child(8) {\n    top: 17.04545px;\n    left: -17.04545px;\n    -webkit-animation: ball-spin-fade-loader 1s -0.12s infinite linear;\n            animation: ball-spin-fade-loader 1s -0.12s infinite linear; }\n  .ball-spin-fade-loader > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute; }\n\n@-webkit-keyframes ball-spin-loader {\n  75% {\n    opacity: 0.2; }\n  100% {\n    opacity: 1; } }\n\n@keyframes ball-spin-loader {\n  75% {\n    opacity: 0.2; }\n  100% {\n    opacity: 1; } }\n\n.ball-spin-loader {\n  position: relative; }\n  .ball-spin-loader > span:nth-child(1) {\n    top: 45px;\n    left: 0;\n    -webkit-animation: ball-spin-loader 2s 0.9s infinite linear;\n            animation: ball-spin-loader 2s 0.9s infinite linear; }\n  .ball-spin-loader > span:nth-child(2) {\n    top: 30.68182px;\n    left: 30.68182px;\n    -webkit-animation: ball-spin-loader 2s 1.8s infinite linear;\n            animation: ball-spin-loader 2s 1.8s infinite linear; }\n  .ball-spin-loader > span:nth-child(3) {\n    top: 0;\n    left: 45px;\n    -webkit-animation: ball-spin-loader 2s 2.7s infinite linear;\n            animation: ball-spin-loader 2s 2.7s infinite linear; }\n  .ball-spin-loader > span:nth-child(4) {\n    top: -30.68182px;\n    left: 30.68182px;\n    -webkit-animation: ball-spin-loader 2s 3.6s infinite linear;\n            animation: ball-spin-loader 2s 3.6s infinite linear; }\n  .ball-spin-loader > span:nth-child(5) {\n    top: -45px;\n    left: 0;\n    -webkit-animation: ball-spin-loader 2s 4.5s infinite linear;\n            animation: ball-spin-loader 2s 4.5s infinite linear; }\n  .ball-spin-loader > span:nth-child(6) {\n    top: -30.68182px;\n    left: -30.68182px;\n    -webkit-animation: ball-spin-loader 2s 5.4s infinite linear;\n            animation: ball-spin-loader 2s 5.4s infinite linear; }\n  .ball-spin-loader > span:nth-child(7) {\n    top: 0;\n    left: -45px;\n    -webkit-animation: ball-spin-loader 2s 6.3s infinite linear;\n            animation: ball-spin-loader 2s 6.3s infinite linear; }\n  .ball-spin-loader > span:nth-child(8) {\n    top: 30.68182px;\n    left: -30.68182px;\n    -webkit-animation: ball-spin-loader 2s 7.2s infinite linear;\n            animation: ball-spin-loader 2s 7.2s infinite linear; }\n  .ball-spin-loader > div {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    background: green; }\n\n@-webkit-keyframes ball-zig {\n  33% {\n    -webkit-transform: translate(-15px, -30px);\n            transform: translate(-15px, -30px); }\n  66% {\n    -webkit-transform: translate(15px, -30px);\n            transform: translate(15px, -30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n@keyframes ball-zig {\n  33% {\n    -webkit-transform: translate(-15px, -30px);\n            transform: translate(-15px, -30px); }\n  66% {\n    -webkit-transform: translate(15px, -30px);\n            transform: translate(15px, -30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n@-webkit-keyframes ball-zag {\n  33% {\n    -webkit-transform: translate(15px, 30px);\n            transform: translate(15px, 30px); }\n  66% {\n    -webkit-transform: translate(-15px, 30px);\n            transform: translate(-15px, 30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n@keyframes ball-zag {\n  33% {\n    -webkit-transform: translate(15px, 30px);\n            transform: translate(15px, 30px); }\n  66% {\n    -webkit-transform: translate(-15px, 30px);\n            transform: translate(-15px, 30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n.ball-zig-zag {\n  position: relative;\n  -webkit-transform: translate(-15px, -15px);\n          transform: translate(-15px, -15px); }\n  .ball-zig-zag > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    margin-left: 15px;\n    top: 4px;\n    left: -7px; }\n    .ball-zig-zag > div:first-child {\n      -webkit-animation: ball-zig 0.7s 0s infinite linear;\n              animation: ball-zig 0.7s 0s infinite linear; }\n    .ball-zig-zag > div:last-child {\n      -webkit-animation: ball-zag 0.7s 0s infinite linear;\n              animation: ball-zag 0.7s 0s infinite linear; }\n\n@-webkit-keyframes ball-zig-deflect {\n  17% {\n    -webkit-transform: translate(-15px, -30px);\n            transform: translate(-15px, -30px); }\n  34% {\n    -webkit-transform: translate(15px, -30px);\n            transform: translate(15px, -30px); }\n  50% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); }\n  67% {\n    -webkit-transform: translate(15px, -30px);\n            transform: translate(15px, -30px); }\n  84% {\n    -webkit-transform: translate(-15px, -30px);\n            transform: translate(-15px, -30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n@keyframes ball-zig-deflect {\n  17% {\n    -webkit-transform: translate(-15px, -30px);\n            transform: translate(-15px, -30px); }\n  34% {\n    -webkit-transform: translate(15px, -30px);\n            transform: translate(15px, -30px); }\n  50% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); }\n  67% {\n    -webkit-transform: translate(15px, -30px);\n            transform: translate(15px, -30px); }\n  84% {\n    -webkit-transform: translate(-15px, -30px);\n            transform: translate(-15px, -30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n@-webkit-keyframes ball-zag-deflect {\n  17% {\n    -webkit-transform: translate(15px, 30px);\n            transform: translate(15px, 30px); }\n  34% {\n    -webkit-transform: translate(-15px, 30px);\n            transform: translate(-15px, 30px); }\n  50% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); }\n  67% {\n    -webkit-transform: translate(-15px, 30px);\n            transform: translate(-15px, 30px); }\n  84% {\n    -webkit-transform: translate(15px, 30px);\n            transform: translate(15px, 30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n@keyframes ball-zag-deflect {\n  17% {\n    -webkit-transform: translate(15px, 30px);\n            transform: translate(15px, 30px); }\n  34% {\n    -webkit-transform: translate(-15px, 30px);\n            transform: translate(-15px, 30px); }\n  50% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); }\n  67% {\n    -webkit-transform: translate(-15px, 30px);\n            transform: translate(-15px, 30px); }\n  84% {\n    -webkit-transform: translate(15px, 30px);\n            transform: translate(15px, 30px); }\n  100% {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0); } }\n\n.ball-zig-zag-deflect {\n  position: relative;\n  -webkit-transform: translate(-15px, -15px);\n          transform: translate(-15px, -15px); }\n  .ball-zig-zag-deflect > div {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    margin-left: 15px;\n    top: 4px;\n    left: -7px; }\n    .ball-zig-zag-deflect > div:first-child {\n      -webkit-animation: ball-zig-deflect 1.5s 0s infinite linear;\n              animation: ball-zig-deflect 1.5s 0s infinite linear; }\n    .ball-zig-zag-deflect > div:last-child {\n      -webkit-animation: ball-zag-deflect 1.5s 0s infinite linear;\n              animation: ball-zag-deflect 1.5s 0s infinite linear; }\n\n/**\n * Lines\n */\n@-webkit-keyframes line-scale {\n  0% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); }\n  50% {\n    -webkit-transform: scaley(0.4);\n            transform: scaley(0.4); }\n  100% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); } }\n@keyframes line-scale {\n  0% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); }\n  50% {\n    -webkit-transform: scaley(0.4);\n            transform: scaley(0.4); }\n  100% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); } }\n\n.line-scale > div:nth-child(1) {\n  -webkit-animation: line-scale 1s -0.4s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: line-scale 1s -0.4s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.line-scale > div:nth-child(2) {\n  -webkit-animation: line-scale 1s -0.3s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: line-scale 1s -0.3s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.line-scale > div:nth-child(3) {\n  -webkit-animation: line-scale 1s -0.2s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: line-scale 1s -0.2s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.line-scale > div:nth-child(4) {\n  -webkit-animation: line-scale 1s -0.1s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: line-scale 1s -0.1s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.line-scale > div:nth-child(5) {\n  -webkit-animation: line-scale 1s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);\n          animation: line-scale 1s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }\n\n.line-scale > div {\n  background-color: #fff;\n  width: 4px;\n  height: 35px;\n  border-radius: 2px;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block; }\n\n@-webkit-keyframes line-scale-party {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1); }\n  50% {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5); }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n@keyframes line-scale-party {\n  0% {\n    -webkit-transform: scale(1);\n            transform: scale(1); }\n  50% {\n    -webkit-transform: scale(0.5);\n            transform: scale(0.5); }\n  100% {\n    -webkit-transform: scale(1);\n            transform: scale(1); } }\n\n.line-scale-party > div:nth-child(1) {\n  -webkit-animation-delay: -0.09s;\n          animation-delay: -0.09s;\n  -webkit-animation-duration: 0.83s;\n          animation-duration: 0.83s; }\n\n.line-scale-party > div:nth-child(2) {\n  -webkit-animation-delay: 0.33s;\n          animation-delay: 0.33s;\n  -webkit-animation-duration: 0.64s;\n          animation-duration: 0.64s; }\n\n.line-scale-party > div:nth-child(3) {\n  -webkit-animation-delay: 0.32s;\n          animation-delay: 0.32s;\n  -webkit-animation-duration: 0.39s;\n          animation-duration: 0.39s; }\n\n.line-scale-party > div:nth-child(4) {\n  -webkit-animation-delay: 0.47s;\n          animation-delay: 0.47s;\n  -webkit-animation-duration: 0.52s;\n          animation-duration: 0.52s; }\n\n.line-scale-party > div {\n  background-color: #fff;\n  width: 4px;\n  height: 35px;\n  border-radius: 2px;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  -webkit-animation-name: line-scale-party;\n          animation-name: line-scale-party;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n  -webkit-animation-delay: 0;\n          animation-delay: 0; }\n\n@-webkit-keyframes line-scale-pulse-out {\n  0% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); }\n  50% {\n    -webkit-transform: scaley(0.4);\n            transform: scaley(0.4); }\n  100% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); } }\n\n@keyframes line-scale-pulse-out {\n  0% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); }\n  50% {\n    -webkit-transform: scaley(0.4);\n            transform: scaley(0.4); }\n  100% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); } }\n\n.line-scale-pulse-out > div {\n  background-color: #fff;\n  width: 4px;\n  height: 35px;\n  border-radius: 2px;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  -webkit-animation: line-scale-pulse-out 0.9s -0.6s infinite cubic-bezier(0.85, 0.25, 0.37, 0.85);\n          animation: line-scale-pulse-out 0.9s -0.6s infinite cubic-bezier(0.85, 0.25, 0.37, 0.85); }\n  .line-scale-pulse-out > div:nth-child(2), .line-scale-pulse-out > div:nth-child(4) {\n    -webkit-animation-delay: -0.4s !important;\n            animation-delay: -0.4s !important; }\n  .line-scale-pulse-out > div:nth-child(1), .line-scale-pulse-out > div:nth-child(5) {\n    -webkit-animation-delay: -0.2s !important;\n            animation-delay: -0.2s !important; }\n\n@-webkit-keyframes line-scale-pulse-out-rapid {\n  0% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); }\n  80% {\n    -webkit-transform: scaley(0.3);\n            transform: scaley(0.3); }\n  90% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); } }\n\n@keyframes line-scale-pulse-out-rapid {\n  0% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); }\n  80% {\n    -webkit-transform: scaley(0.3);\n            transform: scaley(0.3); }\n  90% {\n    -webkit-transform: scaley(1);\n            transform: scaley(1); } }\n\n.line-scale-pulse-out-rapid > div {\n  background-color: #fff;\n  width: 4px;\n  height: 35px;\n  border-radius: 2px;\n  margin: 2px;\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  display: inline-block;\n  -webkit-animation: line-scale-pulse-out-rapid 0.9s -0.5s infinite cubic-bezier(0.11, 0.49, 0.38, 0.78);\n          animation: line-scale-pulse-out-rapid 0.9s -0.5s infinite cubic-bezier(0.11, 0.49, 0.38, 0.78); }\n  .line-scale-pulse-out-rapid > div:nth-child(2), .line-scale-pulse-out-rapid > div:nth-child(4) {\n    -webkit-animation-delay: -0.25s !important;\n            animation-delay: -0.25s !important; }\n  .line-scale-pulse-out-rapid > div:nth-child(1), .line-scale-pulse-out-rapid > div:nth-child(5) {\n    -webkit-animation-delay: 0s !important;\n            animation-delay: 0s !important; }\n\n@-webkit-keyframes line-spin-fade-loader {\n  50% {\n    opacity: 0.3; }\n  100% {\n    opacity: 1; } }\n\n@keyframes line-spin-fade-loader {\n  50% {\n    opacity: 0.3; }\n  100% {\n    opacity: 1; } }\n\n.line-spin-fade-loader {\n  position: relative;\n  top: -10px;\n  left: -4px; }\n  .line-spin-fade-loader > div:nth-child(1) {\n    top: 20px;\n    left: 0;\n    -webkit-animation: line-spin-fade-loader 1.2s -0.84s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.84s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(2) {\n    top: 13.63636px;\n    left: 13.63636px;\n    -webkit-transform: rotate(-45deg);\n            transform: rotate(-45deg);\n    -webkit-animation: line-spin-fade-loader 1.2s -0.72s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.72s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(3) {\n    top: 0;\n    left: 20px;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n    -webkit-animation: line-spin-fade-loader 1.2s -0.6s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.6s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(4) {\n    top: -13.63636px;\n    left: 13.63636px;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n    -webkit-animation: line-spin-fade-loader 1.2s -0.48s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.48s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(5) {\n    top: -20px;\n    left: 0;\n    -webkit-animation: line-spin-fade-loader 1.2s -0.36s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.36s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(6) {\n    top: -13.63636px;\n    left: -13.63636px;\n    -webkit-transform: rotate(-45deg);\n            transform: rotate(-45deg);\n    -webkit-animation: line-spin-fade-loader 1.2s -0.24s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.24s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(7) {\n    top: 0;\n    left: -20px;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n    -webkit-animation: line-spin-fade-loader 1.2s -0.12s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s -0.12s infinite ease-in-out; }\n  .line-spin-fade-loader > div:nth-child(8) {\n    top: 13.63636px;\n    left: -13.63636px;\n    -webkit-transform: rotate(45deg);\n            transform: rotate(45deg);\n    -webkit-animation: line-spin-fade-loader 1.2s 0s infinite ease-in-out;\n            animation: line-spin-fade-loader 1.2s 0s infinite ease-in-out; }\n  .line-spin-fade-loader > div {\n    background-color: #fff;\n    width: 4px;\n    height: 35px;\n    border-radius: 2px;\n    margin: 2px;\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    position: absolute;\n    width: 5px;\n    height: 15px; }\n\n/**\n * Misc\n */\n@-webkit-keyframes triangle-skew-spin {\n  25% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n            transform: perspective(100px) rotateX(180deg) rotateY(0); }\n  50% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n            transform: perspective(100px) rotateX(180deg) rotateY(180deg); }\n  75% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n            transform: perspective(100px) rotateX(0) rotateY(180deg); }\n  100% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n            transform: perspective(100px) rotateX(0) rotateY(0); } }\n@keyframes triangle-skew-spin {\n  25% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n            transform: perspective(100px) rotateX(180deg) rotateY(0); }\n  50% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n            transform: perspective(100px) rotateX(180deg) rotateY(180deg); }\n  75% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n            transform: perspective(100px) rotateX(0) rotateY(180deg); }\n  100% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n            transform: perspective(100px) rotateX(0) rotateY(0); } }\n\n.triangle-skew-spin > div {\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  width: 0;\n  height: 0;\n  border-left: 20px solid transparent;\n  border-right: 20px solid transparent;\n  border-bottom: 20px solid #fff;\n  -webkit-animation: triangle-skew-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;\n          animation: triangle-skew-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite; }\n\n@-webkit-keyframes square-spin {\n  25% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n            transform: perspective(100px) rotateX(180deg) rotateY(0); }\n  50% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n            transform: perspective(100px) rotateX(180deg) rotateY(180deg); }\n  75% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n            transform: perspective(100px) rotateX(0) rotateY(180deg); }\n  100% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n            transform: perspective(100px) rotateX(0) rotateY(0); } }\n\n@keyframes square-spin {\n  25% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);\n            transform: perspective(100px) rotateX(180deg) rotateY(0); }\n  50% {\n    -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);\n            transform: perspective(100px) rotateX(180deg) rotateY(180deg); }\n  75% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);\n            transform: perspective(100px) rotateX(0) rotateY(180deg); }\n  100% {\n    -webkit-transform: perspective(100px) rotateX(0) rotateY(0);\n            transform: perspective(100px) rotateX(0) rotateY(0); } }\n\n.square-spin > div {\n  -webkit-animation-fill-mode: both;\n          animation-fill-mode: both;\n  width: 50px;\n  height: 50px;\n  background: #fff;\n  border: 1px solid red;\n  -webkit-animation: square-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;\n          animation: square-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite; }\n\n@-webkit-keyframes rotate_pacman_half_up {\n  0% {\n    -webkit-transform: rotate(270deg);\n            transform: rotate(270deg); }\n  50% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); }\n  100% {\n    -webkit-transform: rotate(270deg);\n            transform: rotate(270deg); } }\n\n@keyframes rotate_pacman_half_up {\n  0% {\n    -webkit-transform: rotate(270deg);\n            transform: rotate(270deg); }\n  50% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); }\n  100% {\n    -webkit-transform: rotate(270deg);\n            transform: rotate(270deg); } }\n\n@-webkit-keyframes rotate_pacman_half_down {\n  0% {\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg); }\n  50% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg); } }\n\n@keyframes rotate_pacman_half_down {\n  0% {\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg); }\n  50% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  100% {\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg); } }\n\n@-webkit-keyframes pacman-balls {\n  75% {\n    opacity: 0.7; }\n  100% {\n    -webkit-transform: translate(-100px, -6.25px);\n            transform: translate(-100px, -6.25px); } }\n\n@keyframes pacman-balls {\n  75% {\n    opacity: 0.7; }\n  100% {\n    -webkit-transform: translate(-100px, -6.25px);\n            transform: translate(-100px, -6.25px); } }\n\n.pacman {\n  position: relative; }\n  .pacman > div:nth-child(2) {\n    -webkit-animation: pacman-balls 1s -0.99s infinite linear;\n            animation: pacman-balls 1s -0.99s infinite linear; }\n  .pacman > div:nth-child(3) {\n    -webkit-animation: pacman-balls 1s -0.66s infinite linear;\n            animation: pacman-balls 1s -0.66s infinite linear; }\n  .pacman > div:nth-child(4) {\n    -webkit-animation: pacman-balls 1s -0.33s infinite linear;\n            animation: pacman-balls 1s -0.33s infinite linear; }\n  .pacman > div:nth-child(5) {\n    -webkit-animation: pacman-balls 1s 0s infinite linear;\n            animation: pacman-balls 1s 0s infinite linear; }\n  .pacman > div:first-of-type {\n    width: 0px;\n    height: 0px;\n    border-right: 25px solid transparent;\n    border-top: 25px solid #fff;\n    border-left: 25px solid #fff;\n    border-bottom: 25px solid #fff;\n    border-radius: 25px;\n    -webkit-animation: rotate_pacman_half_up 0.5s 0s infinite;\n            animation: rotate_pacman_half_up 0.5s 0s infinite;\n    position: relative;\n    left: -30px; }\n  .pacman > div:nth-child(2) {\n    width: 0px;\n    height: 0px;\n    border-right: 25px solid transparent;\n    border-top: 25px solid #fff;\n    border-left: 25px solid #fff;\n    border-bottom: 25px solid #fff;\n    border-radius: 25px;\n    -webkit-animation: rotate_pacman_half_down 0.5s 0s infinite;\n            animation: rotate_pacman_half_down 0.5s 0s infinite;\n    margin-top: -50px;\n    position: relative;\n    left: -30px; }\n  .pacman > div:nth-child(3),\n  .pacman > div:nth-child(4),\n  .pacman > div:nth-child(5),\n  .pacman > div:nth-child(6) {\n    background-color: #fff;\n    width: 15px;\n    height: 15px;\n    border-radius: 100%;\n    margin: 2px;\n    width: 10px;\n    height: 10px;\n    position: absolute;\n    -webkit-transform: translate(0, -6.25px);\n            transform: translate(0, -6.25px);\n    top: 25px;\n    left: 70px; }\n\n@-webkit-keyframes cube-transition {\n  25% {\n    -webkit-transform: translateX(50px) scale(0.5) rotate(-90deg);\n            transform: translateX(50px) scale(0.5) rotate(-90deg); }\n  50% {\n    -webkit-transform: translate(50px, 50px) rotate(-180deg);\n            transform: translate(50px, 50px) rotate(-180deg); }\n  75% {\n    -webkit-transform: translateY(50px) scale(0.5) rotate(-270deg);\n            transform: translateY(50px) scale(0.5) rotate(-270deg); }\n  100% {\n    -webkit-transform: rotate(-360deg);\n            transform: rotate(-360deg); } }\n\n@keyframes cube-transition {\n  25% {\n    -webkit-transform: translateX(50px) scale(0.5) rotate(-90deg);\n            transform: translateX(50px) scale(0.5) rotate(-90deg); }\n  50% {\n    -webkit-transform: translate(50px, 50px) rotate(-180deg);\n            transform: translate(50px, 50px) rotate(-180deg); }\n  75% {\n    -webkit-transform: translateY(50px) scale(0.5) rotate(-270deg);\n            transform: translateY(50px) scale(0.5) rotate(-270deg); }\n  100% {\n    -webkit-transform: rotate(-360deg);\n            transform: rotate(-360deg); } }\n\n.cube-transition {\n  position: relative;\n  -webkit-transform: translate(-25px, -25px);\n          transform: translate(-25px, -25px); }\n  .cube-transition > div {\n    -webkit-animation-fill-mode: both;\n            animation-fill-mode: both;\n    width: 10px;\n    height: 10px;\n    position: absolute;\n    top: -5px;\n    left: -5px;\n    background-color: #fff;\n    -webkit-animation: cube-transition 1.6s 0s infinite ease-in-out;\n            animation: cube-transition 1.6s 0s infinite ease-in-out; }\n    .cube-transition > div:last-child {\n      -webkit-animation-delay: -0.8s;\n              animation-delay: -0.8s; }\n\n@-webkit-keyframes spin-rotate {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n@keyframes spin-rotate {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg); }\n  50% {\n    -webkit-transform: rotate(180deg);\n            transform: rotate(180deg); }\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg); } }\n\n.semi-circle-spin {\n  position: relative;\n  width: 35px;\n  height: 35px;\n  overflow: hidden; }\n  .semi-circle-spin > div {\n    position: absolute;\n    border-width: 0px;\n    border-radius: 100%;\n    -webkit-animation: spin-rotate 0.6s 0s infinite linear;\n            animation: spin-rotate 0.6s 0s infinite linear;\n    background-image: linear-gradient(transparent 0%, transparent 70%, #fff 30%, #fff 100%);\n    width: 100%;\n    height: 100%; }\n\n@-webkit-keyframes bar-progress {\n  0% {\n    -webkit-transform: scaleY(20%);\n            transform: scaleY(20%);\n    opacity: 1; }\n  25% {\n    -webkit-transform: translateX(6%) scaleY(10%);\n            transform: translateX(6%) scaleY(10%);\n    opacity: 0.7; }\n  50% {\n    -webkit-transform: translateX(20%) scaleY(20%);\n            transform: translateX(20%) scaleY(20%);\n    opacity: 1; }\n  75% {\n    -webkit-transform: translateX(6%) scaleY(10%);\n            transform: translateX(6%) scaleY(10%);\n    opacity: 0.7; }\n  100% {\n    -webkit-transform: scaleY(20%);\n            transform: scaleY(20%);\n    opacity: 1; } }\n\n@keyframes bar-progress {\n  0% {\n    -webkit-transform: scaleY(20%);\n            transform: scaleY(20%);\n    opacity: 1; }\n  25% {\n    -webkit-transform: translateX(6%) scaleY(10%);\n            transform: translateX(6%) scaleY(10%);\n    opacity: 0.7; }\n  50% {\n    -webkit-transform: translateX(20%) scaleY(20%);\n            transform: translateX(20%) scaleY(20%);\n    opacity: 1; }\n  75% {\n    -webkit-transform: translateX(6%) scaleY(10%);\n            transform: translateX(6%) scaleY(10%);\n    opacity: 0.7; }\n  100% {\n    -webkit-transform: scaleY(20%);\n            transform: scaleY(20%);\n    opacity: 1; } }\n\n.bar-progress {\n  width: 30%;\n  height: 12px; }\n  .bar-progress > div {\n    position: relative;\n    width: 20%;\n    height: 12px;\n    border-radius: 10px;\n    background-color: #fff;\n    -webkit-animation: bar-progress 3s cubic-bezier(0.57, 0.1, 0.44, 0.93) infinite;\n            animation: bar-progress 3s cubic-bezier(0.57, 0.1, 0.44, 0.93) infinite;\n    opacity: 1; }\n\n@-webkit-keyframes bar-swing {\n  0% {\n    left: 0; }\n  50% {\n    left: 70%; }\n  100% {\n    left: 0; } }\n\n@keyframes bar-swing {\n  0% {\n    left: 0; }\n  50% {\n    left: 70%; }\n  100% {\n    left: 0; } }\n\n.bar-swing {\n  width: 30%;\n  height: 8px; }\n  .bar-swing > div {\n    position: relative;\n    width: 30%;\n    height: 8px;\n    border-radius: 10px;\n    background-color: #fff;\n    -webkit-animation: bar-swing 1.5s infinite;\n            animation: bar-swing 1.5s infinite; }\n\n@-webkit-keyframes bar-swing-container {\n  0% {\n    left: 0;\n    -webkit-transform: translateX(0);\n            transform: translateX(0); }\n  50% {\n    left: 70%;\n    -webkit-transform: translateX(-4px);\n            transform: translateX(-4px); }\n  100% {\n    left: 0;\n    -webkit-transform: translateX(0);\n            transform: translateX(0); } }\n\n@keyframes bar-swing-container {\n  0% {\n    left: 0;\n    -webkit-transform: translateX(0);\n            transform: translateX(0); }\n  50% {\n    left: 70%;\n    -webkit-transform: translateX(-4px);\n            transform: translateX(-4px); }\n  100% {\n    left: 0;\n    -webkit-transform: translateX(0);\n            transform: translateX(0); } }\n\n.bar-swing-container {\n  width: 20%;\n  height: 8px;\n  position: relative; }\n  .bar-swing-container div:nth-child(1) {\n    position: absolute;\n    width: 100%;\n    background-color: rgba(255, 255, 255, 0.2);\n    height: 12px;\n    border-radius: 10px; }\n  .bar-swing-container div:nth-child(2) {\n    position: absolute;\n    width: 30%;\n    height: 8px;\n    border-radius: 10px;\n    background-color: #fff;\n    -webkit-animation: bar-swing-container 2s cubic-bezier(0.91, 0.35, 0.12, 0.6) infinite;\n            animation: bar-swing-container 2s cubic-bezier(0.91, 0.35, 0.12, 0.6) infinite;\n    margin: 2px 2px 0; }\n", ""]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-block-ui/lib/style.css":
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-block-ui/lib/style.css ***!
+  \**************************************************************************************************************************************************************************************************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "/* duplicate bootstrap sr-only class for users not using bootstrap/availity-uikit */\n.sr-only {\n    position: absolute;\n    width: 1px;\n    height: 1px;\n    padding: 0;\n    margin: -1px;\n    overflow: hidden;\n    clip: rect(0,0,0,0);\n    border: 0;/* 3 */\n}\n.loading-indicator {\n    text-align: center;\n}\n.loading-bullet {\n    display: inline-block;\n    opacity: 0;\n    font-size: 2em;\n    color: #02a17c;\n}\n.block-ui {\n    position: relative;\n    min-height: 3em;\n}\n.block-ui-container {\n    position: absolute;\n    z-index: 1010;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    height: 100%;\n    min-height: 2em;\n    cursor: wait;\n    overflow: hidden;\n}\n.block-ui-container:focus {\n    outline: none;\n}\n.block-ui-overlay {\n    width: 100%;\n    height: 100%;\n    opacity: 0.5;\n    filter: alpha(opacity=50);\n    background-color: white;\n}\n.block-ui-message-container {\n    position: absolute;\n    top: 50%;\n    left: 0;\n    right: 0;\n    text-align: center;\n    -webkit-transform: translateY(-50%);\n            transform: translateY(-50%);\n    z-index: 10001;\n}\n.block-ui-message {\n    color: #333;\n    background: none;\n    z-index: 1011;\n}\n\n/* CSS Animations */\n@-webkit-keyframes fadeInRTL1 {\n    0% {\n        opacity: 0;\n        -webkit-transform: translateX(20px);\n        transform: translateX(20px);\n    }\n    30% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n        transform: translateX(0px);\n    }\n    60% {\n        opacity: 1;\n    }\n    80% {\n        opacity: 0;\n    }\n}\n@keyframes fadeInRTL1 {\n    0% {\n        opacity: 0;\n        -webkit-transform: translateX(20px);\n        transform: translateX(20px);\n    }\n    30% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n        transform: translateX(0px);\n    }\n    60% {\n        opacity: 1;\n    }\n    80% {\n        opacity: 0;\n    }\n}\n@-webkit-keyframes fadeInRTL2 {\n    0% {\n        opacity: 0;\n    }\n    10% {\n        opacity: 0;\n        -webkit-transform: translateX(20px);\n        transform: translateX(20px);\n    }\n    40% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n        transform: translateX(0px);\n    }\n    60% {\n        opacity: 1;\n    }\n    80% {\n        opacity: 0;\n    }\n}\n@keyframes fadeInRTL2 {\n    0% {\n        opacity: 0;\n    }\n    10% {\n        opacity: 0;\n        -webkit-transform: translateX(20px);\n        transform: translateX(20px);\n    }\n    40% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n        transform: translateX(0px);\n    }\n    60% {\n        opacity: 1;\n    }\n    80% {\n        opacity: 0;\n    }\n}\n@-webkit-keyframes fadeInRTL3 {\n    0% {\n        opacity: 0;\n    }\n    20% {\n        opacity: 0;\n        -webkit-transform: translateX(20px);\n        transform: translateX(20px);\n    }\n    50% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n        transform: translateX(0px);\n    }\n    60% {\n        opacity: 1;\n    }\n    80% {\n        opacity: 0;\n    }\n}\n@keyframes fadeInRTL3 {\n    0% {\n        opacity: 0;\n    }\n    20% {\n        opacity: 0;\n        -webkit-transform: translateX(20px);\n        transform: translateX(20px);\n    }\n    50% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n        transform: translateX(0px);\n    }\n    60% {\n        opacity: 1;\n    }\n    80% {\n        opacity: 0;\n    }\n}\n.loading-bullet {\n    display: inline-block;\n    opacity: 0;\n    -webkit-animation: 3s ease .5s infinite fadeInRTL1;\n    animation: 3s ease .5s infinite fadeInRTL1;\n}\n.loading-bullet + .loading-bullet {\n    -webkit-animation-name: fadeInRTL2;\n    animation-name: fadeInRTL2;\n}\n.loading-bullet + .loading-bullet + .loading-bullet {\n    -webkit-animation-name: fadeInRTL3;\n    animation-name: fadeInRTL3;\n}\n", ""]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/ctab.css":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/ctab.css ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".custom-tab .nav-tabs .active{\r\n    background: white !important ; \r\n    color: black;\r\n}\r\n.custom-tab .nav-tabs {\r\n    border: none ;\r\n}\r\n\r\n.custom-tab .nav-tabs a {\r\n    color: black; \r\n    text-align: center;\r\n    font-size: 12px;    \r\n}\r\n.custom-tab .nav-tabs .nav-item {\r\n    border: none ;\r\n    background: #D9D9D9 ;\r\n}\r\n", ""]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/search_bar.css":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/search_bar.css ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".header-desktop-search-field{\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.header-search-field input::-webkit-input-placeholder {\r\n    font: 12px/3 sans-serif;\r\n}\r\n\r\n.header-search-field input::placeholder {\r\n    font: 12px/3 sans-serif;\r\n}\r\n\r\n.header-desktop-search-field input:focus{\r\n    outline: none;\r\n}\r\n\r\n.header-desktop-search-field input {\r\n    padding-left: 25px;\r\n    margin-top: 10px;\r\n    border-radius: 2px;\r\n    border-color: transparent;\r\n    height: 35px;\r\n}\r\n\r\n.header-desktop-search-field .icon {\r\n    position: absolute;\r\n    left: 5px;\r\n    color: rgb(211, 208, 208) ;\r\n    top: 15px;\r\n}\r\n.header-mobile-search-field {\r\n    display: none;\r\n}\r\n.header-mobile-search-field i{\r\n    color: white ;\r\n}\r\n\r\n.header-mobile-search-field .mobile-search-field {\r\n    display: none;\r\n}\r\n\r\n.header-desktop-search-field{\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.mobile-search-field input::-webkit-input-placeholder {\r\n    font: 16px;\r\n    color: white ;\r\n}\r\n\r\n.mobile-search-field input::placeholder {\r\n    font: 16px;\r\n    color: white ;\r\n}\r\n\r\n.mobile-search-field input {\r\n    padding-left: 0px;\r\n    height: 60px;\r\n    width: 300px;\r\n    background: transparent;\r\n    border: none;\r\n    color: white ;\r\n}\r\n\r\n.mobile-search-field .icon {\r\n    position: absolute;\r\n    right: 30px;\r\n    color: rgb(211, 208, 208) ;\r\n    top: 2px;\r\n    font-size: 20px;\r\n}\r\n.mobile-search-field input:focus{\r\n    outline: none;\r\n}", ""]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/sidebar.css":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/sidebar.css ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".bm-item {\r\n    display: inline-block ;\r\n    color: #d1d1d1;\r\n    text-align: left;\r\n    text-decoration: none;\r\n    transition: color 0.2s;\r\n  }\r\n  \r\n  .bm-item:hover {\r\n    color: #ffffff;\r\n  }\r\n\r\n  .bm-menu-wrap .menu-item {\r\n    color: black; \r\n    border-bottom: 1px solid #ddd;\r\n    display: flex;\r\n    align-items: center;\r\n    padding: 5px;\r\n  }\r\n\r\n  .bm-menu-wrap .menu-item .name{\r\n    padding-left: 5px ;\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n  }\r\n  .bm-menu-wrap .menu-item .icon img {\r\n    width: 20px;\r\n  }\r\n  .bm-menu-wrap .menu-item  .icon{\r\n    width: 25px;\r\n  }\r\n  .bm-burger-button button {\r\n    color: white !important;\r\n  }\r\n\r\n  .bm-burger-button {\r\n    position: absolute;\r\n    width: 20px;\r\n    height: 15px;\r\n    left: 10px;\r\n    top: 25px;\r\n}\r\n\r\n/* Color/shape of burger icon bars */\r\n.bm-burger-bars {\r\n  background: white;\r\n}\r\n\r\n/* Color/shape of burger icon bars on hover*/\r\n.bm-burger-bars-hover {\r\n  background: #a90000;\r\n}\r\n\r\n/* Position and sizing of clickable cross button */\r\n.bm-cross-button {\r\n  height: 24px;\r\n  width: 24px;\r\n  top: -3px !important;\r\n  right: 0px !important ;\r\n}\r\n\r\n/* Color/shape of close button cross */\r\n.bm-cross {\r\n  background: #bdc3c7;\r\n}\r\n\r\n/*\r\nSidebar wrapper styles\r\nNote: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases\r\n*/\r\n.bm-menu-wrap {\r\n  position: fixed;\r\n  height: 100%;\r\n  width:240px  !important;\r\n}\r\n\r\n/* General sidebar styles */\r\n.bm-menu {\r\n  background: #373a47;\r\n  padding: 2.5em 1.5em 0;\r\n  font-size: 1.15em;\r\n}\r\n\r\n/* Morph shape necessary with bubble or elastic */\r\n.bm-morph-shape {\r\n  fill: #373a47;\r\n}\r\n\r\n/* Wrapper for item list */\r\n.bm-item-list {\r\n  color: #b8b7ad;\r\n}\r\n\r\n/* Individual item */\r\n.bm-item {\r\n  display: inline-block;\r\n}\r\n\r\n/* Styling of overlay */\r\n.bm-menu {\r\n  background: white ;\r\n  padding: 10px; \r\n}", ""]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/user/layout.css":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/user/layout.css ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".page-header {\r\n    width: 100%;\r\n    height: 157px;\r\n    background: #3F7E68 ;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n.page-header .now-time {\r\n    font-weight: 800;\r\n    font-size: 16px;\r\n    color: white ;\r\n    padding-top: 10px;\r\n}\r\n.page-header .desktop-header {\r\n    width: 1270px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: auto;\r\n}\r\n\r\n.page-menu {\r\n    width: 100%;\r\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\r\n    background: white;\r\n}\r\n\r\n.page-menu .item {\r\n    font-weight: 700;\r\n    font-size: 12px;\r\n    color: black;\r\n    cursor: pointer;\r\n}\r\n\r\n.page-content {\r\n    padding: 0px 15px 163px 15px;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    margin-top: 5px;\r\n}\r\n.page-content .left-part {\r\n    width: 175px;\r\n    background: white ;\r\n    height: 100%;\r\n    border: 1px solid #ddd ;\r\n    padding-bottom: 10px;\r\n}\r\n.page-content .right-part {\r\n    width: 23%;\r\n    position: -webkit-sticky;\r\n    position: sticky;\r\n    top: 0px;\r\n    height: 100px;\r\n}\r\n.page-content .main-content {\r\n    width: 59%;\r\n    padding: 0px 15px;\r\n    padding-bottom: 20px;\r\n}\r\n.page-content .left-part .page-list .item {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-content: center;\r\n    border: 0.5px solid #ddd ;\r\n    padding: 15px 0px; \r\n    cursor: pointer;\r\n}\r\n.page-content .left-part .page-list .item:hover {\r\n    background: #ecebeb;\r\n    width: 90%;\r\n    height: 90%;\r\n    margin-left: 5%;\r\n    transition: .2s ease;\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n}\r\n\r\n.page-content .left-part .page-list .item .icon {\r\n    width: 30% ;\r\n    padding-left: 25px;\r\n    text-align: center;\r\n}\r\n.page-content .left-part .page-list .item .icon img {\r\n    width: 30px;\r\n}\r\n.page-content .left-part .page-list .item .name {\r\n    width: 60% ;\r\n    text-align: left;\r\n    font-size: 12px;\r\n    font-weight: 600;\r\n    padding-top: 10px;\r\n}\r\n.page-content .left-part .create-instant {\r\n    margin-top: 20px;\r\n    padding: 15px;\r\n    width: 100%;\r\n}\r\n.page-content .left-part .create-instant {\r\n    font-size: 12px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n}\r\n.page-content .left-part .create-instant .item {\r\n    cursor: pointer;\r\n}\r\n.page-content .left-part .create-instant .content{\r\n    margin-top: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n.page-content .left-part .google-play {\r\n    text-align: center;\r\n    margin-top: 30px;\r\n    width: 100%;\r\n}\r\n.page-content .left-part .google-play img {\r\n    width: 90%;\r\n    margin: auto;\r\n}\r\n\r\n.page-content .right-part .report-dlg {\r\n    width: 100%;\r\n    background: #FFFFFF;   \r\n}\r\n\r\n.page-content .right-part .report-dlg .title {\r\n    font-size: 14px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n    padding: 7px;\r\n    background: #3F7E68;\r\n    color: white ;\r\n}\r\n\r\n.page-content .right-part .report-dlg .content {\r\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);   \r\n}\r\n.page-content .right-part .available-credit{\r\n    margin-bottom: 27px;\r\n}\r\n.page-content .right-part .available-credit .content {\r\n    width: 100%;\r\n    padding: 5px 18px;   \r\n}\r\n\r\n.page-content .right-part .available-credit .content .item {\r\n    margin-top: 14px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-weight: 500;\r\n    font-size: 12px;\r\n    \r\n}\r\n.page-content .right-part .available-credit .content .item .name {\r\n    width: 70%;\r\n}\r\n.page-content .right-part .available-credit .content .item .value {\r\n    width: 30%;\r\n    padding-left: 10px;\r\n}\r\n\r\n.page-content .right-part .bid-history .content {\r\n    min-height: 100px;\r\n    width: 100%;\r\n}\r\n\r\n.page-footer {\r\n    width: 100%;\r\n    background: #3F7E68 ;\r\n\r\n}\r\n.page-footer .desktop-footer {\r\n    background: #3F7E68 ;\r\n    color: white ;\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    /* padding: 43px 110px 23px 110px; */\r\n}\r\n.page-footer .desktop-footer .company-info {\r\n    padding: 20px;\r\n    font-weight: 400;\r\n}\r\n.page-footer .desktop-footer .companies-logo{\r\n    display: grid;\r\n    grid-template-columns: repeat(8,1fr);\r\n    grid-column-gap: 11px;\r\n    margin-top: 30px;\r\n}\r\n\r\n.page-footer .desktop-footer .companies-logo .item{\r\n    align-self: center;\r\n    justify-self: center;\r\n}\r\n.page-footer .desktop-footer .policy-group {\r\n    display: flex ;\r\n    justify-content: space-around;\r\n    margin-top: 30px;\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n}\r\n.page-footer .desktop-footer .version {\r\n    text-align: center;\r\n    margin-top: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n\r\n}\r\n.bm-burger-button {\r\n    display: none !important;\r\n}\r\n\r\n@media screen and (max-width: 1280px){\r\n    .page-container {\r\n        width: 100%;\r\n    }\r\n    .page-content {\r\n        display: block;\r\n        padding: 0px;\r\n    }\r\n    .page-content .main-content{\r\n        width: 100%;\r\n    }\r\n    .page-content .left-part {\r\n        display: none;\r\n    }\r\n    .page-content .right-part {\r\n        display: none;\r\n    }\r\n    .page-menu {\r\n        display: none;\r\n    }\r\n    .page-footer .desktop-footer {\r\n        padding: 15px;\r\n    }\r\n    \r\n    .bm-burger-button {\r\n        display: block !important;\r\n    }\r\n    .page-header {\r\n        height: 60px;\r\n        line-height: 60px;\r\n    }\r\n    .page-header .desktop-header {\r\n        padding-left: 50px;\r\n    }\r\n    .page-header .header-mark img {\r\n        width: 120px;\r\n    }\r\n    .page-header .now-time {\r\n        display: none;\r\n    }\r\n    .dash-board .bet-buttons .item {    \r\n        height: 30px !important;\r\n        line-height: 30px !important;\r\n    }\r\n\r\n    .page-footer .desktop-footer .companies-logo{\r\n        grid-template-columns: repeat(2,1fr);\r\n        grid-row-gap: 27px;\r\n        grid-column-gap: unset;\r\n    }   \r\n    .page-footer .desktop-footer .company-info {\r\n        padding: 20px 10px;\r\n    }\r\n    .page-footer .desktop-footer .policy-group {\r\n        display: none   ;\r\n    }\r\n    .header-desktop-search-field {\r\n        display: none !important;\r\n    }\r\n    .header-mobile-search-field {\r\n        display: block !important; \r\n    }\r\n}", ""]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/loaders.css/loaders.css":
+/*!**********************************************!*\
+  !*** ./node_modules/loaders.css/loaders.css ***!
+  \**********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_loaders_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./loaders.css */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/loaders.css/loaders.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_loaders_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_loaders_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/react-block-ui/lib/style.css":
+/*!***************************************************!*\
+  !*** ./node_modules/react-block-ui/lib/style.css ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./style.css */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-block-ui/lib/style.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/css/component/ctab.css":
+/*!******************************************!*\
+  !*** ./resources/css/component/ctab.css ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ctab_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./ctab.css */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/ctab.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ctab_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ctab_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/css/component/search_bar.css":
+/*!************************************************!*\
+  !*** ./resources/css/component/search_bar.css ***!
+  \************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_search_bar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./search_bar.css */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/search_bar.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_search_bar_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_search_bar_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/css/component/sidebar.css":
+/*!*********************************************!*\
+  !*** ./resources/css/component/sidebar.css ***!
+  \*********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_sidebar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./sidebar.css */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/sidebar.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_sidebar_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_sidebar_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/css/user/layout.css":
+/*!***************************************!*\
+  !*** ./resources/css/user/layout.css ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/laravel-mix/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_layout_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./layout.css */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/user/layout.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_laravel_mix_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_layout_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_layout_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/prop-types-extra/lib/all.js":
 /*!**************************************************!*\
   !*** ./node_modules/prop-types-extra/lib/all.js ***!
@@ -16235,6 +16513,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/react-router-dom/es/Route.js":
+/*!***************************************************!*\
+  !*** ./node_modules/react-router-dom/es/Route.js ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_router_es_Route__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router/es/Route */ "./node_modules/react-router/es/Route.js");
+// Written in this round about way for babel-transform-imports
+
+
+/* harmony default export */ __webpack_exports__["default"] = (react_router_es_Route__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+/***/ }),
+
+/***/ "./node_modules/react-router-dom/es/Switch.js":
+/*!****************************************************!*\
+  !*** ./node_modules/react-router-dom/es/Switch.js ***!
+  \****************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_router_es_Switch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router/es/Switch */ "./node_modules/react-router/es/Switch.js");
+// Written in this round about way for babel-transform-imports
+
+
+/* harmony default export */ __webpack_exports__["default"] = (react_router_es_Switch__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+/***/ }),
+
 /***/ "./node_modules/react-router/es/Redirect.js":
 /*!**************************************************!*\
   !*** ./node_modules/react-router/es/Redirect.js ***!
@@ -16368,6 +16678,260 @@ Redirect.contextTypes = {
 
 /***/ }),
 
+/***/ "./node_modules/react-router/es/Route.js":
+/*!***********************************************!*\
+  !*** ./node_modules/react-router/es/Route.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! warning */ "./node_modules/warning/warning.js");
+/* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(warning__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! invariant */ "./node_modules/invariant/browser.js");
+/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(invariant__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _matchPath__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./matchPath */ "./node_modules/react-router/es/matchPath.js");
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+var isEmptyChildren = function isEmptyChildren(children) {
+  return react__WEBPACK_IMPORTED_MODULE_2__.Children.count(children) === 0;
+};
+
+/**
+ * The public API for matching a single path and rendering.
+ */
+
+var Route = function (_React$Component) {
+  _inherits(Route, _React$Component);
+
+  function Route() {
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Route);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.state = {
+      match: _this.computeMatch(_this.props, _this.context.router)
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  Route.prototype.getChildContext = function getChildContext() {
+    return {
+      router: _extends({}, this.context.router, {
+        route: {
+          location: this.props.location || this.context.router.route.location,
+          match: this.state.match
+        }
+      })
+    };
+  };
+
+  Route.prototype.computeMatch = function computeMatch(_ref, router) {
+    var computedMatch = _ref.computedMatch,
+        location = _ref.location,
+        path = _ref.path,
+        strict = _ref.strict,
+        exact = _ref.exact,
+        sensitive = _ref.sensitive;
+
+    if (computedMatch) return computedMatch; // <Switch> already computed the match for us
+
+    invariant__WEBPACK_IMPORTED_MODULE_1___default()(router, "You should not use <Route> or withRouter() outside a <Router>");
+
+    var route = router.route;
+
+    var pathname = (location || route.location).pathname;
+
+    return (0,_matchPath__WEBPACK_IMPORTED_MODULE_3__["default"])(pathname, { path: path, strict: strict, exact: exact, sensitive: sensitive }, route.match);
+  };
+
+  Route.prototype.componentWillMount = function componentWillMount() {
+    warning__WEBPACK_IMPORTED_MODULE_0___default()(!(this.props.component && this.props.render), "You should not use <Route component> and <Route render> in the same route; <Route render> will be ignored");
+
+    warning__WEBPACK_IMPORTED_MODULE_0___default()(!(this.props.component && this.props.children && !isEmptyChildren(this.props.children)), "You should not use <Route component> and <Route children> in the same route; <Route children> will be ignored");
+
+    warning__WEBPACK_IMPORTED_MODULE_0___default()(!(this.props.render && this.props.children && !isEmptyChildren(this.props.children)), "You should not use <Route render> and <Route children> in the same route; <Route children> will be ignored");
+  };
+
+  Route.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps, nextContext) {
+    warning__WEBPACK_IMPORTED_MODULE_0___default()(!(nextProps.location && !this.props.location), '<Route> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.');
+
+    warning__WEBPACK_IMPORTED_MODULE_0___default()(!(!nextProps.location && this.props.location), '<Route> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.');
+
+    this.setState({
+      match: this.computeMatch(nextProps, nextContext.router)
+    });
+  };
+
+  Route.prototype.render = function render() {
+    var match = this.state.match;
+    var _props = this.props,
+        children = _props.children,
+        component = _props.component,
+        render = _props.render;
+    var _context$router = this.context.router,
+        history = _context$router.history,
+        route = _context$router.route,
+        staticContext = _context$router.staticContext;
+
+    var location = this.props.location || route.location;
+    var props = { match: match, location: location, history: history, staticContext: staticContext };
+
+    if (component) return match ? react__WEBPACK_IMPORTED_MODULE_2__.createElement(component, props) : null;
+
+    if (render) return match ? render(props) : null;
+
+    if (typeof children === "function") return children(props);
+
+    if (children && !isEmptyChildren(children)) return react__WEBPACK_IMPORTED_MODULE_2__.Children.only(children);
+
+    return null;
+  };
+
+  return Route;
+}(react__WEBPACK_IMPORTED_MODULE_2__.Component);
+
+Route.propTypes = {
+  computedMatch: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object), // private, from <Switch>
+  path: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string),
+  exact: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
+  strict: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
+  sensitive: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
+  component: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func),
+  render: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func),
+  children: prop_types__WEBPACK_IMPORTED_MODULE_4___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_4___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_4___default().node)]),
+  location: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object)
+};
+Route.contextTypes = {
+  router: prop_types__WEBPACK_IMPORTED_MODULE_4___default().shape({
+    history: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object.isRequired),
+    route: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object.isRequired),
+    staticContext: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object)
+  })
+};
+Route.childContextTypes = {
+  router: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object.isRequired)
+};
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Route);
+
+/***/ }),
+
+/***/ "./node_modules/react-router/es/Switch.js":
+/*!************************************************!*\
+  !*** ./node_modules/react-router/es/Switch.js ***!
+  \************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! warning */ "./node_modules/warning/warning.js");
+/* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(warning__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! invariant */ "./node_modules/invariant/browser.js");
+/* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(invariant__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _matchPath__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./matchPath */ "./node_modules/react-router/es/matchPath.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+/**
+ * The public API for rendering the first <Route> that matches.
+ */
+
+var Switch = function (_React$Component) {
+  _inherits(Switch, _React$Component);
+
+  function Switch() {
+    _classCallCheck(this, Switch);
+
+    return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+  }
+
+  Switch.prototype.componentWillMount = function componentWillMount() {
+    invariant__WEBPACK_IMPORTED_MODULE_2___default()(this.context.router, "You should not use <Switch> outside a <Router>");
+  };
+
+  Switch.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+    warning__WEBPACK_IMPORTED_MODULE_1___default()(!(nextProps.location && !this.props.location), '<Switch> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.');
+
+    warning__WEBPACK_IMPORTED_MODULE_1___default()(!(!nextProps.location && this.props.location), '<Switch> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.');
+  };
+
+  Switch.prototype.render = function render() {
+    var route = this.context.router.route;
+    var children = this.props.children;
+
+    var location = this.props.location || route.location;
+
+    var match = void 0,
+        child = void 0;
+    react__WEBPACK_IMPORTED_MODULE_0__.Children.forEach(children, function (element) {
+      if (match == null && react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(element)) {
+        var _element$props = element.props,
+            pathProp = _element$props.path,
+            exact = _element$props.exact,
+            strict = _element$props.strict,
+            sensitive = _element$props.sensitive,
+            from = _element$props.from;
+
+        var path = pathProp || from;
+
+        child = element;
+        match = (0,_matchPath__WEBPACK_IMPORTED_MODULE_3__["default"])(location.pathname, { path: path, exact: exact, strict: strict, sensitive: sensitive }, route.match);
+      }
+    });
+
+    return match ? react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(child, { location: location, computedMatch: match }) : null;
+  };
+
+  return Switch;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+Switch.contextTypes = {
+  router: prop_types__WEBPACK_IMPORTED_MODULE_4___default().shape({
+    route: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object.isRequired)
+  }).isRequired
+};
+Switch.propTypes = {
+  children: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().node),
+  location: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object)
+};
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Switch);
+
+/***/ }),
+
 /***/ "./node_modules/react-router/es/generatePath.js":
 /*!******************************************************!*\
   !*** ./node_modules/react-router/es/generatePath.js ***!
@@ -16415,6 +16979,672 @@ var generatePath = function generatePath() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (generatePath);
+
+/***/ }),
+
+/***/ "./node_modules/react-router/es/matchPath.js":
+/*!***************************************************!*\
+  !*** ./node_modules/react-router/es/matchPath.js ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! path-to-regexp */ "./node_modules/react-router/node_modules/path-to-regexp/index.js");
+/* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(path_to_regexp__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var patternCache = {};
+var cacheLimit = 10000;
+var cacheCount = 0;
+
+var compilePath = function compilePath(pattern, options) {
+  var cacheKey = "" + options.end + options.strict + options.sensitive;
+  var cache = patternCache[cacheKey] || (patternCache[cacheKey] = {});
+
+  if (cache[pattern]) return cache[pattern];
+
+  var keys = [];
+  var re = path_to_regexp__WEBPACK_IMPORTED_MODULE_0___default()(pattern, keys, options);
+  var compiledPattern = { re: re, keys: keys };
+
+  if (cacheCount < cacheLimit) {
+    cache[pattern] = compiledPattern;
+    cacheCount++;
+  }
+
+  return compiledPattern;
+};
+
+/**
+ * Public API for matching a URL pathname to a path pattern.
+ */
+var matchPath = function matchPath(pathname) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var parent = arguments[2];
+
+  if (typeof options === "string") options = { path: options };
+
+  var _options = options,
+      path = _options.path,
+      _options$exact = _options.exact,
+      exact = _options$exact === undefined ? false : _options$exact,
+      _options$strict = _options.strict,
+      strict = _options$strict === undefined ? false : _options$strict,
+      _options$sensitive = _options.sensitive,
+      sensitive = _options$sensitive === undefined ? false : _options$sensitive;
+
+
+  if (path == null) return parent;
+
+  var _compilePath = compilePath(path, { end: exact, strict: strict, sensitive: sensitive }),
+      re = _compilePath.re,
+      keys = _compilePath.keys;
+
+  var match = re.exec(pathname);
+
+  if (!match) return null;
+
+  var url = match[0],
+      values = match.slice(1);
+
+  var isExact = pathname === url;
+
+  if (exact && !isExact) return null;
+
+  return {
+    path: path, // the path pattern used to match
+    url: path === "/" && url === "" ? "/" : url, // the matched portion of the URL
+    isExact: isExact, // whether or not we matched exactly
+    params: keys.reduce(function (memo, key, index) {
+      memo[key.name] = values[index];
+      return memo;
+    }, {})
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (matchPath);
+
+/***/ }),
+
+/***/ "./node_modules/react-router/es/withRouter.js":
+/*!****************************************************!*\
+  !*** ./node_modules/react-router/es/withRouter.js ***!
+  \****************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/react-router/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
+/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Route__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Route */ "./node_modules/react-router/es/Route.js");
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+
+
+
+
+
+/**
+ * A public higher-order component to access the imperative API
+ */
+var withRouter = function withRouter(Component) {
+  var C = function C(props) {
+    var wrappedComponentRef = props.wrappedComponentRef,
+        remainingProps = _objectWithoutProperties(props, ["wrappedComponentRef"]);
+
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Route__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: function children(routeComponentProps) {
+        return react__WEBPACK_IMPORTED_MODULE_0__.createElement(Component, _extends({}, remainingProps, routeComponentProps, {
+          ref: wrappedComponentRef
+        }));
+      }
+    });
+  };
+
+  C.displayName = "withRouter(" + (Component.displayName || Component.name) + ")";
+  C.WrappedComponent = Component;
+  C.propTypes = {
+    wrappedComponentRef: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().func)
+  };
+
+  return hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_1___default()(C, Component);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (withRouter);
+
+/***/ }),
+
+/***/ "./node_modules/react-router/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/react-router/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
+  \************************************************************************************************************/
+/***/ (function(module) {
+
+"use strict";
+
+
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+var REACT_STATICS = {
+    childContextTypes: true,
+    contextTypes: true,
+    defaultProps: true,
+    displayName: true,
+    getDefaultProps: true,
+    getDerivedStateFromProps: true,
+    mixins: true,
+    propTypes: true,
+    type: true
+};
+
+var KNOWN_STATICS = {
+    name: true,
+    length: true,
+    prototype: true,
+    caller: true,
+    callee: true,
+    arguments: true,
+    arity: true
+};
+
+var defineProperty = Object.defineProperty;
+var getOwnPropertyNames = Object.getOwnPropertyNames;
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+var getPrototypeOf = Object.getPrototypeOf;
+var objectPrototype = getPrototypeOf && getPrototypeOf(Object);
+
+function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
+    if (typeof sourceComponent !== 'string') { // don't hoist over string (html) components
+
+        if (objectPrototype) {
+            var inheritedComponent = getPrototypeOf(sourceComponent);
+            if (inheritedComponent && inheritedComponent !== objectPrototype) {
+                hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
+            }
+        }
+
+        var keys = getOwnPropertyNames(sourceComponent);
+
+        if (getOwnPropertySymbols) {
+            keys = keys.concat(getOwnPropertySymbols(sourceComponent));
+        }
+
+        for (var i = 0; i < keys.length; ++i) {
+            var key = keys[i];
+            if (!REACT_STATICS[key] && !KNOWN_STATICS[key] && (!blacklist || !blacklist[key])) {
+                var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
+                try { // Avoid failures from read-only properties
+                    defineProperty(targetComponent, key, descriptor);
+                } catch (e) {}
+            }
+        }
+
+        return targetComponent;
+    }
+
+    return targetComponent;
+}
+
+module.exports = hoistNonReactStatics;
+
+
+/***/ }),
+
+/***/ "./node_modules/react-router/node_modules/isarray/index.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-router/node_modules/isarray/index.js ***!
+  \*****************************************************************/
+/***/ (function(module) {
+
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-router/node_modules/path-to-regexp/index.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-router/node_modules/path-to-regexp/index.js ***!
+  \************************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+var isarray = __webpack_require__(/*! isarray */ "./node_modules/react-router/node_modules/isarray/index.js")
+
+/**
+ * Expose `pathToRegexp`.
+ */
+module.exports = pathToRegexp
+module.exports.parse = parse
+module.exports.compile = compile
+module.exports.tokensToFunction = tokensToFunction
+module.exports.tokensToRegExp = tokensToRegExp
+
+/**
+ * The main path matching regexp utility.
+ *
+ * @type {RegExp}
+ */
+var PATH_REGEXP = new RegExp([
+  // Match escaped characters that would otherwise appear in future matches.
+  // This allows the user to escape special characters that won't transform.
+  '(\\\\.)',
+  // Match Express-style parameters and un-named parameters with a prefix
+  // and optional suffixes. Matches appear as:
+  //
+  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
+  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
+  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
+  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))'
+].join('|'), 'g')
+
+/**
+ * Parse a string for the raw tokens.
+ *
+ * @param  {string}  str
+ * @param  {Object=} options
+ * @return {!Array}
+ */
+function parse (str, options) {
+  var tokens = []
+  var key = 0
+  var index = 0
+  var path = ''
+  var defaultDelimiter = options && options.delimiter || '/'
+  var res
+
+  while ((res = PATH_REGEXP.exec(str)) != null) {
+    var m = res[0]
+    var escaped = res[1]
+    var offset = res.index
+    path += str.slice(index, offset)
+    index = offset + m.length
+
+    // Ignore already escaped sequences.
+    if (escaped) {
+      path += escaped[1]
+      continue
+    }
+
+    var next = str[index]
+    var prefix = res[2]
+    var name = res[3]
+    var capture = res[4]
+    var group = res[5]
+    var modifier = res[6]
+    var asterisk = res[7]
+
+    // Push the current path onto the tokens.
+    if (path) {
+      tokens.push(path)
+      path = ''
+    }
+
+    var partial = prefix != null && next != null && next !== prefix
+    var repeat = modifier === '+' || modifier === '*'
+    var optional = modifier === '?' || modifier === '*'
+    var delimiter = res[2] || defaultDelimiter
+    var pattern = capture || group
+
+    tokens.push({
+      name: name || key++,
+      prefix: prefix || '',
+      delimiter: delimiter,
+      optional: optional,
+      repeat: repeat,
+      partial: partial,
+      asterisk: !!asterisk,
+      pattern: pattern ? escapeGroup(pattern) : (asterisk ? '.*' : '[^' + escapeString(delimiter) + ']+?')
+    })
+  }
+
+  // Match any characters still remaining.
+  if (index < str.length) {
+    path += str.substr(index)
+  }
+
+  // If the path exists, push it onto the end.
+  if (path) {
+    tokens.push(path)
+  }
+
+  return tokens
+}
+
+/**
+ * Compile a string to a template function for the path.
+ *
+ * @param  {string}             str
+ * @param  {Object=}            options
+ * @return {!function(Object=, Object=)}
+ */
+function compile (str, options) {
+  return tokensToFunction(parse(str, options), options)
+}
+
+/**
+ * Prettier encoding of URI path segments.
+ *
+ * @param  {string}
+ * @return {string}
+ */
+function encodeURIComponentPretty (str) {
+  return encodeURI(str).replace(/[\/?#]/g, function (c) {
+    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
+  })
+}
+
+/**
+ * Encode the asterisk parameter. Similar to `pretty`, but allows slashes.
+ *
+ * @param  {string}
+ * @return {string}
+ */
+function encodeAsterisk (str) {
+  return encodeURI(str).replace(/[?#]/g, function (c) {
+    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
+  })
+}
+
+/**
+ * Expose a method for transforming tokens into the path function.
+ */
+function tokensToFunction (tokens, options) {
+  // Compile all the tokens into regexps.
+  var matches = new Array(tokens.length)
+
+  // Compile all the patterns before compilation.
+  for (var i = 0; i < tokens.length; i++) {
+    if (typeof tokens[i] === 'object') {
+      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$', flags(options))
+    }
+  }
+
+  return function (obj, opts) {
+    var path = ''
+    var data = obj || {}
+    var options = opts || {}
+    var encode = options.pretty ? encodeURIComponentPretty : encodeURIComponent
+
+    for (var i = 0; i < tokens.length; i++) {
+      var token = tokens[i]
+
+      if (typeof token === 'string') {
+        path += token
+
+        continue
+      }
+
+      var value = data[token.name]
+      var segment
+
+      if (value == null) {
+        if (token.optional) {
+          // Prepend partial segment prefixes.
+          if (token.partial) {
+            path += token.prefix
+          }
+
+          continue
+        } else {
+          throw new TypeError('Expected "' + token.name + '" to be defined')
+        }
+      }
+
+      if (isarray(value)) {
+        if (!token.repeat) {
+          throw new TypeError('Expected "' + token.name + '" to not repeat, but received `' + JSON.stringify(value) + '`')
+        }
+
+        if (value.length === 0) {
+          if (token.optional) {
+            continue
+          } else {
+            throw new TypeError('Expected "' + token.name + '" to not be empty')
+          }
+        }
+
+        for (var j = 0; j < value.length; j++) {
+          segment = encode(value[j])
+
+          if (!matches[i].test(segment)) {
+            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received `' + JSON.stringify(segment) + '`')
+          }
+
+          path += (j === 0 ? token.prefix : token.delimiter) + segment
+        }
+
+        continue
+      }
+
+      segment = token.asterisk ? encodeAsterisk(value) : encode(value)
+
+      if (!matches[i].test(segment)) {
+        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
+      }
+
+      path += token.prefix + segment
+    }
+
+    return path
+  }
+}
+
+/**
+ * Escape a regular expression string.
+ *
+ * @param  {string} str
+ * @return {string}
+ */
+function escapeString (str) {
+  return str.replace(/([.+*?=^!:${}()[\]|\/\\])/g, '\\$1')
+}
+
+/**
+ * Escape the capturing group by escaping special characters and meaning.
+ *
+ * @param  {string} group
+ * @return {string}
+ */
+function escapeGroup (group) {
+  return group.replace(/([=!:$\/()])/g, '\\$1')
+}
+
+/**
+ * Attach the keys as a property of the regexp.
+ *
+ * @param  {!RegExp} re
+ * @param  {Array}   keys
+ * @return {!RegExp}
+ */
+function attachKeys (re, keys) {
+  re.keys = keys
+  return re
+}
+
+/**
+ * Get the flags for a regexp from the options.
+ *
+ * @param  {Object} options
+ * @return {string}
+ */
+function flags (options) {
+  return options && options.sensitive ? '' : 'i'
+}
+
+/**
+ * Pull out keys from a regexp.
+ *
+ * @param  {!RegExp} path
+ * @param  {!Array}  keys
+ * @return {!RegExp}
+ */
+function regexpToRegexp (path, keys) {
+  // Use a negative lookahead to match only capturing groups.
+  var groups = path.source.match(/\((?!\?)/g)
+
+  if (groups) {
+    for (var i = 0; i < groups.length; i++) {
+      keys.push({
+        name: i,
+        prefix: null,
+        delimiter: null,
+        optional: false,
+        repeat: false,
+        partial: false,
+        asterisk: false,
+        pattern: null
+      })
+    }
+  }
+
+  return attachKeys(path, keys)
+}
+
+/**
+ * Transform an array into a regexp.
+ *
+ * @param  {!Array}  path
+ * @param  {Array}   keys
+ * @param  {!Object} options
+ * @return {!RegExp}
+ */
+function arrayToRegexp (path, keys, options) {
+  var parts = []
+
+  for (var i = 0; i < path.length; i++) {
+    parts.push(pathToRegexp(path[i], keys, options).source)
+  }
+
+  var regexp = new RegExp('(?:' + parts.join('|') + ')', flags(options))
+
+  return attachKeys(regexp, keys)
+}
+
+/**
+ * Create a path regexp from string input.
+ *
+ * @param  {string}  path
+ * @param  {!Array}  keys
+ * @param  {!Object} options
+ * @return {!RegExp}
+ */
+function stringToRegexp (path, keys, options) {
+  return tokensToRegExp(parse(path, options), keys, options)
+}
+
+/**
+ * Expose a function for taking tokens and returning a RegExp.
+ *
+ * @param  {!Array}          tokens
+ * @param  {(Array|Object)=} keys
+ * @param  {Object=}         options
+ * @return {!RegExp}
+ */
+function tokensToRegExp (tokens, keys, options) {
+  if (!isarray(keys)) {
+    options = /** @type {!Object} */ (keys || options)
+    keys = []
+  }
+
+  options = options || {}
+
+  var strict = options.strict
+  var end = options.end !== false
+  var route = ''
+
+  // Iterate over the tokens and create our regexp string.
+  for (var i = 0; i < tokens.length; i++) {
+    var token = tokens[i]
+
+    if (typeof token === 'string') {
+      route += escapeString(token)
+    } else {
+      var prefix = escapeString(token.prefix)
+      var capture = '(?:' + token.pattern + ')'
+
+      keys.push(token)
+
+      if (token.repeat) {
+        capture += '(?:' + prefix + capture + ')*'
+      }
+
+      if (token.optional) {
+        if (!token.partial) {
+          capture = '(?:' + prefix + '(' + capture + '))?'
+        } else {
+          capture = prefix + '(' + capture + ')?'
+        }
+      } else {
+        capture = prefix + '(' + capture + ')'
+      }
+
+      route += capture
+    }
+  }
+
+  var delimiter = escapeString(options.delimiter || '/')
+  var endsWithDelimiter = route.slice(-delimiter.length) === delimiter
+
+  // In non-strict mode we allow a slash at the end of match. If the path to
+  // match already ends with a slash, we remove it for consistency. The slash
+  // is valid at the end of a path match, not in the middle. This is important
+  // in non-ending mode, where "/test/" shouldn't match "/test//route".
+  if (!strict) {
+    route = (endsWithDelimiter ? route.slice(0, -delimiter.length) : route) + '(?:' + delimiter + '(?=$))?'
+  }
+
+  if (end) {
+    route += '$'
+  } else {
+    // In non-ending mode, we need the capturing groups to match as much as
+    // possible by using a positive lookahead to the end or next path segment.
+    route += strict && endsWithDelimiter ? '' : '(?=' + delimiter + '|$)'
+  }
+
+  return attachKeys(new RegExp('^' + route, flags(options)), keys)
+}
+
+/**
+ * Normalize the given path string, returning a regular expression.
+ *
+ * An empty array can be passed in for the keys, which will hold the
+ * placeholder key descriptions. For example, using `/user/:id`, `keys` will
+ * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
+ *
+ * @param  {(string|RegExp|Array)} path
+ * @param  {(Array|Object)=}       keys
+ * @param  {Object=}               options
+ * @return {!RegExp}
+ */
+function pathToRegexp (path, keys, options) {
+  if (!isarray(keys)) {
+    options = /** @type {!Object} */ (keys || options)
+    keys = []
+  }
+
+  options = options || {}
+
+  if (path instanceof RegExp) {
+    return regexpToRegexp(path, /** @type {!Array} */ (keys))
+  }
+
+  if (isarray(path)) {
+    return arrayToRegexp(/** @type {!Array} */ (path), /** @type {!Array} */ (keys), options)
+  }
+
+  return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
+}
+
 
 /***/ }),
 
@@ -25475,114 +26705,6 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
 
 module.exports = Snap
 
-
-/***/ }),
-
-/***/ "./resources/css/component/ctab.css":
-/*!******************************************!*\
-  !*** ./resources/css/component/ctab.css ***!
-  \******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ctab_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./ctab.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/ctab.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ctab_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ctab_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ }),
-
-/***/ "./resources/css/component/search_bar.css":
-/*!************************************************!*\
-  !*** ./resources/css/component/search_bar.css ***!
-  \************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_search_bar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./search_bar.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/search_bar.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_search_bar_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_search_bar_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ }),
-
-/***/ "./resources/css/component/sidebar.css":
-/*!*********************************************!*\
-  !*** ./resources/css/component/sidebar.css ***!
-  \*********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_sidebar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./sidebar.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/component/sidebar.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_sidebar_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_sidebar_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ }),
-
-/***/ "./resources/css/user/layout.css":
-/*!***************************************!*\
-  !*** ./resources/css/user/layout.css ***!
-  \***************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_layout_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./layout.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/user/layout.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_layout_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_layout_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

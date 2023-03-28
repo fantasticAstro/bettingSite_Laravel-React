@@ -1,7 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\User\DashController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("{any}", function () {
+    return view('welcome'); // or wherever your React app is bootstrapped.
+})->where('any', '.*');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/test', [DashController::class, 'getLiveResult']);

@@ -13,7 +13,7 @@ const store = createStore(reducer);
 
 const app = (
     <Provider store={store}>
-        <BrowserRouter basename={config.basename}>
+        <BrowserRouter basename={config.adminBasename}>
             <Main />
         </BrowserRouter>
     </Provider>

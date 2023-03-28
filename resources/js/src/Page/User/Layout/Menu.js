@@ -12,7 +12,7 @@ function Menu(props) {
                     }}
                 >
                 {
-                    Config.menuList.map((item, index) =>
+                    Config.userMenuList.map((item, index) =>
                         <div className='item'>
                             {item.name}
                         </div>

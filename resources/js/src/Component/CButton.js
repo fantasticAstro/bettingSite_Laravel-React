@@ -1,7 +1,6 @@
 import {useState} from 'react' ;
 function CButton(props) {
     const [isHover, setIsHover] = useState(false);
-    console.log(props) ;
     const style = {
         background: 
             isHover?
