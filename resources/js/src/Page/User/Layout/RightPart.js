@@ -1,6 +1,7 @@
 
-
 import CTab  from "../../../Component/CTab";
+import * as actionTypes from '../../../../store/actions' ;
+
 function RightPart(props) {
     const bist_history_tabs = [
         {name: 'BEST SLIP', content: 'You Don’t Have Any Bid Right Now !'},
@@ -36,4 +37,17 @@ function RightPart(props) {
         </div>
     ) ;
 }
+
 export default RightPart ;
+// const mapStateToProps = state => {
+//     return {
+//         bet_slip: state.bet_slip
+//     }
+// };
+
+// const mapDispatchToProps = dispatch => {
+//     return {
+//     }
+// };
+
+// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(windowSize(RightPart)));

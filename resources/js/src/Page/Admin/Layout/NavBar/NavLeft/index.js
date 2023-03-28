@@ -8,6 +8,7 @@ import Aux from "../../../../../../hoc/_Aux";
 import DEMO from "../../../../../../store/constant";
 import * as actionTypes from "../../../../../../store/actions";
 
+
 class NavLeft extends Component {
 
     render() {

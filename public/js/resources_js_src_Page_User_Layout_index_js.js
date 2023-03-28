@@ -210,10 +210,19 @@ var tullSangamBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(functio
 var tripplePattiBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
   return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_TripplePattiBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/TripplePattiBet */ "./resources/js/src/Page/User/TripplePattiBet/index.js"));
 });
+var userManage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_userManage_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/userManage */ "./resources/js/src/Page/Admin/userManage/index.js"));
+});
 
 /*ADMIN */
 var adminDashBoard = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
   return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_DashBoard_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/DashBoard */ "./resources/js/src/Page/Admin/DashBoard/index.js"));
+});
+var gameList = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_GameManage_GameList_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/GameManage/GameList.js */ "./resources/js/src/Page/Admin/GameManage/GameList.js"));
+});
+var gameRates = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_GameManage_GameRates_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/GameManage/GameRates.js */ "./resources/js/src/Page/Admin/GameManage/GameRates.js"));
 });
 var routes = {
   user: [{
@@ -262,6 +271,21 @@ var routes = {
     exact: true,
     name: 'adminDashBoard',
     component: adminDashBoard
+  }, {
+    path: '/admin/user_manage',
+    exact: true,
+    name: 'USER MANAGEMENT',
+    component: userManage
+  }, {
+    path: '/admin/game_list',
+    exact: true,
+    name: 'GAME LIST',
+    component: gameList
+  }, {
+    path: '/admin/game_rates',
+    exact: true,
+    name: 'GAME LIST',
+    component: gameRates
   }]
 };
 /* harmony default export */ __webpack_exports__["default"] = (routes);
@@ -761,7 +785,9 @@ function Menu(props) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Component_CTab__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../Component/CTab */ "./resources/js/src/Component/CTab.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../store/actions */ "./resources/js/store/actions.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -773,43 +799,43 @@ function RightPart(props) {
     name: 'OPEN BET',
     content: 'You Don’t Have Any Bid Right Now !'
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "right-part",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "available-credit report-dlg",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "title",
         children: "AVAILABLE CREDIT"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "content",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "item",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "name",
             children: "ACCOUNT BALANCE"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "value",
             children: ": $500"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "item",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "name",
             children: "LAST CREDIT"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "value",
             children: ": $1000"
           })]
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "bid-history report-dlg",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "title",
         children: "BID HISTORY"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "content",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Component_CTab__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Component_CTab__WEBPACK_IMPORTED_MODULE_0__["default"], {
           tabs: bist_history_tabs
         })
       })]
@@ -817,6 +843,18 @@ function RightPart(props) {
   });
 }
 /* harmony default export */ __webpack_exports__["default"] = (RightPart);
+// const mapStateToProps = state => {
+//     return {
+//         bet_slip: state.bet_slip
+//     }
+// };
+
+// const mapDispatchToProps = dispatch => {
+//     return {
+//     }
+// };
+
+// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(windowSize(RightPart)));
 
 /***/ }),
 

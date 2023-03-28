@@ -2,6 +2,10 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\User\DashController;
+use App\Http\Controllers\Admin\AdminUsersController;
+use App\Http\Controllers\Admin\AdminGameController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +22,14 @@ Route::get("{any}", function () {
 })->where('any', '.*');
 
 Route::post('/test', [DashController::class, 'getLiveResult']);
+
+Route::post('/admin/get_user_data', [AdminUsersController::class, 'getUserData']);
+Route::post('/admin/add_user_data', [AdminUsersController::class, 'addUserData']);
+Route::post('/admin/get_game_list', [AdminGameController::class, 'getGameList']);
+Route::post('/admin/save_edit_game', [AdminGameController::class, 'saveEditGame']);
+
+Route::post('/admin/get_game_rates', [AdminGameController::class, 'getGameRates']);
+Route::post('/admin/save_game_rates', [AdminGameController::class, 'saveGameRates']);
+
+
+

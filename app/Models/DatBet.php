@@ -8,6 +8,6 @@ use App\Models\AdminLanguage;
 
 class DatBet extends Model
 {
-    protected $table = 'dat_market';
+    protected $table = 'dat_bet';
     use HasFactory;
 }

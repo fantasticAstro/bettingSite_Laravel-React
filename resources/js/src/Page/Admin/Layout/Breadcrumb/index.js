@@ -47,7 +47,6 @@ class Breadcrumb extends Component {
     render() {
         let main, item;
         let breadcrumb = '';
-        let title = 'Welcome';
         if (this.state.main && this.state.main.type === 'collapse') {
             main = (
                 <li className="breadcrumb-item">
@@ -89,7 +88,7 @@ class Breadcrumb extends Component {
 
         }
 
-        document.title = title + ' | Datta Able Free React + Redux Admin Template';
+        document.title = 'Admin Panel';
 
         return (
             <Aux>

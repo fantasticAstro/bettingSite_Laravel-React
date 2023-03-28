@@ -4,6 +4,10 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { Col, Row } from 'react-bootstrap';
 import CButton from './CButton';
 import {useState} from 'react' ;
+import * as actionTypes from '../../store/actions' ;
+import {connect} from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import {save_bid} from '../../api/market'
 
 function Market(props) {    
     const [check_bet, setChecBet] = useState({});
@@ -14,10 +18,22 @@ function Market(props) {
             _check_bet[`${number}`] = !_check_bet[`${number}`]  ;
         } else {
             _check_bet[`${number}`] = true ;
-        }    
+        } 
         setChecBet({..._check_bet}) ;
+        for(var k = 0 ; k < _check_bet.length ; k++) {
+            if(_check_bet[`${number}`]) {
+                
+            }
+        }
+        
     }
     
+
+    const saveBit = () => {
+        for(var k = 0 ; k < check_bet.length ; k++) {
+            
+        }
+    }
     return (
         <div className='market'>
             <div className='title'>
@@ -41,7 +57,6 @@ function Market(props) {
                 </Dropdown>
             </div>
             <div className='market-content'>
-
                 <BetField callback={setCheck} check_bet={check_bet} type={props.type}/>
             </div>
             <div className='bid-content'>
@@ -56,6 +71,7 @@ function Market(props) {
                     fonSize='15px'
                     hoverBackground='rgb(42,90,74)'
                     hoverColor='white'
+                    callback = {() => saveBit()}
                 />
             </div>
         </div>
@@ -64,18 +80,16 @@ function Market(props) {
 
 function BetField(props) {
     let type = props.type ;
-    if(type == "signe" || type == "single_patti") {
+    if(type == "single" || type == "single_patti") {
         return <SingleBet callback={props.callback} check_bet={props.check_bet}/>
     } else if(type == "double_patti" || type == "jodi") {
-        return <DoublePattiBet callback={props.callback} check_bet={props.check_bet} />
+        return <DoubleBet callback={props.callback} check_bet={props.check_bet} />
     } else if(type == "tripple_patti") {
-        return <TripplePattiBet callback={props.callback} check_bet={props.check_bet} />
+        return <TrippleBet callback={props.callback} check_bet={props.check_bet} />
     }
 }
-function TripplePattiBet(props) {
-    
-}
-function DoublePattiBet(props) {
+
+function DoubleBet(props) {
     var list = [] ;
     for(var k = 0 ; k<100 ; k++) {
         list.push(<BetNumItem number={k} is_check={false} callback={props.callback} check_state={props.check_bet[`${k}`]}/>) ;
@@ -98,9 +112,6 @@ function SingleBet(props) {
     ) ;
 }
 
-function DoubleBet() {
-
-}
 function TrippleBet() {
 
 }
@@ -124,4 +135,18 @@ function BetNumItem(props) {
         </Col>
     )
 }
-export default Market ;
+
+// export default Market ;
+
+const mapStateToProps = state => {
+    return {
+        bet_slip: state.bet_slip
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addBetSlip: () => dispatch({type: actionTypes.ADD_BET_SLIP, bet_slip:bet_slip}),
+    }
+};
+export default connect(mapStateToProps, mapDispatchToProps) (Market);

@@ -6,6 +6,7 @@ const initialState = {
     isTrigger: [], //for active default menu, set blank for horizontal
     ...config,
     isFullScreen: false, // static can't change
+    bet_slip:[]
 };
 
 const reducer = (state = initialState, action) => {
@@ -82,6 +83,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 layout: action.layout
+            };
+        case actionTypes.ADD_BET_SLIP :
+            return {
+                ...state,
+                bet_slip: action.bet_slip
             };
         default:
             return state;

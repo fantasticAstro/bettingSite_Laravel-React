@@ -5,13 +5,11 @@ import Loader from '../Layout/Loader' ;
 import Aux from '../../../../hoc/_Aux' ;
 import routes from "../../../../routes";
 import Fullscreen from "react-full-screen";
-import * as actionTypes from "../../../../store/actions";
 import Navigation from './Navigation';
 import NavBar from './NavBar';
 import Breadcrumb from './Breadcrumb';
 import '../../../../../css/admin/app.scss';
 import adminDefaultPath from '../DashBoard' ;
-
 
     
 

@@ -1,5 +1,4 @@
 import React, { Component, Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,7 +8,7 @@ import '../../css/app.css' ;
 
 import UserLoader from './Page/User/Layout/Loader' ;
 import AdminLoader from './Page/Admin/Layout/Loader' ;
-
+import ToastNotification from './Component/ToastNotification';
 
 const UserLayout = Loadable({
     loader: () => import('./Page/User/Layout'),
@@ -28,6 +27,7 @@ function Main(props) {
                 window.location.pathname.indexOf("admin") > -1  ?
                 <AdminLayout />:<UserLayout />   
             }
+            <ToastNotification />
         </>
     );
     
