@@ -1,14 +1,14 @@
 import Market from '../../../Component/Market' ;
 
-function SingleBet(props) {
+function JodiBet(props) {
     return (
         <div>
             <Market
-                type="SINGLE"
+                type="JODI"
             >
             </Market>                  
         </div>
     ) ;
 }
 
-export default SingleBet ;
+export default JodiBet ;

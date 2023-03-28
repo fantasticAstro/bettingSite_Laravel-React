@@ -1,14 +1,14 @@
 import Market from '../../../Component/Market' ;
 
-function SingleBet(props) {
+function HalfSangameBet(props) {
     return (
         <div>
             <Market
-                type="SINGLE"
+                type="HALF SANGAM"
             >
             </Market>                  
         </div>
     ) ;
 }
 
-export default SingleBet ;
+export default HalfSangameBet ;

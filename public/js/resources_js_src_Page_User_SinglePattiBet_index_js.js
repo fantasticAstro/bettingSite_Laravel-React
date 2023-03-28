@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkdatta_able_rv18_0_4"] = self["webpackChunkdatta_able_rv18_0_4"] || []).push([["resources_js_src_Page_User_SingleBet_index_js"],{
+(self["webpackChunkdatta_able_rv18_0_4"] = self["webpackChunkdatta_able_rv18_0_4"] || []).push([["resources_js_src_Page_User_SinglePattiBet_index_js"],{
 
 /***/ "./node_modules/@popperjs/core/lib/createPopper.js":
 /*!*********************************************************!*\
@@ -3356,10 +3356,10 @@ function BetNumItem(props) {
 
 /***/ }),
 
-/***/ "./resources/js/src/Page/User/SingleBet/index.js":
-/*!*******************************************************!*\
-  !*** ./resources/js/src/Page/User/SingleBet/index.js ***!
-  \*******************************************************/
+/***/ "./resources/js/src/Page/User/SinglePattiBet/index.js":
+/*!************************************************************!*\
+  !*** ./resources/js/src/Page/User/SinglePattiBet/index.js ***!
+  \************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -3367,14 +3367,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
-function SingleBet(props) {
+function SinglePattiBet(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Component_Market__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      type: "SINGLE"
+      type: "SINGLE PATTI"
     })
   });
 }
-/* harmony default export */ __webpack_exports__["default"] = (SingleBet);
+/* harmony default export */ __webpack_exports__["default"] = (SinglePattiBet);
 
 /***/ }),
 

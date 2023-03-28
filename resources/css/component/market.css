@@ -1,0 +1,85 @@
+
+.market .title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: black ;
+    margin: 0 0 10px;
+    border-bottom: 1px solid rgba(15,35,39,.4)  ;
+    
+}
+.market .title .name {
+    font-weight: 300px;
+    font-size: 24px;
+}
+.market .title .date {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    padding-top: 15px;
+    color: rgb(51, 50, 50)
+}
+.market .market-list .dropdown{
+    width: 50%;
+    margin: auto ;
+    margin-top: 15px;
+}
+
+.market .market-list .dropdown button, .dropdown-menu {
+    width: 100%;
+    background: #dedbd7 ;
+}
+.market .market-list .dropdown-menu {
+    padding: 0px;
+}
+.market .market-list .dropdown-menu .dropdown-item {
+    padding: 10px;
+}
+.market .market-list .dropdown-menu .dropdown-item:hover{
+    background: #acaaa9 ;
+}
+.market .market-content {
+    margin-top: 15px;
+}
+.market .market-content .item {
+    background: #dedbd7 ;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    line-height: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.market .market-content .item .bet-number {
+    width: 40%;
+    background: #3F7E68 ;
+    border-radius: 4px;
+    text-align: center;
+    color: white ;
+    font-size: 25px;
+}
+
+.market .market-content .col-sm-2 {
+    width: 50% !important ; 
+}
+.market .market-content .item .bet-check {
+    width: 60%;
+    text-align: center;
+}
+.market .bid-content {
+    margin-top: 15px;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    color: black ;
+    border-top: 1px solid rgba(15,35,39,.4) ;
+}
+
+.market .bid-content .bid-amount {
+    padding-left: 30px;
+    padding-top: 10px;
+    font-weight: bold;
+}

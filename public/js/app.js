@@ -34,7 +34,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   userDefaultPath: '/',
   adminDefaultPath: '/admin/',
-  adminBasename: '/datta-able/react/default',
+  adminBasename: '/',
   // only at build time to set, like /datta-able
   layout: 'vertical',
   // vertical, horizontal (not available in lite version)
@@ -79,48 +79,38 @@ __webpack_require__.r(__webpack_exports__);
   blockingColor: '#02a17c',
   userMenuList: [{
     name: 'SINGLE',
-    url: '',
+    url: '/single',
     icon: 'single',
     is_left: true
   }, {
     name: 'JODI',
-    url: '',
+    url: '/jodi',
     icon: 'jodi',
     is_left: true
   }, {
     name: 'SINGLE PATTI',
-    url: '',
+    url: '/single_patti',
     icon: 'single_patti',
     is_left: true
   }, {
     name: 'DOUBLE PATTI',
-    url: '',
+    url: 'double_patti',
     icon: 'double_patti',
     is_left: true
   }, {
     name: 'TRIPPLE PATTI',
-    url: '',
+    url: '/tripple_patti',
     icon: 'triple_patti',
     is_left: true
   }, {
     name: 'HALF SANGAM',
-    url: '',
+    url: 'half_sangam',
     icon: 'half_sangam',
     is_left: true
   }, {
     name: 'FULL SANGAM',
-    url: '',
+    url: 'full_sangam',
     icon: 'full_sangam',
-    is_left: true
-  }, {
-    name: 'ODD/EVEN',
-    url: '',
-    icon: 'odd_even',
-    is_left: false
-  }, {
-    name: 'RED BRACKET',
-    url: '',
-    icon: 'red_bracket',
     is_left: true
   }],
   adminMenuList: [{
@@ -329,14 +319,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/BrowserRouter.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/BrowserRouter.js");
 /* harmony import */ var _src_Main__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src/Main */ "./resources/js/src/Main.js");
 /* harmony import */ var _serviceWorker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./serviceWorker */ "./resources/js/serviceWorker.js");
 /* harmony import */ var _store_reducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store/reducer */ "./resources/js/store/reducer.js");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./config */ "./resources/js/config.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -345,14 +334,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// import config from './config';
 
-
-var store = (0,redux__WEBPACK_IMPORTED_MODULE_8__.createStore)(_store_reducer__WEBPACK_IMPORTED_MODULE_5__["default"]);
-var app = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_2__.Provider, {
+var store = (0,redux__WEBPACK_IMPORTED_MODULE_7__.createStore)(_store_reducer__WEBPACK_IMPORTED_MODULE_5__["default"]);
+var app = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_2__.Provider, {
   store: store,
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    basename: _config__WEBPACK_IMPORTED_MODULE_6__["default"].adminBasename,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_src_Main__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_src_Main__WEBPACK_IMPORTED_MODULE_3__["default"], {})
   })
 });
 react_dom__WEBPACK_IMPORTED_MODULE_1__.render(app, document.getElementById('root'));
@@ -35625,36 +35613,6 @@ function invariant(condition, message) {
 /******/ 		};
 /******/ 	}();
 /******/ 	
-/******/ 	/* webpack/runtime/create fake namespace object */
-/******/ 	!function() {
-/******/ 		var getProto = Object.getPrototypeOf ? function(obj) { return Object.getPrototypeOf(obj); } : function(obj) { return obj.__proto__; };
-/******/ 		var leafPrototypes;
-/******/ 		// create a fake namespace object
-/******/ 		// mode & 1: value is a module id, require it
-/******/ 		// mode & 2: merge all properties of value into the ns
-/******/ 		// mode & 4: return value when already ns object
-/******/ 		// mode & 16: return value when it's Promise-like
-/******/ 		// mode & 8|1: behave like require
-/******/ 		__webpack_require__.t = function(value, mode) {
-/******/ 			if(mode & 1) value = this(value);
-/******/ 			if(mode & 8) return value;
-/******/ 			if(typeof value === 'object' && value) {
-/******/ 				if((mode & 4) && value.__esModule) return value;
-/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
-/******/ 			}
-/******/ 			var ns = Object.create(null);
-/******/ 			__webpack_require__.r(ns);
-/******/ 			var def = {};
-/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
-/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
-/******/ 				Object.getOwnPropertyNames(current).forEach(function(key) { def[key] = function() { return value[key]; }; });
-/******/ 			}
-/******/ 			def['default'] = function() { return value; };
-/******/ 			__webpack_require__.d(ns, def);
-/******/ 			return ns;
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -35685,7 +35643,7 @@ function invariant(condition, message) {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = function(chunkId) {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_src_Page_User_Layout_index_js":1,"resources_js_src_Page_Admin_Layout_index_js":1,"resources_js_src_Page_User_DashBoard_index_js":1,"resources_js_src_Page_User_SingleBet_index_js":1,"resources_js_src_Page_Admin_DashBoard_index_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_src_Page_User_Layout_index_js":1,"resources_js_src_Page_Admin_Layout_index_js":1,"resources_js_src_Page_User_DashBoard_index_js":1,"resources_js_src_Page_User_SingleBet_index_js":1,"resources_js_src_Page_User_JodiBet_index_js":1,"resources_js_src_Page_User_SinglePattiBet_index_js":1,"resources_js_src_Page_User_DoublePattiBet_index_js":1,"resources_js_src_Page_User_HalfSangamBet_index_js":1,"resources_js_src_Page_User_FullSangamBet_index_js":1,"resources_js_src_Page_User_TripplePattiBet_index_js":1,"resources_js_src_Page_Admin_DashBoard_index_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

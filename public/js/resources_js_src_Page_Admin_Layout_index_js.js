@@ -3363,7 +3363,25 @@ var userDashBoard = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(functio
   return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_DashBoard_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/DashBoard */ "./resources/js/src/Page/User/DashBoard/index.js"));
 });
 var singleBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
-  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_SingleBet_index_js").then(__webpack_require__.t.bind(__webpack_require__, /*! ./src/Page/User/SingleBet */ "./resources/js/src/Page/User/SingleBet/index.js", 23));
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_SingleBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/SingleBet */ "./resources/js/src/Page/User/SingleBet/index.js"));
+});
+var jodiBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_JodiBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/JodiBet */ "./resources/js/src/Page/User/JodiBet/index.js"));
+});
+var singlePattiBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_SinglePattiBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/SinglePattiBet */ "./resources/js/src/Page/User/SinglePattiBet/index.js"));
+});
+var doublePattiBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_DoublePattiBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/DoublePattiBet */ "./resources/js/src/Page/User/DoublePattiBet/index.js"));
+});
+var halfSangamBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_HalfSangamBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/HalfSangamBet */ "./resources/js/src/Page/User/HalfSangamBet/index.js"));
+});
+var tullSangamBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_FullSangamBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/FullSangamBet */ "./resources/js/src/Page/User/FullSangamBet/index.js"));
+});
+var tripplePattiBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_TripplePattiBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/TripplePattiBet */ "./resources/js/src/Page/User/TripplePattiBet/index.js"));
 });
 
 /*ADMIN */
@@ -3376,17 +3394,47 @@ var routes = {
     exact: true,
     name: 'Default',
     component: userDashBoard
+  }, {
+    path: '/single',
+    exact: true,
+    name: 'singleBet',
+    component: singleBet
+  }, {
+    path: '/jodi',
+    exact: true,
+    name: 'jodiBet',
+    component: jodiBet
+  }, {
+    path: '/single_patti',
+    exact: true,
+    name: 'jodiBet',
+    component: singlePattiBet
+  }, {
+    path: '/double_patti',
+    exact: true,
+    name: 'jodiBet',
+    component: doublePattiBet
+  }, {
+    path: '/half_sangam',
+    exact: true,
+    name: 'jodiBet',
+    component: halfSangamBet
+  }, {
+    path: '/full_sangam',
+    exact: true,
+    name: 'jodiBet',
+    component: tullSangamBet
+  }, {
+    path: '/tripple_sangam',
+    exact: true,
+    name: 'jodiBet',
+    component: tripplePattiBet
   }],
   admin: [{
     path: '/admin',
     exact: true,
     name: 'adminDashBoard',
     component: adminDashBoard
-  }, {
-    path: '/single',
-    exact: true,
-    name: 'singleBet',
-    component: singleBet
   }]
 };
 /* harmony default export */ __webpack_exports__["default"] = (routes);

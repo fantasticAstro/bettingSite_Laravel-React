@@ -28,6 +28,8 @@ class DatBet extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('dat_bet', function (Blueprint $table) {
+            $table->integer('market_id')->length(11);
+        });
     }
 }

@@ -190,7 +190,25 @@ var userDashBoard = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(functio
   return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_DashBoard_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/DashBoard */ "./resources/js/src/Page/User/DashBoard/index.js"));
 });
 var singleBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
-  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_SingleBet_index_js").then(__webpack_require__.t.bind(__webpack_require__, /*! ./src/Page/User/SingleBet */ "./resources/js/src/Page/User/SingleBet/index.js", 23));
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_SingleBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/SingleBet */ "./resources/js/src/Page/User/SingleBet/index.js"));
+});
+var jodiBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_JodiBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/JodiBet */ "./resources/js/src/Page/User/JodiBet/index.js"));
+});
+var singlePattiBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_SinglePattiBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/SinglePattiBet */ "./resources/js/src/Page/User/SinglePattiBet/index.js"));
+});
+var doublePattiBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_DoublePattiBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/DoublePattiBet */ "./resources/js/src/Page/User/DoublePattiBet/index.js"));
+});
+var halfSangamBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_HalfSangamBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/HalfSangamBet */ "./resources/js/src/Page/User/HalfSangamBet/index.js"));
+});
+var tullSangamBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_FullSangamBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/FullSangamBet */ "./resources/js/src/Page/User/FullSangamBet/index.js"));
+});
+var tripplePattiBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_TripplePattiBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/TripplePattiBet */ "./resources/js/src/Page/User/TripplePattiBet/index.js"));
 });
 
 /*ADMIN */
@@ -203,17 +221,47 @@ var routes = {
     exact: true,
     name: 'Default',
     component: userDashBoard
+  }, {
+    path: '/single',
+    exact: true,
+    name: 'singleBet',
+    component: singleBet
+  }, {
+    path: '/jodi',
+    exact: true,
+    name: 'jodiBet',
+    component: jodiBet
+  }, {
+    path: '/single_patti',
+    exact: true,
+    name: 'jodiBet',
+    component: singlePattiBet
+  }, {
+    path: '/double_patti',
+    exact: true,
+    name: 'jodiBet',
+    component: doublePattiBet
+  }, {
+    path: '/half_sangam',
+    exact: true,
+    name: 'jodiBet',
+    component: halfSangamBet
+  }, {
+    path: '/full_sangam',
+    exact: true,
+    name: 'jodiBet',
+    component: tullSangamBet
+  }, {
+    path: '/tripple_sangam',
+    exact: true,
+    name: 'jodiBet',
+    component: tripplePattiBet
   }],
   admin: [{
     path: '/admin',
     exact: true,
     name: 'adminDashBoard',
     component: adminDashBoard
-  }, {
-    path: '/single',
-    exact: true,
-    name: 'singleBet',
-    component: singleBet
   }]
 };
 /* harmony default export */ __webpack_exports__["default"] = (routes);
@@ -553,6 +601,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function Header(props) {
   var Login = function Login() {};
   var Signup = function Signup() {};
@@ -560,8 +609,9 @@ function Header(props) {
     className: "page-header",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "desktop-header",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
         className: "header-mark",
+        href: "/",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: "/images/mark.png"
         })
@@ -670,6 +720,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
+
 function Menu(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     className: "page-menu",
@@ -685,9 +736,12 @@ function Menu(props) {
           height: '35px'
         },
         children: _config__WEBPACK_IMPORTED_MODULE_0__["default"].userMenuList.map(function (item, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "item",
-            children: item.name
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+            href: item.url,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "item ".concat(document.location.pathname === item.url ? 'active' : ''),
+              children: item.name
+            })
           });
         })
       })
@@ -13135,7 +13189,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".page-header {\r\n    width: 100%;\r\n    height: 157px;\r\n    background: #3F7E68 ;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n.page-header .now-time {\r\n    font-weight: 800;\r\n    font-size: 16px;\r\n    color: white ;\r\n    padding-top: 10px;\r\n}\r\n.page-header .desktop-header {\r\n    width: 1270px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: auto;\r\n}\r\n\r\n.page-menu {\r\n    width: 100%;\r\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\r\n    background: white;\r\n}\r\n\r\n.page-menu .item {\r\n    font-weight: 700;\r\n    font-size: 12px;\r\n    color: black;\r\n    cursor: pointer;\r\n}\r\n\r\n.page-content {\r\n    padding: 0px 15px 163px 15px;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    margin-top: 5px;\r\n}\r\n.page-content .left-part {\r\n    width: 175px;\r\n    background: white ;\r\n    height: 100%;\r\n    border: 1px solid #ddd ;\r\n    padding-bottom: 10px;\r\n}\r\n.page-content .right-part {\r\n    width: 23%;\r\n    position: -webkit-sticky;\r\n    position: sticky;\r\n    top: 0px;\r\n    height: 100px;\r\n}\r\n.page-content .main-content {\r\n    width: 59%;\r\n    padding: 0px 15px;\r\n    padding-bottom: 20px;\r\n}\r\n.page-content .left-part .page-list .item {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-content: center;\r\n    border: 0.5px solid #ddd ;\r\n    padding: 15px 0px; \r\n    cursor: pointer;\r\n}\r\n.page-content .left-part .page-list .item:hover {\r\n    background: #ecebeb;\r\n    width: 90%;\r\n    height: 90%;\r\n    margin-left: 5%;\r\n    transition: .2s ease;\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n}\r\n\r\n.page-content .left-part .page-list .item .icon {\r\n    width: 30% ;\r\n    padding-left: 25px;\r\n    text-align: center;\r\n}\r\n.page-content .left-part .page-list .item .icon img {\r\n    width: 30px;\r\n}\r\n.page-content .left-part .page-list .item .name {\r\n    width: 60% ;\r\n    text-align: left;\r\n    font-size: 12px;\r\n    font-weight: 600;\r\n    padding-top: 10px;\r\n}\r\n.page-content .left-part .create-instant {\r\n    margin-top: 20px;\r\n    padding: 15px;\r\n    width: 100%;\r\n}\r\n.page-content .left-part .create-instant {\r\n    font-size: 12px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n}\r\n.page-content .left-part .create-instant .item {\r\n    cursor: pointer;\r\n}\r\n.page-content .left-part .create-instant .content{\r\n    margin-top: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n.page-content .left-part .google-play {\r\n    text-align: center;\r\n    margin-top: 30px;\r\n    width: 100%;\r\n}\r\n.page-content .left-part .google-play img {\r\n    width: 90%;\r\n    margin: auto;\r\n}\r\n\r\n.page-content .right-part .report-dlg {\r\n    width: 100%;\r\n    background: #FFFFFF;   \r\n}\r\n\r\n.page-content .right-part .report-dlg .title {\r\n    font-size: 14px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n    padding: 7px;\r\n    background: #3F7E68;\r\n    color: white ;\r\n}\r\n\r\n.page-content .right-part .report-dlg .content {\r\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);   \r\n}\r\n.page-content .right-part .available-credit{\r\n    margin-bottom: 27px;\r\n}\r\n.page-content .right-part .available-credit .content {\r\n    width: 100%;\r\n    padding: 5px 18px;   \r\n}\r\n\r\n.page-content .right-part .available-credit .content .item {\r\n    margin-top: 14px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-weight: 500;\r\n    font-size: 12px;\r\n    \r\n}\r\n.page-content .right-part .available-credit .content .item .name {\r\n    width: 70%;\r\n}\r\n.page-content .right-part .available-credit .content .item .value {\r\n    width: 30%;\r\n    padding-left: 10px;\r\n}\r\n\r\n.page-content .right-part .bid-history .content {\r\n    min-height: 100px;\r\n    width: 100%;\r\n}\r\n\r\n.page-footer {\r\n    width: 100%;\r\n    background: #3F7E68 ;\r\n\r\n}\r\n.page-footer .desktop-footer {\r\n    background: #3F7E68 ;\r\n    color: white ;\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    /* padding: 43px 110px 23px 110px; */\r\n}\r\n.page-footer .desktop-footer .company-info {\r\n    padding: 20px;\r\n    font-weight: 400;\r\n}\r\n.page-footer .desktop-footer .companies-logo{\r\n    display: grid;\r\n    grid-template-columns: repeat(8,1fr);\r\n    grid-column-gap: 11px;\r\n    margin-top: 30px;\r\n}\r\n\r\n.page-footer .desktop-footer .companies-logo .item{\r\n    align-self: center;\r\n    justify-self: center;\r\n}\r\n.page-footer .desktop-footer .policy-group {\r\n    display: flex ;\r\n    justify-content: space-around;\r\n    margin-top: 30px;\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n}\r\n.page-footer .desktop-footer .version {\r\n    text-align: center;\r\n    margin-top: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n\r\n}\r\n.bm-burger-button {\r\n    display: none !important;\r\n}\r\n\r\n@media screen and (max-width: 1280px){\r\n    .page-container {\r\n        width: 100%;\r\n    }\r\n    .page-content {\r\n        display: block;\r\n        padding: 0px;\r\n    }\r\n    .page-content .main-content{\r\n        width: 100%;\r\n    }\r\n    .page-content .left-part {\r\n        display: none;\r\n    }\r\n    .page-content .right-part {\r\n        display: none;\r\n    }\r\n    .page-menu {\r\n        display: none;\r\n    }\r\n    .page-footer .desktop-footer {\r\n        padding: 15px;\r\n    }\r\n    \r\n    .bm-burger-button {\r\n        display: block !important;\r\n    }\r\n    .page-header {\r\n        height: 60px;\r\n        line-height: 60px;\r\n    }\r\n    .page-header .desktop-header {\r\n        padding-left: 50px;\r\n    }\r\n    .page-header .header-mark img {\r\n        width: 120px;\r\n    }\r\n    .page-header .now-time {\r\n        display: none;\r\n    }\r\n    .dash-board .bet-buttons .item {    \r\n        height: 30px !important;\r\n        line-height: 30px !important;\r\n    }\r\n\r\n    .page-footer .desktop-footer .companies-logo{\r\n        grid-template-columns: repeat(2,1fr);\r\n        grid-row-gap: 27px;\r\n        grid-column-gap: unset;\r\n    }   \r\n    .page-footer .desktop-footer .company-info {\r\n        padding: 20px 10px;\r\n    }\r\n    .page-footer .desktop-footer .policy-group {\r\n        display: none   ;\r\n    }\r\n    .header-desktop-search-field {\r\n        display: none !important;\r\n    }\r\n    .header-mobile-search-field {\r\n        display: block !important; \r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".page-header {\r\n    width: 100%;\r\n    height: 157px;\r\n    background: #3F7E68 ;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n.page-header .now-time {\r\n    font-weight: 800;\r\n    font-size: 16px;\r\n    color: white ;\r\n    padding-top: 10px;\r\n}\r\n.page-header .desktop-header {\r\n    width: 1270px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: auto;\r\n}\r\n\r\n.page-menu {\r\n    width: 100%;\r\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\r\n    background: white;\r\n}\r\n.page-menu a {\r\n    border: none ;\r\n}\r\n.page-menu .item {\r\n    font-weight: 700;\r\n    font-size: 12px;\r\n    color: black;\r\n    cursor: pointer;\r\n}\r\n\r\n.page-menu .active {\r\n    color: #c95c54 ;\r\n}\r\n\r\n.page-content {\r\n    padding: 0px 15px 163px 15px;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    margin-top: 5px;\r\n}\r\n.page-content .left-part {\r\n    width: 175px;\r\n    background: white ;\r\n    height: 100%;\r\n    border: 1px solid #ddd ;\r\n    padding-bottom: 10px;\r\n}\r\n.page-content .right-part {\r\n    width: 23%;\r\n    position: -webkit-sticky;\r\n    position: sticky;\r\n    top: 0px;\r\n    height: 100px;\r\n}\r\n.page-content .main-content {\r\n    width: 59%;\r\n    padding: 0px 15px;\r\n    padding-bottom: 20px;\r\n}\r\n.page-content .left-part .page-list .item {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-content: center;\r\n    border: 0.5px solid #ddd ;\r\n    padding: 15px 0px; \r\n    cursor: pointer;\r\n}\r\n.page-content .left-part .page-list .item:hover {\r\n    background: #ecebeb;\r\n    width: 90%;\r\n    height: 90%;\r\n    margin-left: 5%;\r\n    transition: .2s ease;\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n}\r\n\r\n.page-content .left-part .page-list .item .icon {\r\n    width: 30% ;\r\n    padding-left: 25px;\r\n    text-align: center;\r\n}\r\n.page-content .left-part .page-list .item .icon img {\r\n    width: 30px;\r\n}\r\n.page-content .left-part .page-list .item .name {\r\n    width: 60% ;\r\n    text-align: left;\r\n    font-size: 12px;\r\n    font-weight: 600;\r\n    padding-top: 10px;\r\n}\r\n.page-content .left-part .create-instant {\r\n    margin-top: 20px;\r\n    padding: 15px;\r\n    width: 100%;\r\n}\r\n.page-content .left-part .create-instant {\r\n    font-size: 12px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n}\r\n.page-content .left-part .create-instant .item {\r\n    cursor: pointer;\r\n}\r\n.page-content .left-part .create-instant .content{\r\n    margin-top: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n.page-content .left-part .google-play {\r\n    text-align: center;\r\n    margin-top: 30px;\r\n    width: 100%;\r\n}\r\n.page-content .left-part .google-play img {\r\n    width: 90%;\r\n    margin: auto;\r\n}\r\n\r\n.page-content .right-part .report-dlg {\r\n    width: 100%;\r\n    background: #FFFFFF;   \r\n}\r\n\r\n.page-content .right-part .report-dlg .title {\r\n    font-size: 14px;\r\n    font-weight: 600;\r\n    text-align: center;\r\n    padding: 7px;\r\n    background: #3F7E68;\r\n    color: white ;\r\n}\r\n\r\n.page-content .right-part .report-dlg .content {\r\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);   \r\n}\r\n.page-content .right-part .available-credit{\r\n    margin-bottom: 27px;\r\n}\r\n.page-content .right-part .available-credit .content {\r\n    width: 100%;\r\n    padding: 5px 18px;   \r\n}\r\n\r\n.page-content .right-part .available-credit .content .item {\r\n    margin-top: 14px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-weight: 500;\r\n    font-size: 12px;\r\n    \r\n}\r\n.page-content .right-part .available-credit .content .item .name {\r\n    width: 70%;\r\n}\r\n.page-content .right-part .available-credit .content .item .value {\r\n    width: 30%;\r\n    padding-left: 10px;\r\n}\r\n\r\n.page-content .right-part .bid-history .content {\r\n    min-height: 100px;\r\n    width: 100%;\r\n}\r\n\r\n.page-footer {\r\n    width: 100%;\r\n    background: #3F7E68 ;\r\n\r\n}\r\n.page-footer .desktop-footer {\r\n    background: #3F7E68 ;\r\n    color: white ;\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n    /* padding: 43px 110px 23px 110px; */\r\n}\r\n.page-footer .desktop-footer .company-info {\r\n    padding: 20px;\r\n    font-weight: 400;\r\n}\r\n.page-footer .desktop-footer .companies-logo{\r\n    display: grid;\r\n    grid-template-columns: repeat(8,1fr);\r\n    grid-column-gap: 11px;\r\n    margin-top: 30px;\r\n}\r\n\r\n.page-footer .desktop-footer .companies-logo .item{\r\n    align-self: center;\r\n    justify-self: center;\r\n}\r\n.page-footer .desktop-footer .policy-group {\r\n    display: flex ;\r\n    justify-content: space-around;\r\n    margin-top: 30px;\r\n    font-size: 15px;\r\n    font-weight: 700;\r\n}\r\n.page-footer .desktop-footer .version {\r\n    text-align: center;\r\n    margin-top: 55px;\r\n    font-size: 12px;\r\n    font-weight: 400;\r\n\r\n}\r\n.bm-burger-button {\r\n    display: none !important;\r\n}\r\n\r\n@media screen and (max-width: 1280px){\r\n    .page-container {\r\n        width: 100%;\r\n    }\r\n    .page-content {\r\n        display: block;\r\n        padding: 0px;\r\n    }\r\n    .page-content .main-content{\r\n        width: 100%;\r\n    }\r\n    .page-content .left-part {\r\n        display: none;\r\n    }\r\n    .page-content .right-part {\r\n        display: none;\r\n    }\r\n    .page-menu {\r\n        display: none;\r\n    }\r\n    .page-footer .desktop-footer {\r\n        padding: 15px;\r\n    }\r\n    \r\n    .bm-burger-button {\r\n        display: block !important;\r\n    }\r\n    .page-header {\r\n        height: 60px;\r\n        line-height: 60px;\r\n    }\r\n    .page-header .desktop-header {\r\n        padding-left: 50px;\r\n    }\r\n    .page-header .header-mark img {\r\n        width: 120px;\r\n    }\r\n    .page-header .now-time {\r\n        display: none;\r\n    }\r\n    .dash-board .bet-buttons .item {    \r\n        height: 30px !important;\r\n        line-height: 30px !important;\r\n    }\r\n\r\n    .page-footer .desktop-footer .companies-logo{\r\n        grid-template-columns: repeat(2,1fr);\r\n        grid-row-gap: 27px;\r\n        grid-column-gap: unset;\r\n    }   \r\n    .page-footer .desktop-footer .company-info {\r\n        padding: 20px 10px;\r\n    }\r\n    .page-footer .desktop-footer .policy-group {\r\n        display: none   ;\r\n    }\r\n    .header-desktop-search-field {\r\n        display: none !important;\r\n    }\r\n    .header-mobile-search-field {\r\n        display: block !important; \r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 

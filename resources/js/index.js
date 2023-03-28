@@ -7,13 +7,13 @@ import {BrowserRouter} from 'react-router-dom';
 import Main from './src/Main';
 import * as serviceWorker from './serviceWorker';
 import reducer from './store/reducer';
-import config from './config';
+// import config from './config';
 
 const store = createStore(reducer);
 
 const app = (
     <Provider store={store}>
-        <BrowserRouter basename={config.adminBasename}>
+        <BrowserRouter>
             <Main />
         </BrowserRouter>
     </Provider>

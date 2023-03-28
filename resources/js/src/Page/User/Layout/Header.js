@@ -2,6 +2,7 @@
 import {Row, Col} from 'react-bootstrap' ;
 import CButton from '../../../Component/CButton' ;
 import SearchBar from '../../../Component/SearchBar' ;
+import { Link } from 'react-router-dom';
 
 function Header(props) {
     const Login = () => {
@@ -11,13 +12,12 @@ function Header(props) {
 
     }
 
-
     return(
         <div className='page-header'>
             <div className='desktop-header'>
-                <div className='header-mark'>
+                <a className='header-mark' href={`/`}>
                     <img src="/images/mark.png"/>
-                </div>
+                </a>
                 <div className='now-time'>
                     Mar 
                 </div>

@@ -24,12 +24,18 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background: white;
 }
-
+.page-menu a {
+    border: none ;
+}
 .page-menu .item {
     font-weight: 700;
     font-size: 12px;
     color: black;
     cursor: pointer;
+}
+
+.page-menu .active {
+    color: #c95c54 ;
 }
 
 .page-content {

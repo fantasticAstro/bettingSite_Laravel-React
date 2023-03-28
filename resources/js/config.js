@@ -1,7 +1,7 @@
 export default {
     userDefaultPath: '/',
     adminDefaultPath: '/admin/',
-    adminBasename: '/datta-able/react/default', // only at build time to set, like /datta-able
+    adminBasename: '/', // only at build time to set, like /datta-able
     layout: 'vertical', // vertical, horizontal (not available in lite version)
     preLayout: null, // (not available in lite version)
     collapseMenu: false, // mini-menu
@@ -26,15 +26,13 @@ export default {
     blockingType: 'ball-triangle-path',
     blockingColor: '#02a17c',
     userMenuList:[
-        {name: 'SINGLE', url:'',icon:'single', is_left: true},
-        {name: 'JODI', url:'',icon:'jodi',is_left: true},
-        {name: 'SINGLE PATTI', url:'', icon:'single_patti',is_left: true},
-        {name: 'DOUBLE PATTI', url:'',icon:'double_patti',is_left: true},
-        {name: 'TRIPPLE PATTI', url:'', icon:'triple_patti',is_left: true},
-        {name: 'HALF SANGAM', url:'', icon:'half_sangam',is_left: true},
-        {name: 'FULL SANGAM', url:'', icon: 'full_sangam',is_left: true},
-        {name: 'ODD/EVEN', url:'', icon:'odd_even',is_left: false},
-        {name: 'RED BRACKET', url:'', icon:'red_bracket',is_left: true},
+        {name: 'SINGLE', url:'/single',icon:'single', is_left: true},
+        {name: 'JODI', url:'/jodi',icon:'jodi',is_left: true},
+        {name: 'SINGLE PATTI', url:'/single_patti', icon:'single_patti',is_left: true},
+        {name: 'DOUBLE PATTI', url:'double_patti',icon:'double_patti',is_left: true},
+        {name: 'TRIPPLE PATTI', url:'/tripple_patti', icon:'triple_patti',is_left: true},
+        {name: 'HALF SANGAM', url:'half_sangam', icon:'half_sangam',is_left: true},
+        {name: 'FULL SANGAM', url:'full_sangam', icon: 'full_sangam',is_left: true},
     ],
     adminMenuList: [
             {
