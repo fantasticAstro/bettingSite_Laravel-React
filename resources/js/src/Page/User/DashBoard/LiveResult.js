@@ -23,6 +23,7 @@ function LiveResult(props){
         }) ;
         return ;
     }, 1);
+    
     return(
         <div className='live-result'>
             <div className='title'>

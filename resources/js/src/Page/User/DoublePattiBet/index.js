@@ -4,7 +4,8 @@ function DoublePattiBet(props) {
     return (
         <div>
             <Market
-                type="DOUBLE PATTI"
+                name="DOUBLE PATTI"
+                type="double_patti"
             >
             </Market>                  
         </div>

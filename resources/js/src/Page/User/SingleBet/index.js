@@ -4,7 +4,8 @@ function SingleBet(props) {
     return (
         <div>
             <Market
-                type="SINGLE"
+                name="SINGLE"
+                type="single"
             >
             </Market>                  
         </div>

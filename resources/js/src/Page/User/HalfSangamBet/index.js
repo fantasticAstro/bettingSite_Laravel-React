@@ -4,7 +4,8 @@ function HalfSangameBet(props) {
     return (
         <div>
             <Market
-                type="HALF SANGAM"
+                name="HALF SANGAM"
+                type="half_sangam"
             >
             </Market>                  
         </div>

@@ -4,7 +4,8 @@ function JodiBet(props) {
     return (
         <div>
             <Market
-                type="JODI"
+                name="JODI"
+                type="jodi"
             >
             </Market>                  
         </div>

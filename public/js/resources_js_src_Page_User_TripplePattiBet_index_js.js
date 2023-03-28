@@ -3231,7 +3231,7 @@ function Market(props) {
       className: "title",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "name",
-        children: props.type
+        children: props.name
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "date",
         children: "20232-2"
@@ -3282,17 +3282,17 @@ function Market(props) {
 }
 function BetField(props) {
   var type = props.type;
-  if (type == "SINGLE" || type == "SINGLE PATTI") {
+  if (type == "signe" || type == "single_patti") {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(SingleBet, {
       callback: props.callback,
       check_bet: props.check_bet
     });
-  } else if (type == "DOUBLE PATTI" || type == "JODI") {
+  } else if (type == "double_patti" || type == "jodi") {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(DoublePattiBet, {
       callback: props.callback,
       check_bet: props.check_bet
     });
-  } else if (type == "TRIPPLE PATTI") {
+  } else if (type == "tripple_patti") {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(TripplePattiBet, {
       callback: props.callback,
       check_bet: props.check_bet
@@ -3370,7 +3370,8 @@ __webpack_require__.r(__webpack_exports__);
 function TripplePattiBet(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Component_Market__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      type: "TRIPPLE PATTI"
+      name: "TRIPPLE PATTI",
+      type: "tripple_patti"
     })
   });
 }

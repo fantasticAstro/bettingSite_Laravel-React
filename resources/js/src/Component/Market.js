@@ -22,7 +22,7 @@ function Market(props) {
         <div className='market'>
             <div className='title'>
                 <div className='name'>
-                    {props.type}
+                    {props.name}
                 </div>
                 <div className='date'>
                     20232-2
@@ -64,11 +64,11 @@ function Market(props) {
 
 function BetField(props) {
     let type = props.type ;
-    if(type == "SINGLE" || type == "SINGLE PATTI") {
+    if(type == "signe" || type == "single_patti") {
         return <SingleBet callback={props.callback} check_bet={props.check_bet}/>
-    } else if(type == "DOUBLE PATTI" || type == "JODI") {
+    } else if(type == "double_patti" || type == "jodi") {
         return <DoublePattiBet callback={props.callback} check_bet={props.check_bet} />
-    } else if(type == "TRIPPLE PATTI") {
+    } else if(type == "tripple_patti") {
         return <TripplePattiBet callback={props.callback} check_bet={props.check_bet} />
     }
 }

@@ -4,7 +4,8 @@ function SinglePattiBet(props) {
     return (
         <div>
             <Market
-                type="SINGLE PATTI"
+                name="SINGLE PATTI"
+                type="single_patti"
             >
             </Market>                  
         </div>
