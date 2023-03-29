@@ -98,8 +98,8 @@ __webpack_require__.r(__webpack_exports__);
     icon: 'double_patti',
     is_left: true
   }, {
-    name: 'TRIPPLE PATTI',
-    url: '/tripple_patti',
+    name: 'TRIPLE PATTI',
+    url: '/triple_patti',
     icon: 'triple_patti',
     is_left: true
   }, {

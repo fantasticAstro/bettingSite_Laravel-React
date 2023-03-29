@@ -30,7 +30,7 @@ export default {
         {name: 'JODI', url:'/jodi',icon:'jodi',is_left: true},
         {name: 'SINGLE PATTI', url:'/single_patti', icon:'single_patti',is_left: true},
         {name: 'DOUBLE PATTI', url:'double_patti',icon:'double_patti',is_left: true},
-        {name: 'TRIPPLE PATTI', url:'/tripple_patti', icon:'triple_patti',is_left: true},
+        {name: 'TRIPLE PATTI', url:'/triple_patti', icon:'triple_patti',is_left: true},
         {name: 'HALF SANGAM', url:'half_sangam', icon:'half_sangam',is_left: true},
         {name: 'FULL SANGAM', url:'full_sangam', icon: 'full_sangam',is_left: true},
     ],

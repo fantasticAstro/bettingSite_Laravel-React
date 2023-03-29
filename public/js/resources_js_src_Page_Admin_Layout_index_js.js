@@ -3487,7 +3487,7 @@ var routes = {
     name: 'jodiBet',
     component: singlePattiBet
   }, {
-    path: '/tripple_patti',
+    path: '/triple_patti',
     exact: true,
     name: 'jodiBet',
     component: tripplePattiBet
@@ -3506,11 +3506,6 @@ var routes = {
     exact: true,
     name: 'jodiBet',
     component: tullSangamBet
-  }, {
-    path: '/tripple_sangam',
-    exact: true,
-    name: 'jodiBet',
-    component: tripplePattiBet
   }],
   admin: [{
     path: '/admin',

@@ -31,11 +31,10 @@ const routes = {
         { path: '/single', exact: true, name: 'singleBet', component: singleBet },
         { path: '/jodi', exact: true, name: 'jodiBet', component: jodiBet },
         { path: '/single_patti', exact: true, name: 'jodiBet', component: singlePattiBet },
-        { path: '/tripple_patti', exact: true, name: 'jodiBet', component: tripplePattiBet },
+        { path: '/triple_patti', exact: true, name: 'jodiBet', component: tripplePattiBet },
         { path: '/double_patti', exact: true, name: 'jodiBet', component: doublePattiBet },
         { path: '/half_sangam', exact: true, name: 'jodiBet', component: halfSangamBet },
         { path: '/full_sangam', exact: true, name: 'jodiBet', component: tullSangamBet },
-        { path: '/tripple_sangam', exact: true, name: 'jodiBet', component: tripplePattiBet },
     ],
     admin:[
         { path: '/admin', exact: true, name: 'adminDashBoard', component: adminDashBoard },

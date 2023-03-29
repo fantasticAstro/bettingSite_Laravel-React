@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 use App\Models\DatMarket;
 use App\Models\DatBet;
+use App\Models\MarketCategory;
 use App\Models\TransactionLog;
 
 
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App;
+use Carbon\Carbon;
 
 
 class MarketController extends Controller
@@ -17,39 +19,49 @@ class MarketController extends Controller
     public function getMarketList(Request $request) {
         $bet_type = $request->bet_type ;
 
-        $ret = DatMarket::where("status", "Y")->select(["id", "name", "open_time", "close_time", "status"])->get()->toArray() ;
+        $dayBefore = (new Carbon())->modify('-1 day')->format('Y-m-d') ;
+        $dayafter = (new Carbon())->modify('+1 day')->format('Y-m-d') ;
+
+        $ret = DatMarket::where("status", "N")
+        ->whereDate("date", ">", "$dayBefore")
+        ->whereDate("date", "<", "$dayafter")
+        ->select("*")
+        ->get()
+        ->toArray() ;
         $data_ = array() ;
         
         foreach($ret as $item) {
             $type = "" ;
             $time="00:00" ;
+            
+            $market_info = MarketCategory::where("id", $item["id"])
+            ->where("status", "Y")
+            ->select(["name", "open_time", "close_time", "id"])
+            ->get()
+            ->toArray() ;
+            if(!$market_info)  {
+                continue ;
+            }
 
+            $market_info = $market_info[0] ;
             $now = strtotime(date("Y-m-d H:i:s")) ;
-            $open_time = strtotime(date("Y-m-d {$item['open_time']}")) ;
-            $close_time = strtotime(date("Y-m-d {$item['close_time']}")) ;
+            $open_time = strtotime(date("Y-m-d {$market_info['open_time']}")) ;
+            $close_time = strtotime(date("Y-m-d {$market_info['close_time']}")) ;
             if($now< $open_time) {
                 $type = "OPEN" ;
-                $time = $item['open_time'] ;
+                $time = $market_info['open_time'] ;
             } else if($now < $close_time && $now > $open_time) {
                 $type = "CLOSE" ;
-                $time = $item['close_time'] ;
+                $time = $market_info['close_time'] ;
             } else {
                 continue ;
             }
 
-            if($bet_type == "tripple_patti" && $type != "open") {
-                continue ;
-            }
-
             
-
-            $item['type'] = $type ;
-            $item['time'] = $time ;
-            $data_[] = $item ;
-            
+            $market_info['type'] = $type ;
+            $market_info['time'] = $time ;
+            $data_[] = $market_info ;   
         }
-        
-        
         return response()->json($data_);
     }
     public function getBetInfo(Request $request) {
