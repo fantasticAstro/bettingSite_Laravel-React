@@ -210,9 +210,6 @@ var tullSangamBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(functio
 var tripplePattiBet = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
   return __webpack_require__.e(/*! import() */ "resources_js_src_Page_User_TripplePattiBet_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/User/TripplePattiBet */ "./resources/js/src/Page/User/TripplePattiBet/index.js"));
 });
-var userManage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
-  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_userManage_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/userManage */ "./resources/js/src/Page/Admin/userManage/index.js"));
-});
 
 /*ADMIN */
 var adminDashBoard = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
@@ -223,6 +220,12 @@ var gameList = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () 
 });
 var gameRates = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
   return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_GameManage_GameRates_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/GameManage/GameRates.js */ "./resources/js/src/Page/Admin/GameManage/GameRates.js"));
+});
+var userManage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_userManage_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/userManage */ "./resources/js/src/Page/Admin/userManage/index.js"));
+});
+var userDetail = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_userManage_UserDetail_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/userManage/UserDetail */ "./resources/js/src/Page/Admin/userManage/UserDetail.js"));
 });
 var routes = {
   user: [{
@@ -286,6 +289,11 @@ var routes = {
     exact: true,
     name: 'GAME LIST',
     component: gameRates
+  }, {
+    path: '/admin/user_profile/:id',
+    exact: true,
+    name: 'User Detail',
+    component: userDetail
   }]
 };
 /* harmony default export */ __webpack_exports__["default"] = (routes);
@@ -345,7 +353,7 @@ function CButton(props) {
     setIsHover(false);
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-    onClick: props.callBack,
+    onClick: props.callback,
     style: style,
     onMouseEnter: handleMouseEnter,
     onMouseLeave: handleMouseLeave,

@@ -48,7 +48,7 @@ function CButton(props) {
     
     return(
             <button
-                onClick={props.callBack} 
+                onClick={props.callback}
                 style={style}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}>

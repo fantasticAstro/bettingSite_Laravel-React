@@ -3,37 +3,73 @@ import '../../../css/component/market.css' ;
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Col, Row } from 'react-bootstrap';
 import CButton from './CButton';
-import {useState} from 'react' ;
+import {useState, useEffect} from 'react' ;
 import * as actionTypes from '../../store/actions' ;
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {save_bid} from '../../api/market'
+import Common from '../Utils/Common' ;
+import api from '../../api/market' ;
 
 function Market(props) {    
     const [check_bet, setChecBet] = useState({});
+    const [market_list, setMarketList] = useState([{name: '', open_time:'00:00', close_time:'00:00'}]); 
+    const [sel_market, setMarket] = useState({id: -1, name: ''}) ;
+    const [total_amount, setTotalAmount] = useState(0)
+    const [bet_info, setBetInfo] = useState({id: -1, value:0})
+
+    useEffect(() => {
+        // setBlocking(true) ;
+        api.get_market_list().then(result =>{
+            setMarketList(result) ;
+            if(result.length > 0) {
+                var _sel_market =result[0] ;
+                setMarket(_sel_market) ;
+            }
+            // setBlocking(false) ;
+        }) ;
+        api.get_bet_info({name: props.type}).then(result =>{
+            if(result.length > 0) {
+                setBetInfo(result[0]) ;
+            }
+        }) ;
+        
+        return ;
+    }, 1);
+
     const setCheck = (number) => {
         number = number.toString() ;
         let  _check_bet = check_bet ;
-        if(Object.keys(check_bet).includes(number)) {
+        if(Object.keys(_check_bet).includes(number)) {
             _check_bet[`${number}`] = !_check_bet[`${number}`]  ;
         } else {
             _check_bet[`${number}`] = true ;
         } 
         setChecBet({..._check_bet}) ;
-        for(var k = 0 ; k < _check_bet.length ; k++) {
-            if(_check_bet[`${number}`]) {
-                
+        let _total_amount = 0 ; 
+        for(let key in _check_bet) {
+            if(_check_bet[key]) {
+                _total_amount+=parseInt(bet_info.value);
             }
         }
-        
+        setTotalAmount(_total_amount) ;
     }
     
 
-    const saveBit = () => {
-        for(var k = 0 ; k < check_bet.length ; k++) {
-            
+    const saveBet = () => {
+        let req = [] ;
+        
+        try{
+            api.save_bet({data: check_bet, bet_id: bet_info.id, market_id:sel_market.id}).then(result =>{
+                if(result.status == "200") {
+                    Common.toast("success", "Successfully")
+                }
+            }) ;
+        }catch(e) {
+            Common.toast("error", "Faield")
         }
+
     }
+    
     return (
         <div className='market'>
             <div className='title'>
@@ -47,12 +83,19 @@ function Market(props) {
             <div className='market-list'>
                 <Dropdown>
                     <Dropdown.Toggle variant="default" id="dropdown-basic">
-                        Dropdown Button
+                        {
+                            sel_market.name
+                        }
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                        {
+                            market_list.map((item, key) =>
+                                {
+                                    <Dropdown.Item href="#">{item.name}</Dropdown.Item>
+                                }
+                            )
+                        }
+                        <Dropdown.Item href="#">123</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
             </div>
@@ -61,7 +104,7 @@ function Market(props) {
             </div>
             <div className='bid-content'>
                 <div className='bid-amount'>
-                    TOTAL-BID - $ 500
+                    TOTAL-BET - $ {total_amount}
                 </div>
                 <CButton 
                     text='PLACE BID'
@@ -71,12 +114,13 @@ function Market(props) {
                     fonSize='15px'
                     hoverBackground='rgb(42,90,74)'
                     hoverColor='white'
-                    callback = {() => saveBit()}
+                    callback = {saveBet}
                 />
             </div>
         </div>
     )
 }
+
 
 function BetField(props) {
     let type = props.type ;

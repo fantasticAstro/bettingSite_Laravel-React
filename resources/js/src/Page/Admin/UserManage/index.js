@@ -80,7 +80,7 @@ function UserManage(props) {
                         <Button variant="primary" onClick={() => Credit(item.id) }>Credit</Button>
                         <Button variant="success" onClick={() => Debit() }>Debit</Button>
                     </div>,
-                view: <i className='fa fa-eye' style={{fontSize: '20px', cursor: 'pointer'}}></i>,
+                view: <a href={`/admin/user_profile/${item.id}`}><i className='fa fa-eye' style={{fontSize: '20px', cursor: 'pointer'}}></i></a>,
 
             }) ;
         }

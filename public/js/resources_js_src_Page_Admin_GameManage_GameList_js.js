@@ -1073,6 +1073,14 @@ api.saveEditGame = function (req) {
     data: req
   });
 };
+api.deleteGame = function (req) {
+  return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    url: "/admin/delete_game",
+    method: 'post',
+    type: 'json',
+    data: req
+  });
+};
 api.getGameRates = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
     url: "/admin/get_game_rates",
@@ -1267,6 +1275,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Form.js");
 /* harmony import */ var react_time_picker__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-time-picker */ "./node_modules/react-time-picker/dist/entry.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -1312,6 +1326,10 @@ function GameList(props) {
     edit_id = _useState10[0],
     setEditId = _useState10[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    getGameList();
+    return;
+  }, 1);
+  var getGameList = function getGameList() {
     setBlocking(true);
     try {
       _api_admin_game_manage__WEBPACK_IMPORTED_MODULE_5__["default"].getGameList().then(function (result) {
@@ -1321,39 +1339,38 @@ function GameList(props) {
     } catch (e) {
       setBlocking(false);
     }
-    return;
-  }, 1);
+  };
   var saveEditGame = function saveEditGame() {
     setBlocking(true);
     try {
-      _api_admin_game_manage__WEBPACK_IMPORTED_MODULE_5__["default"].saveGameList({
+      _api_admin_game_manage__WEBPACK_IMPORTED_MODULE_5__["default"].saveEditGame({
         edit_id: edit_id,
         edit_form: edit_form
       }).then(function (result) {
-        saveGameList(result);
+        if (result.status == "200") {
+          getGameList();
+          _Utils_Common__WEBPACK_IMPORTED_MODULE_7__["default"].toast("success", "Add Successfully");
+        } else {}
       });
       setBlocking(false);
     } catch (e) {
       setBlocking(false);
     }
   };
-  var validateAddUserForm = function validateAddUserForm(event) {
-    if (event == null) {
+  var validateAddUserForm = function validateAddUserForm(e) {
+    if (e == null) {
       return;
     }
     try {
-      var name = event.target.name;
-      var value = event.target.value;
-      var _edit_form = edit_form;
-      _edit_form[name] = value;
-      setEditForm(_edit_form);
+      var nextFormState = _objectSpread(_objectSpread({}, edit_form), {}, _defineProperty({}, e.target.name, e.target.value));
+      setEditForm(nextFormState);
     } catch (e) {
       console.log(e);
     }
   };
   var validateTime = function validateTime(value, name) {
-    var _edit_form = edit_form;
-    _edit_form[name] = value;
+    var nextFormState = _objectSpread(_objectSpread({}, edit_form), {}, _defineProperty({}, name, value));
+    setEditForm(nextFormState);
   };
   var openEditModal = function openEditModal(id) {
     setEditId(id);
@@ -1381,7 +1398,26 @@ function GameList(props) {
     var _edit_model = edit_model;
     setEditModal(!_edit_model);
   };
-  var openDeleteModal = function openDeleteModal(id) {};
+  var deleteGame = function deleteGame(id) {
+    setBlocking(true);
+    try {
+      _api_admin_game_manage__WEBPACK_IMPORTED_MODULE_5__["default"].deleteGame({
+        id: id
+      }).then(function (result) {
+        if (result.status == "200") {
+          getGameList();
+          _Utils_Common__WEBPACK_IMPORTED_MODULE_7__["default"].toast("success", "Delete Successfully");
+        } else {
+          _Utils_Common__WEBPACK_IMPORTED_MODULE_7__["default"].toast("error", "Delete Failed");
+        }
+      });
+      setBlocking(false);
+    } catch (e) {
+      setBlocking(false);
+      console.log(e);
+      _Utils_Common__WEBPACK_IMPORTED_MODULE_7__["default"].toast("error", "Delete Failed");
+    }
+  };
   var makeDataTableColums = function makeDataTableColums() {
     var columns = [];
     columns = [{
@@ -1449,7 +1485,7 @@ function GameList(props) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
             className: "btn btn-danger",
             onClick: function onClick() {
-              return openDeleteModal(item.id);
+              return deleteGame(item.id);
             },
             children: "Delete"
           })
@@ -1517,8 +1553,8 @@ function GameList(props) {
               value: edit_form.open_time,
               type: "number",
               name: "open_time",
-              onChange: function onChange(event) {
-                return validateTime(event, 'open_time');
+              onChange: function onChange(value) {
+                return validateTime(value, 'open_time');
               }
             })
           })]
@@ -1533,8 +1569,8 @@ function GameList(props) {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_time_picker__WEBPACK_IMPORTED_MODULE_8__["default"], {
               type: "number",
               name: "close_time",
-              onChange: function onChange(event) {
-                return validateTime(event, 'close_time');
+              onChange: function onChange(value) {
+                return validateTime(value, 'close_time');
               },
               value: edit_form.close_time
             })

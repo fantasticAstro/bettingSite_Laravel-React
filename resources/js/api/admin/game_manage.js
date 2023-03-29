@@ -10,9 +10,18 @@ api.getGameList = (req) => {
         data: req
     }) ;
 }
+
 api.saveEditGame = (req) => {
     return axios({
         url: "/admin/save_edit_game",
+        method:'post',
+        type: 'json',
+        data: req
+    }) ;
+}
+api.deleteGame = (req) => {
+    return axios({
+        url: "/admin/delete_game",
         method:'post',
         type: 'json',
         data: req

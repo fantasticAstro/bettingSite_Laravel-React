@@ -994,12 +994,15 @@ function UserManage(props) {
             children: "Debit"
           })]
         }),
-        view: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
-          className: "fa fa-eye",
-          style: {
-            fontSize: '20px',
-            cursor: 'pointer'
-          }
+        view: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
+          href: "/admin/user_profile/".concat(item.id),
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
+            className: "fa fa-eye",
+            style: {
+              fontSize: '20px',
+              cursor: 'pointer'
+            }
+          })
         })
       });
     };

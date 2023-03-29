@@ -30,6 +30,27 @@ class AdminGameController extends Controller
     public function saveEditGame(Request $request) {
         $edit_id = $request->edit_id ;
         $edit_form = $request->edit_form ;
+        if($edit_id == -1) {
+            DatMarket::insert([
+                "name"=>$edit_form['game_name'],
+                "open_time"=>$edit_form['open_time'].":00",
+                "close_time"=>$edit_form['close_time'].":00",
+                "status"=>$edit_form['status']
+            ]) ;
+        } else {
+            DatMarket::where("id", $edit_id)->update([
+                "name"=>$edit_form['game_name'],
+                "open_time"=>$edit_form['open_time'],
+                "close_time"=>$edit_form['close_time'],
+                "status"=>$edit_form['status']
+            ]) ;
+        }
+
+        return response()->json(array("status"=>"200")) ;
+    }
+    public function deleteGame(Request $request) {
+        DatMarket::where("id", $request->id)->delete() ;
+        return response()->json(array("status"=>"200")) ;
 
     }
     public function getGameRates(Request $request) {

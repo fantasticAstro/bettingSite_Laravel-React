@@ -112,7 +112,7 @@ function CButton(props) {
     setIsHover(false);
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-    onClick: props.callBack,
+    onClick: props.callback,
     style: style,
     onMouseEnter: handleMouseEnter,
     onMouseLeave: handleMouseLeave,

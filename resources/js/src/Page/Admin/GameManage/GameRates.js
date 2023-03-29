@@ -35,12 +35,13 @@ function GameRates(props) {
         }
         setRatesForm(ret) ;
     }
-    const validateAddUserForm = (event) => {
-        const name =event.target.name ;
-        const value = event.target.value ;
-        let _rates_form = rates_form ;
-        _rates_form[name] = value ;
-        setUserForm(_rates_form) ;
+    const validateAddUserForm = (e) => {
+        const nextFormState = {
+            ...rates_form,
+            [e.target.name]: e.target.value,
+        };
+            
+        setRatesForm(nextFormState) ;
     }
     const saveRatesData =() => {
         let req = [] ;

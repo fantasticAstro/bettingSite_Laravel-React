@@ -19,6 +19,11 @@ function GameList(props) {
     const [edit_id, setEditId] = useState(-1) ;
 
     useEffect(() => {
+        getGameList() ;
+        return ;
+    }, 1);
+
+    const getGameList = () => {
         setBlocking(true) ;
         try {
             api.getGameList().then(result => {
@@ -28,13 +33,16 @@ function GameList(props) {
         }catch(e) {
             setBlocking(false) ;
         }
-        return ;
-    }, 1);
+    }
     const saveEditGame = () => {    
         setBlocking(true) ;
         try {
-            api.saveGameList({edit_id: edit_id, edit_form: edit_form}).then(result => {
-                saveGameList(result) ;
+            api.saveEditGame({edit_id: edit_id, edit_form: edit_form}).then(result => {
+                if(result.status == "200") {
+                    getGameList();
+                    Common.toast("success", "Add Successfully") ;
+                } else {
+                }
             }) ;
             setBlocking(false) ;
         }catch(e) {
@@ -42,28 +50,33 @@ function GameList(props) {
         }
     }
 
-    const validateAddUserForm = (event) => {
+    const validateAddUserForm = (e) => {
       
-        if(event == null) {
+        if(e == null) {
             return ;
         }
 
         try{
-            const name =event.target.name ;
-            const value = event.target.value ;
-            let _edit_form = edit_form ;
-            _edit_form[name] = value ;
-            setEditForm(_edit_form) ;
+            const nextFormState = {
+                ...edit_form,
+                [e.target.name]: e.target.value,
+            };
+            
+            setEditForm(nextFormState) ;
         }catch(e) {
             console.log(e) ;
         }
     }
 
     const validateTime = (value, name) => {
-        let _edit_form = edit_form ;
-        _edit_form[name] = value ;
+        
+        const nextFormState = {
+            ...edit_form,
+            [name]: value,
+        };
+        setEditForm(nextFormState) ;
+        
     }
-
     const openEditModal = (id) => {
         setEditId(id) ;
         if(id == -1){
@@ -86,8 +99,23 @@ function GameList(props) {
         let _edit_model = edit_model ;
         setEditModal(!_edit_model) ;
     }
-    const openDeleteModal = ( id ) => {
-
+    const deleteGame = ( id ) => {
+        setBlocking(true) ;
+        try {
+            api.deleteGame({id: id}).then(result => {
+                if(result.status == "200") {
+                    getGameList();
+                    Common.toast("success", "Delete Successfully") ;
+                } else {
+                    Common.toast("error", "Delete Failed") ;
+                }
+            }) ;
+            setBlocking(false) ;
+        }catch(e) {
+            setBlocking(false) ;
+            console.log(e) ;
+            Common.toast("error", "Delete Failed") ;
+        }
     }
     const makeDataTableColums = () => {
         let columns = [] ;
@@ -153,7 +181,7 @@ function GameList(props) {
                     </div>,
                 action2: <div style={{padding: '5px'}}
                 >
-                    <button className='btn btn-danger'  onClick={() => openDeleteModal(item.id)}>Delete</button>
+                    <button className='btn btn-danger'  onClick={() => deleteGame(item.id)}>Delete</button>
                 </div>
             })
         }
@@ -201,7 +229,7 @@ function GameList(props) {
                                 value={edit_form.open_time}
                                 type="number" 
                                 name='open_time'
-                                onChange={(event)=>validateTime(event, 'open_time')} 
+                                onChange={(value)=>validateTime(value, 'open_time')} 
                             />
                         </div>
                     </Form.Group>
@@ -211,7 +239,7 @@ function GameList(props) {
                             <TimePicker 
                                 type="number" 
                                 name='close_time'
-                                onChange={(event)=>validateTime(event, 'close_time')} 
+                                onChange={(value)=>validateTime(value, 'close_time')} 
                                 value={edit_form.close_time}
                             />
                         </div>

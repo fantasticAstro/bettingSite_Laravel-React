@@ -3194,6 +3194,30 @@ api.get_liver_result = function (req) {
     data: req
   });
 };
+api.get_market_list = function (req) {
+  return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    url: "/get_market_list",
+    method: 'post',
+    type: 'json',
+    data: req
+  });
+};
+api.get_bet_info = function (req) {
+  return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    url: "/get_bet_info",
+    method: 'post',
+    type: 'json',
+    data: req
+  });
+};
+api.save_bet = function (req) {
+  return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    url: "/save_bet",
+    method: 'post',
+    type: 'json',
+    data: req
+  });
+};
 /* harmony default export */ __webpack_exports__["default"] = (api);
 
 /***/ }),
@@ -3285,7 +3309,7 @@ function CButton(props) {
     setIsHover(false);
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-    onClick: props.callBack,
+    onClick: props.callback,
     style: style,
     onMouseEnter: handleMouseEnter,
     onMouseLeave: handleMouseLeave,
@@ -3305,15 +3329,16 @@ function CButton(props) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_component_market_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../css/component/market.css */ "./resources/css/component/market.css");
-/* harmony import */ var react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap/Dropdown */ "./node_modules/react-bootstrap/esm/Dropdown.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Row.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-bootstrap/Dropdown */ "./node_modules/react-bootstrap/esm/Dropdown.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Row.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
 /* harmony import */ var _CButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CButton */ "./resources/js/src/Component/CButton.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../store/actions */ "./resources/js/store/actions.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _api_market__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../api/market */ "./resources/js/api/market.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Utils_Common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Utils/Common */ "./resources/js/src/Utils/Common.js");
+/* harmony import */ var _api_market__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../api/market */ "./resources/js/api/market.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -3338,71 +3363,134 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Market(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({}),
     _useState2 = _slicedToArray(_useState, 2),
     check_bet = _useState2[0],
     setChecBet = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([{
+      name: '',
+      open_time: '00:00',
+      close_time: '00:00'
+    }]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    market_list = _useState4[0],
+    setMarketList = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
+      id: -1,
+      name: ''
+    }),
+    _useState6 = _slicedToArray(_useState5, 2),
+    sel_market = _useState6[0],
+    setMarket = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+    _useState8 = _slicedToArray(_useState7, 2),
+    total_amount = _useState8[0],
+    setTotalAmount = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
+      id: -1,
+      value: 0
+    }),
+    _useState10 = _slicedToArray(_useState9, 2),
+    bet_info = _useState10[0],
+    setBetInfo = _useState10[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
+    // setBlocking(true) ;
+    _api_market__WEBPACK_IMPORTED_MODULE_6__["default"].get_market_list().then(function (result) {
+      setMarketList(result);
+      if (result.length > 0) {
+        var _sel_market = result[0];
+        setMarket(_sel_market);
+      }
+      // setBlocking(false) ;
+    });
+
+    _api_market__WEBPACK_IMPORTED_MODULE_6__["default"].get_bet_info({
+      name: props.type
+    }).then(function (result) {
+      if (result.length > 0) {
+        setBetInfo(result[0]);
+      }
+    });
+    return;
+  }, 1);
   var setCheck = function setCheck(number) {
     number = number.toString();
     var _check_bet = check_bet;
-    if (Object.keys(check_bet).includes(number)) {
+    if (Object.keys(_check_bet).includes(number)) {
       _check_bet["".concat(number)] = !_check_bet["".concat(number)];
     } else {
       _check_bet["".concat(number)] = true;
     }
     setChecBet(_objectSpread({}, _check_bet));
-    for (var k = 0; k < _check_bet.length; k++) {
-      if (_check_bet["".concat(number)]) {}
+    var _total_amount = 0;
+    for (var key in _check_bet) {
+      if (_check_bet[key]) {
+        _total_amount += parseInt(bet_info.value);
+      }
+    }
+    setTotalAmount(_total_amount);
+  };
+  var saveBet = function saveBet() {
+    var req = [];
+    try {
+      _api_market__WEBPACK_IMPORTED_MODULE_6__["default"].save_bet({
+        data: check_bet,
+        bet_id: bet_info.id,
+        market_id: sel_market.id
+      }).then(function (result) {
+        if (result.status == "200") {
+          _Utils_Common__WEBPACK_IMPORTED_MODULE_5__["default"].toast("success", "Successfully");
+        }
+      });
+    } catch (e) {
+      _Utils_Common__WEBPACK_IMPORTED_MODULE_5__["default"].toast("error", "Faield");
     }
   };
-  var saveBit = function saveBit() {
-    for (var k = 0; k < check_bet.length; k++) {}
-  };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "market",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "title",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "name",
         children: props.name
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "date",
         children: "20232-2"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "market-list",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Toggle, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_8__["default"].Toggle, {
           variant: "default",
           id: "dropdown-basic",
-          children: "Dropdown Button"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Menu, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
-            href: "#/action-1",
-            children: "Action"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
-            href: "#/action-2",
-            children: "Another action"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_7__["default"].Item, {
-            href: "#/action-3",
-            children: "Something else"
+          children: sel_market.name
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_8__["default"].Menu, {
+          children: [market_list.map(function (item, key) {
+            /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_8__["default"].Item, {
+              href: "#",
+              children: item.name
+            });
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap_Dropdown__WEBPACK_IMPORTED_MODULE_8__["default"].Item, {
+            href: "#",
+            children: "123"
           })]
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "market-content",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(BetField, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(BetField, {
         callback: setCheck,
         check_bet: check_bet,
         type: props.type
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "bid-content",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "bid-amount",
-        children: "TOTAL-BID - $ 500"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_CButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        children: ["TOTAL-BET - $ ", total_amount]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_CButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
         text: "PLACE BID",
         background: "#3F7E68",
         color: "white",
@@ -3410,9 +3498,7 @@ function Market(props) {
         fonSize: "15px",
         hoverBackground: "rgb(42,90,74)",
         hoverColor: "white",
-        callback: function callback() {
-          return saveBit();
-        }
+        callback: saveBet
       })]
     })]
   });
@@ -3420,17 +3506,17 @@ function Market(props) {
 function BetField(props) {
   var type = props.type;
   if (type == "single" || type == "single_patti") {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(SingleBet, {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(SingleBet, {
       callback: props.callback,
       check_bet: props.check_bet
     });
   } else if (type == "double_patti" || type == "jodi") {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(DoubleBet, {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(DoubleBet, {
       callback: props.callback,
       check_bet: props.check_bet
     });
   } else if (type == "tripple_patti") {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(TrippleBet, {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(TrippleBet, {
       callback: props.callback,
       check_bet: props.check_bet
     });
@@ -3439,50 +3525,50 @@ function BetField(props) {
 function DoubleBet(props) {
   var list = [];
   for (var k = 0; k < 100; k++) {
-    list.push( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(BetNumItem, {
+    list.push( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(BetNumItem, {
       number: k,
       is_check: false,
       callback: props.callback,
       check_state: props.check_bet["".concat(k)]
     }));
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
     children: list
   });
 }
 function SingleBet(props) {
   var list = [];
   for (var k = 0; k < 10; k++) {
-    list.push( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(BetNumItem, {
+    list.push( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(BetNumItem, {
       number: k,
       is_check: false,
       callback: props.callback,
       check_state: props.check_bet["".concat(k)]
     }));
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
     children: list
   });
 }
 function TrippleBet() {}
 function BetNumItem(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
     md: 3,
     sm: 2,
     onClick: function onClick() {
       return props.callback(props.number);
     },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "item",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "bet-number",
         children: props.number
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "bet-check",
-        children: props['check_state'] ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+        children: props['check_state'] ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
           src: "images/user/bet_check.png",
           width: "40px"
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {})
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {})
       })]
     })
   });
@@ -3530,6 +3616,25 @@ function DoublePattiBet(props) {
   });
 }
 /* harmony default export */ __webpack_exports__["default"] = (DoublePattiBet);
+
+/***/ }),
+
+/***/ "./resources/js/src/Utils/Common.js":
+/*!******************************************!*\
+  !*** ./resources/js/src/Utils/Common.js ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+
+var common = {
+  toast: function toast(type, text) {
+    react_toastify__WEBPACK_IMPORTED_MODULE_0__.toast[type](text);
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (common);
 
 /***/ }),
 

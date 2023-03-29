@@ -15,12 +15,13 @@ const tullSangamBet = React.lazy(() => import('./src/Page/User/FullSangamBet'));
 const tripplePattiBet = React.lazy(() => import('./src/Page/User/TripplePattiBet'));
 
 
-const userManage = React.lazy(() => import('./src/Page/Admin/userManage'));
 
 /*ADMIN */
 const adminDashBoard = React.lazy(() => import('./src/Page/Admin/DashBoard'));
 const gameList = React.lazy(() => import('./src/Page/Admin/GameManage/GameList.js'));
 const gameRates = React.lazy(() => import('./src/Page/Admin/GameManage/GameRates.js'));
+const userManage = React.lazy(() => import('./src/Page/Admin/userManage'));
+const userDetail = React.lazy(() => import('./src/Page/Admin/userManage/UserDetail'));
 
 const routes = {
     user:[
@@ -38,7 +39,7 @@ const routes = {
         { path: '/admin/user_manage', exact: true, name: 'USER MANAGEMENT', component: userManage },
         { path: '/admin/game_list', exact: true, name: 'GAME LIST', component: gameList },
         { path: '/admin/game_rates', exact: true, name: 'GAME LIST', component: gameRates },
-
+        { path: '/admin/user_profile/:id', exact: true, name: 'User Detail', component: userDetail },
     ]
 };
 
