@@ -12,14 +12,18 @@ import api from '../../api/market' ;
 
 function Market(props) {    
     const [check_bet, setChecBet] = useState({});
-    const [market_list, setMarketList] = useState([{name: '', open_time:'00:00', close_time:'00:00'}]); 
-    const [sel_market, setMarket] = useState({id: -1, name: ''}) ;
+    const [market_list, setMarketList] = useState([{name: '123', open_time:'00:00', time:'00:00'}, {name: '456', time:'00:00', close_time:'00:00'}]); 
+    const [sel_market, setMarket] = useState({id: -1, name: '', type:'OPEN', time:'00:00:00'}) ;
     const [total_amount, setTotalAmount] = useState(0)
     const [bet_info, setBetInfo] = useState({id: -1, value:0})
 
+    const [isOpen, setOpen] = useState(false);
+    
+    const toggleDropdown = () => setOpen(!isOpen);
+    
     useEffect(() => {
         // setBlocking(true) ;
-        api.get_market_list().then(result =>{
+        api.get_market_list({type: props.type}).then(result =>{
             setMarketList(result) ;
             if(result.length > 0) {
                 var _sel_market =result[0] ;
@@ -56,8 +60,9 @@ function Market(props) {
     
 
     const saveBet = () => {
-        let req = [] ;
         
+        let req = [] ;
+
         try{
             api.save_bet({data: check_bet, bet_id: bet_info.id, market_id:sel_market.id}).then(result =>{
                 if(result.status == "200") {
@@ -69,6 +74,11 @@ function Market(props) {
         }
 
     }
+
+    const selMarket = (item) => {
+        setMarket(item) ;
+        toggleDropdown() ;
+    }
     
     return (
         <div className='market'>
@@ -77,27 +87,27 @@ function Market(props) {
                     {props.name}
                 </div>
                 <div className='date'>
-                    20232-2
+                    2023-03-29
                 </div>
             </div>
             <div className='market-list'>
-                <Dropdown>
-                    <Dropdown.Toggle variant="default" id="dropdown-basic">
+                <div className='dropdown'>
+                    <div className='dropdown-header' onClick={toggleDropdown}>
+                        {sel_market.name} {sel_market.type} ({sel_market.time})
+                        <i className={`fa fa-chevron-right icon ${isOpen && "open"}`}></i>
+                    </div>
+                    <div className={`dropdown-body ${isOpen && 'open'}`}>
                         {
-                            sel_market.name
+                            market_list.map(item => (
+                                sel_market.id != item.id ?
+                                <div className="dropdown-item" onClick={() => selMarket(item)}>
+                                    {item.name} {item.type} ({item.time})
+                                </div>
+                                :<></>
+                            ))
                         }
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        {
-                            market_list.map((item, key) =>
-                                {
-                                    <Dropdown.Item href="#">{item.name}</Dropdown.Item>
-                                }
-                            )
-                        }
-                        <Dropdown.Item href="#">123</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                    </div>
+                </div>
             </div>
             <div className='market-content'>
                 <BetField callback={setCheck} check_bet={check_bet} type={props.type}/>
@@ -124,11 +134,11 @@ function Market(props) {
 
 function BetField(props) {
     let type = props.type ;
-    if(type == "single" || type == "single_patti") {
+    if(type == "single" || type == "single_patti" || type == "full_sangam" || type == "half_sangam") {
         return <SingleBet callback={props.callback} check_bet={props.check_bet}/>
-    } else if(type == "double_patti" || type == "jodi") {
+    } else if(type == "double_patti" || type == "jodi"  || type == "full_sangam" || type == "half_sangam") {
         return <DoubleBet callback={props.callback} check_bet={props.check_bet} />
-    } else if(type == "tripple_patti") {
+    } else if(type == "tripple_patti" || type == "full_sangam" || type == "half_sangam") {
         return <TrippleBet callback={props.callback} check_bet={props.check_bet} />
     }
 }
@@ -156,8 +166,13 @@ function SingleBet(props) {
     ) ;
 }
 
-function TrippleBet() {
-
+function TrippleBet(props) {
+    
+    return (
+        <div>
+            DEVLOPE        
+        </div>
+    )
 }
 
 
@@ -171,7 +186,7 @@ function BetNumItem(props) {
                 <div className='bet-check'>
                     {
                         props['check_state']?
-                        <img src="images/user/bet_check.png" width='40px' />:<></>
+                        <i className='fa fa-check' style={{fontSize: '40px', color: '#4fcb1c'}}></i>:<></>
                     }
                 </div>
             </div>

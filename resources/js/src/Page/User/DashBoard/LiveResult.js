@@ -43,10 +43,10 @@ function LiveResult(props){
                         live_result.map((item, index) =>
                             <div className='item'>
                                 <div className='name'>
-                                    MILAN MORNING
+                                    {item.name}
                                 </div>
                                 <div className='number'>
-                                    XXX-XX-XXX
+                                    {item.result}
                                 </div>
                                 <div className='setting'>
                                     <CButton 

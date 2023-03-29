@@ -1,11 +1,11 @@
 import React, { Component, Suspense } from 'react';
-import {Route, Switch, Redirect} from 'react-router-dom';
+
 import {connect} from 'react-redux';
 import Fullscreen from "react-full-screen";
 import windowSize from 'react-window-size';
 
-import Loader from "../Layout/Loader";
-import routes from "../../../../routes";
+import {Link, BrowserRouter as Router} from 'react-router-dom';
+
 import Aux from "../../../../hoc/_Aux";
 import * as actionTypes from "../../../../store/actions";
 
@@ -56,57 +56,44 @@ class UserLayout extends Component {
         document.addEventListener('mozfullscreenchange', this.fullScreenExitHandler);
         document.addEventListener('MSFullscreenChange', this.fullScreenExitHandler);
         
-        const menu = routes.user.map((route, index) => {
-            return (route.component) ? (
-                <Route
-                    key={index}
-                    path={route.path}
-                    exact={route.exact}
-                    name={route.name}
-                    render={props => (
-                        <route.component {...props} />
-                    )} />
-            ) : (null);
-        });
-
+        
         return (
             <Aux>
-                <ScrollToTop>
-                    <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}>
-                        {
-                            Config.userMenuList.map((item, index) =>
-                                <a>
-                                <div className='menu-item'>
-                                    <div className='icon'>
-                                    <img src={`images/user/menu-icons/${item.icon}.png`}/>
-                                    </div>
-                                    <div className='name'>
-                                    {
-                                        item.name
-                                    }
-                                    </div>
-                                </div>
-                                </a>
-                            )
-                        }
-                    </Sidebar>
+                {/* <ScrollToTop> */}
+                    
+                    
                     <Fullscreen enabled={this.props.isFullScreen}>
                         <div className="app-user-page" onClick={() => this.mobileOutClickHandler}>
-                            <Header />
-                            
-                            <UserMenu />
-                            <Content >
-                                <Suspense fallback={<Loader/>}>
-                                    <Switch>
-                                        {menu}
-                                        <Redirect from="/" to={this.props.userDefaultPath} />
-                                    </Switch>
-                                </Suspense>
-                            </Content>
-                            <Footer />
+                            <Router >
+                                <div>
+                                    <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}>
+                                        {
+                                            Config.userMenuList.map((item, index) =>
+                                                <Link to ={item.url}>
+                                                    <div className='menu-item'>
+                                                        <div className='icon'>
+                                                        <img src={`images/user/menu-icons/${item.icon}.png`}/>
+                                                        </div>
+                                                        <div className='name'>
+                                                        {
+                                                            item.name
+                                                        }
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            )
+                                        }
+                                    </Sidebar>
+                                    <Header />
+                                    <UserMenu />
+                                    <Content />
+                                        
+                                    <Footer />
+                                </div>
+                            </Router>
                         </div>
                     </Fullscreen>
-                </ScrollToTop>
+                {/* </ScrollToTop> */}
             </Aux>
         );
     }

@@ -15,9 +15,45 @@ use App;
 class MarketController extends Controller
 {
     public function getMarketList(Request $request) {
-        $ret = DatMarket::where("status", "Y")->select(["id", "name", "open_time", "close_time", "status"])->get()->toArray() ;
+        $bet_type = $request->bet_type ;
+
+        $ret = DatMarket::where("status", "N")->select(["id", "name", "open_time", "close_time", "status"])->get()->toArray() ;
         $data_ = array() ;
-        return response()->json($ret);
+        
+        foreach($ret as $item) {
+            $type = "" ;
+            $time="00:00" ;
+
+            $now = strtotime(date("Y-m-d H:i:s")) ;
+            $open_time = strtotime(date("Y-m-d {$item['open_time']}")) ;
+            $close_time = strtotime(date("Y-m-d {$item['close_time']}")) ;
+            if($now < $open_time) {
+                $type = "OPEN" ;
+                $time = $item['open_time'] ;
+            } else if($now < $close_time && $now > $open_time) {
+                $type = "CLOSE" ;
+                $time = $item['close_time'] ;
+            } else {
+                continue ;
+            }
+
+            if($bet_type == "tripple_patti" && $type != "open") {
+                continue ;
+            }
+
+            if($bet_type == "tripple_patti" && $type != "open") {
+                continue ;
+            }
+            
+
+            $item['type'] = $type ;
+            $item['time'] = $time ;
+            $data_[] = $item ;
+            
+        }
+        
+        
+        return response()->json($data_);
     }
     public function getBetInfo(Request $request) {
         $name = $request->name ;

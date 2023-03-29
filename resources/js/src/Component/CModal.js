@@ -20,7 +20,7 @@ function CModal(props) {
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            width: props.width?props.widht: '50%'
+            width: props.width?props.width: '50%'
         },
         header: {
             display: 'flex',

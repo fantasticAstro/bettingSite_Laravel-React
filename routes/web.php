@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\User\DashController;
 use App\Http\Controllers\User\MarketController;
+use App\Http\Controllers\AuthController;
 
 use App\Http\Controllers\Admin\AdminUsersController;
 use App\Http\Controllers\Admin\AdminGameController;
@@ -29,6 +30,8 @@ Route::post('/test', [DashController::class, 'getLiveResult']);
 Route::post('/get_market_list', [MarketController::class, 'getMarketList']);
 Route::post('/get_bet_info', [MarketController::class, 'getBetInfo']);
 Route::post('/save_bet', [MarketController::class, 'saveBet']);
+Route::post('/sign_up', [AuthController::class, 'signUp']);
+
 
 Route::post('/admin/get_user_data', [AdminUsersController::class, 'getUserData']);
 Route::post('/admin/add_user_data', [AdminUsersController::class, 'addUserData']);

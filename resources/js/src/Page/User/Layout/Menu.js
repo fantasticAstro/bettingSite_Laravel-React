@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Config from '../../../../config' ;
 function Menu(props) {
     return(
@@ -14,11 +14,11 @@ function Menu(props) {
                 >
                 {
                     Config.userMenuList.map((item, index) =>
-                        <a href={item.url}>
+                        <NavLink to={item.url}>
                             <div className={`item ${document.location.pathname===item.url?'active':''}`} >
                                 {item.name}
                             </div>
-                        </a>
+                        </NavLink>
                     )
                 }
                 </div>

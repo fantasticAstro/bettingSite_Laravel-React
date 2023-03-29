@@ -1,4 +1,6 @@
 import Config from '../../../../config' ;
+import {Link} from 'react-router-dom';
+
 function LeftPart(props) {
     return(
         <div className='left-part'>
@@ -8,7 +10,7 @@ function LeftPart(props) {
                     <>
                         {
                              item.is_left ?
-                             <div className='item'>
+                            <Link to={item.url}><div className='item'>
                                 <div className='icon'>
                                     <img src={`images/user/menu-icons/${item.icon}.png`}/>
                                 </div>
@@ -16,6 +18,7 @@ function LeftPart(props) {
                                     {item.name}
                                 </div>
                             </div>
+                            </Link>
                             :
                             <></>
                         }
