@@ -133,11 +133,11 @@ function Market(props) {
 
 function BetField(props) {
     let type = props.type ;
-    if(type == "single" || type == "single_patti" || type == "full_sangam" || type == "half_sangam") {
+    if(type == "single" || type == "single_patti" ) {
         return <SingleBet callback={props.callback} check_bet={props.check_bet}/>
-    } else if(type == "double_patti" || type == "jodi"  || type == "full_sangam" || type == "half_sangam") {
+    } else if(type == "double_patti" || type == "jodi"  ) {
         return <DoubleBet callback={props.callback} check_bet={props.check_bet} />
-    } else if(type == "tripple_patti" || type == "full_sangam" || type == "half_sangam") {
+    } else if(type == "tripple_patti") {
         return <TrippleBet callback={props.callback} check_bet={props.check_bet} />
     }
 }
@@ -169,7 +169,9 @@ function TrippleBet(props) {
     
     return (
         <div>
-            DEVLOPE        
+            <select class='form-control' style={{width: '30%'}}>
+                
+            </select>        
         </div>
     )
 }

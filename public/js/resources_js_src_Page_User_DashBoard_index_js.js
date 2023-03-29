@@ -15,7 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 var api = {};
 api.get_liver_result = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/test",
+    url: "/get_live_result",
     method: 'post',
     type: 'json',
     data: req

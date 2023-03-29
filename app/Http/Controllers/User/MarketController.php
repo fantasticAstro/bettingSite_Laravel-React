@@ -17,7 +17,7 @@ class MarketController extends Controller
     public function getMarketList(Request $request) {
         $bet_type = $request->bet_type ;
 
-        $ret = DatMarket::where("status", "N")->select(["id", "name", "open_time", "close_time", "status"])->get()->toArray() ;
+        $ret = DatMarket::where("status", "Y")->select(["id", "name", "open_time", "close_time", "status"])->get()->toArray() ;
         $data_ = array() ;
         
         foreach($ret as $item) {
@@ -27,7 +27,7 @@ class MarketController extends Controller
             $now = strtotime(date("Y-m-d H:i:s")) ;
             $open_time = strtotime(date("Y-m-d {$item['open_time']}")) ;
             $close_time = strtotime(date("Y-m-d {$item['close_time']}")) ;
-            if($now < $open_time) {
+            if($now< $open_time) {
                 $type = "OPEN" ;
                 $time = $item['open_time'] ;
             } else if($now < $close_time && $now > $open_time) {
@@ -41,9 +41,6 @@ class MarketController extends Controller
                 continue ;
             }
 
-            if($bet_type == "tripple_patti" && $type != "open") {
-                continue ;
-            }
             
 
             $item['type'] = $type ;

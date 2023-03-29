@@ -691,7 +691,7 @@ __webpack_require__.r(__webpack_exports__);
 var api = {};
 api.getGameList = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/admin/get_game_list",
+    url: "/admin/game/get_game_list",
     method: 'post',
     type: 'json',
     data: req
@@ -699,7 +699,7 @@ api.getGameList = function (req) {
 };
 api.saveEditGame = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/admin/save_edit_game",
+    url: "/admin/game/save_edit_game",
     method: 'post',
     type: 'json',
     data: req
@@ -707,7 +707,7 @@ api.saveEditGame = function (req) {
 };
 api.deleteGame = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/admin/delete_game",
+    url: "/admin/game/delete_game",
     method: 'post',
     type: 'json',
     data: req
@@ -715,7 +715,7 @@ api.deleteGame = function (req) {
 };
 api.getGameRates = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/admin/get_game_rates",
+    url: "/admin/game/get_game_rates",
     method: 'post',
     type: 'json',
     data: req
@@ -723,7 +723,7 @@ api.getGameRates = function (req) {
 };
 api.saveGameRates = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/admin/save_game_rates",
+    url: "/admin/game/save_game_rates",
     method: 'post',
     type: 'json',
     data: req

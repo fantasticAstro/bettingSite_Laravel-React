@@ -103,5 +103,21 @@ export default {
             ]
 
         },
+        {
+            id: 'user',
+            title: 'Declare Result',
+            type: 'group',
+            icon: 'icon-navigation',
+            children: [
+                {
+                    id: 'dec',
+                    title: 'Declare Result',
+                    type: 'item',
+                    url: '/admin/declare_result',
+                    icon: 'fa fa-circle',
+                }
+            ]
+
+        },
     ],
 };

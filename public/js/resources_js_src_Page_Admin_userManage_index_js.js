@@ -676,6 +676,39 @@ function stylis_min (W) {
 
 /***/ }),
 
+/***/ "./resources/js/api/admin/user_detail.js":
+/*!***********************************************!*\
+  !*** ./resources/js/api/admin/user_detail.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../config */ "./resources/js/config.js");
+/* harmony import */ var _service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service */ "./resources/js/api/service.js");
+
+
+var api = {};
+api.editPoint = function (req) {
+  return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    url: "/admin/user_profile/edit_point",
+    method: 'post',
+    type: 'json',
+    data: req
+  });
+};
+api.getUserInfo = function (req) {
+  return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    url: "/admin/user_profile/get_user_info",
+    method: 'post',
+    type: 'json',
+    data: req
+  });
+};
+/* harmony default export */ __webpack_exports__["default"] = (api);
+
+/***/ }),
+
 /***/ "./resources/js/api/admin/user_manage.js":
 /*!***********************************************!*\
   !*** ./resources/js/api/admin/user_manage.js ***!
@@ -691,7 +724,7 @@ __webpack_require__.r(__webpack_exports__);
 var api = {};
 api.getUserData = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/admin/get_user_data",
+    url: "/admin/user/get_user_data",
     method: 'post',
     type: 'json',
     data: req
@@ -699,7 +732,7 @@ api.getUserData = function (req) {
 };
 api.addUserData = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/admin/add_user_data",
+    url: "/admin/user/add_user_data",
     method: 'post',
     type: 'json',
     data: req
@@ -844,17 +877,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_loaders__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_loaders__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Component_ATable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Component/ATable */ "./resources/js/src/Component/ATable.js");
 /* harmony import */ var _api_admin_user_manage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../api/admin/user_manage */ "./resources/js/api/admin/user_manage.js");
-/* harmony import */ var _Component_CModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Component/CModal */ "./resources/js/src/Component/CModal.js");
-/* harmony import */ var _Utils_Common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Utils/Common */ "./resources/js/src/Utils/Common.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Button.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Form.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _api_admin_user_detail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../api/admin/user_detail */ "./resources/js/api/admin/user_detail.js");
+/* harmony import */ var _Component_CModal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Component/CModal */ "./resources/js/src/Component/CModal.js");
+/* harmony import */ var _Utils_Common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../Utils/Common */ "./resources/js/src/Utils/Common.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Form.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -881,17 +916,33 @@ function UserManage(props) {
     setAddUserModal = _useState6[1];
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState8 = _slicedToArray(_useState7, 2),
-    credit_model = _useState8[0],
-    setCreditModal = _useState8[1];
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    point_modal = _useState8[0],
+    setPointModal = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+    _useState10 = _slicedToArray(_useState9, 2),
+    point_form = _useState10[0],
+    setPointForm = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
       username: '',
       password: '',
       mobile: ''
     }),
-    _useState10 = _slicedToArray(_useState9, 2),
-    user_form = _useState10[0],
-    setUserForm = _useState10[1];
+    _useState12 = _slicedToArray(_useState11, 2),
+    user_form = _useState12[0],
+    setUserForm = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(-1),
+    _useState14 = _slicedToArray(_useState13, 2),
+    sel_user_id = _useState14[0],
+    setUserId = _useState14[1];
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("Add Points"),
+    _useState16 = _slicedToArray(_useState15, 2),
+    modal_title = _useState16[0],
+    setModalTitle = _useState16[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    getUserData();
+    return;
+  }, 1);
+  var getUserData = function getUserData() {
     setBlocking(true);
     try {
       _api_admin_user_manage__WEBPACK_IMPORTED_MODULE_5__["default"].getUserData().then(function (result) {
@@ -901,8 +952,7 @@ function UserManage(props) {
     } catch (e) {
       setBlocking(false);
     }
-    return;
-  }, 1);
+  };
   var openAddUserModal = function openAddUserModal() {
     var _add_user_modal = add_user_modal;
     setAddUserModal(!_add_user_modal);
@@ -914,20 +964,26 @@ function UserManage(props) {
     _user_form[name] = value;
     setUserForm(_user_form);
   };
+  var openPointModal = function openPointModal(modal_title, id) {
+    var _point_modal = point_modal;
+    setUserId(id);
+    setModalTitle(modal_title);
+    setPointModal(!_point_modal);
+  };
   var submitUerForm = function submitUerForm() {
     setBlocking(true);
     try {
       _api_admin_user_manage__WEBPACK_IMPORTED_MODULE_5__["default"].addUserData(user_form).then(function (result) {
         if (result.status == "200") {
-          _Utils_Common__WEBPACK_IMPORTED_MODULE_7__["default"].toast('success', 'Sign Up Success');
+          _Utils_Common__WEBPACK_IMPORTED_MODULE_8__["default"].toast('success', 'Sign Up Success');
           openAddUserModal();
         } else {
-          (0,_Utils_Common__WEBPACK_IMPORTED_MODULE_7__["default"])('success', 'Sign Up Failed');
+          (0,_Utils_Common__WEBPACK_IMPORTED_MODULE_8__["default"])('success', 'Sign Up Failed');
         }
         setBlocking(false);
       });
     } catch (e) {
-      (0,_Utils_Common__WEBPACK_IMPORTED_MODULE_7__["default"])('success', 'Sign Up Failed');
+      (0,_Utils_Common__WEBPACK_IMPORTED_MODULE_8__["default"])('success', 'Sign Up Failed');
       setBlocking(false);
     }
   };
@@ -942,27 +998,27 @@ function UserManage(props) {
         username: item.username,
         usermobile: item.mobile,
         points: item.point,
-        credit_debit: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        credit_debit: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           style: {
             padding: '5px'
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
             variant: "primary",
             onClick: function onClick() {
-              return Credit(item.id);
+              return openPointModal("Add Points", item.id);
             },
             children: "Credit"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
             variant: "success",
             onClick: function onClick() {
-              return Debit();
+              return openPointModal("Withdrwa Points", item.id);
             },
             children: "Debit"
           })]
         }),
-        view: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
+        view: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("a", {
           href: "/admin/user_profile/".concat(item.id),
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
             className: "fa fa-eye",
             style: {
               fontSize: '20px',
@@ -1009,40 +1065,56 @@ function UserManage(props) {
   var renderTable = function renderTable(val, row) {
     console.log(val, row);
   };
+  var editPoint = function editPoint() {
+    try {
+      _api_admin_user_detail__WEBPACK_IMPORTED_MODULE_6__["default"].editPoint({
+        point: point_form,
+        id: sel_user_id,
+        type: modal_title
+      }).then(function (result) {
+        if (result.status == '200') {
+          _Utils_Common__WEBPACK_IMPORTED_MODULE_8__["default"].toast("success", modal_title + " Successfully");
+        }
+        getUserData();
+      });
+    } catch (e) {
+      _Utils_Common__WEBPACK_IMPORTED_MODULE_8__["default"].toast("error", modal_title + " Failed");
+    }
+  };
   var columns = makeDataTableColums();
   var user_table_data = makeDataTableForm(user_data);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("button", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("button", {
         type: "button",
         className: "btn btn-primary",
         onClick: openAddUserModal,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("i", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("i", {
           className: "fa fa-plus"
         }), "Add New User"]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_block_ui__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_block_ui__WEBPACK_IMPORTED_MODULE_2__["default"], {
       tag: "div",
       blocking: blocking,
-      loader: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_loaders__WEBPACK_IMPORTED_MODULE_3__.Loader, {
+      loader: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_loaders__WEBPACK_IMPORTED_MODULE_3__.Loader, {
         active: true,
         type: _config__WEBPACK_IMPORTED_MODULE_1__["default"].blockingType,
         color: _config__WEBPACK_IMPORTED_MODULE_1__["default"].blockingColor
       }),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Component_ATable__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Component_ATable__WEBPACK_IMPORTED_MODULE_4__["default"], {
         columns: columns,
         data: user_table_data
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Component_CModal__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Component_CModal__WEBPACK_IMPORTED_MODULE_7__["default"], {
       open_modal: add_user_modal,
       close_modal: openAddUserModal,
       title: "Add New User",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"].Group, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Group, {
           controlId: "formBasicUsername",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"].Label, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Label, {
             children: "Username"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"].Control, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Control, {
             type: "text",
             placeholder: "Enter Username",
             name: "username",
@@ -1050,22 +1122,22 @@ function UserManage(props) {
               return validateAddUserForm(event);
             }
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"].Group, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Group, {
           controlId: "formBasicMobile",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"].Label, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Label, {
             children: "Mobile"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"].Control, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Control, {
             type: "number",
             name: "mobile",
             onChange: function onChange(event) {
               return validateAddUserForm(event);
             }
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"].Group, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Group, {
           controlId: "formBasicPassword",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"].Label, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Label, {
             children: "Password"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"].Control, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Control, {
             type: "password",
             placeholder: "Enter Password",
             name: "password",
@@ -1073,17 +1145,55 @@ function UserManage(props) {
               return validateAddUserForm(event);
             }
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
           align: "right",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
             variant: "primary",
             onClick: submitUerForm,
             children: "Submit"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
             variant: "danger",
             onClick: openAddUserModal,
             children: "Close"
           })]
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Component_CModal__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      open_modal: point_modal,
+      close_modal: function close_modal() {
+        return openPointModal('');
+      },
+      title: modal_title,
+      width: "40%",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Group, {
+          controlId: "formBasicUsername",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Label, {
+            children: modal_title
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Control, {
+            type: "number",
+            name: "point",
+            value: point_form,
+            onChange: function onChange(event) {
+              return setPointForm(event.target.value);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_11__["default"].Group, {
+          controlId: "formBasicUsername",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+            align: "right",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              variant: "primary",
+              onClick: editPoint,
+              children: "Submit"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
+              variant: "danger",
+              onClick: function onClick() {
+                return openPointModal('', -"");
+              },
+              children: "Close"
+            })]
+          })
         })]
       })
     })]

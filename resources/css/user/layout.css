@@ -276,4 +276,10 @@
     .header-mobile-search-field {
         display: block !important; 
     }
+    .market .dropdown {
+        width: 90% !important;
+    }
+    .ReactModal__Content {
+        width: 90% !important;
+    }
 }

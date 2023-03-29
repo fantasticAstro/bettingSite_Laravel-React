@@ -1059,7 +1059,7 @@ __webpack_require__.r(__webpack_exports__);
 var api = {};
 api.getGameList = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/admin/get_game_list",
+    url: "/admin/game/get_game_list",
     method: 'post',
     type: 'json',
     data: req
@@ -1067,7 +1067,7 @@ api.getGameList = function (req) {
 };
 api.saveEditGame = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/admin/save_edit_game",
+    url: "/admin/game/save_edit_game",
     method: 'post',
     type: 'json',
     data: req
@@ -1075,7 +1075,7 @@ api.saveEditGame = function (req) {
 };
 api.deleteGame = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/admin/delete_game",
+    url: "/admin/game/delete_game",
     method: 'post',
     type: 'json',
     data: req
@@ -1083,7 +1083,7 @@ api.deleteGame = function (req) {
 };
 api.getGameRates = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/admin/get_game_rates",
+    url: "/admin/game/get_game_rates",
     method: 'post',
     type: 'json',
     data: req
@@ -1091,7 +1091,7 @@ api.getGameRates = function (req) {
 };
 api.saveGameRates = function (req) {
   return (0,_service__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    url: "/admin/save_game_rates",
+    url: "/admin/game/save_game_rates",
     method: 'post',
     type: 'json',
     data: req
@@ -1465,6 +1465,7 @@ function GameList(props) {
   };
   var columns = makeDataTableColums();
   var get_data_table = makeDataTableForm(game_list);
+  console.log(edit_form);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("button", {
@@ -1547,15 +1548,14 @@ function GameList(props) {
             children: "Does market have special timings ?"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("select", {
             className: "form-control",
+            value: edit_form.status,
             onChange: function onChange(event) {
               return validateAddUserForm(event);
             },
             name: "status",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
-              select: "".concat(edit_form.status == "Y" ? 'selected' : ''),
               children: "Y"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("option", {
-              select: "".concat(edit_form.status == "N" ? 'selected' : ''),
               children: "N"
             })]
           })]

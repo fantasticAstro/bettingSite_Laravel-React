@@ -3462,6 +3462,9 @@ var userDetail = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function (
 var transaction = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
   return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_Transaction_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/Transaction */ "./resources/js/src/Page/Admin/Transaction/index.js"));
 });
+var declareResult = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_DeclareResult_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/DeclareResult */ "./resources/js/src/Page/Admin/DeclareResult/index.js"));
+});
 var routes = {
   user: [{
     path: '/',
@@ -3539,6 +3542,11 @@ var routes = {
     exact: true,
     name: 'User Detail',
     component: userDetail
+  }, {
+    path: '/admin/declare_result',
+    exact: true,
+    name: 'User Detail',
+    component: declareResult
   }]
 };
 /* harmony default export */ __webpack_exports__["default"] = (routes);

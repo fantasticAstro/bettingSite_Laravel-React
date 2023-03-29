@@ -91,6 +91,7 @@ function GameList(props) {
                         close_time: item.close_time,
                         status: item.status
                     }) ;
+                    
                     break ;
                 }
             }
@@ -191,6 +192,8 @@ function GameList(props) {
     
     const columns = makeDataTableColums() ;
     const get_data_table = makeDataTableForm(game_list) ;
+
+    console.log(edit_form) ;
     return (
         <div>
             <div>
@@ -246,11 +249,11 @@ function GameList(props) {
                     </Form.Group>
                     <Form.Group controlId="formBasictime">
                         <Form.Label>Does market have special timings ?</Form.Label>
-                        <select className='form-control' onChange={(event)=>validateAddUserForm(event)} name='status'>
-                            <option select = {`${edit_form.status == "Y"? 'selected':''}`}>
+                        <select className='form-control' value={edit_form.status} onChange={(event)=>validateAddUserForm(event)} name='status'>
+                            <option>
                                 Y
                             </option>
-                            <option select = {`${edit_form.status == "N"? 'selected':''}`}>
+                            <option >
                                 N
                             </option>
                         </select>

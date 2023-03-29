@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Models\DatMarket;
 use App\Models\DatBet;
+use App\Models\MarketCategory;
 
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -13,7 +14,7 @@ use App;
 class AdminGameController extends Controller
 {
     public function getGameList(Request $request) {
-        $ret = DatMarket::all() ;
+        $ret = MarketCategory::select("*")->get()->toArray() ;
         return response()->json($ret);
     }
     public function addUserData(Request $request) {
@@ -31,14 +32,14 @@ class AdminGameController extends Controller
         $edit_id = $request->edit_id ;
         $edit_form = $request->edit_form ;
         if($edit_id == -1) {
-            DatMarket::insert([
+            MarketCategory::insert([
                 "name"=>$edit_form['game_name'],
                 "open_time"=>$edit_form['open_time'].":00",
                 "close_time"=>$edit_form['close_time'].":00",
                 "status"=>$edit_form['status']
             ]) ;
         } else {
-            DatMarket::where("id", $edit_id)->update([
+            MarketCategory::where("id", $edit_id)->update([
                 "name"=>$edit_form['game_name'],
                 "open_time"=>$edit_form['open_time'],
                 "close_time"=>$edit_form['close_time'],

@@ -4,7 +4,7 @@ import axios from '../service' ;
 let api = {} ;
 api.getUserData = (req) => {
     return axios({
-        url: "/admin/get_user_data",
+        url: "/admin/user/get_user_data",
         method:'post',
         type: 'json',
         data: req
@@ -12,7 +12,7 @@ api.getUserData = (req) => {
 }
 api.addUserData = (req) => {
     return axios({
-        url: "/admin/add_user_data",
+        url: "/admin/user/add_user_data",
         method:'post',
         type: 'json',
         data: req

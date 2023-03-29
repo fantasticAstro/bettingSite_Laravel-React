@@ -5,7 +5,7 @@ let api = {} ;
 api.get_liver_result = (req) => {
 
     return axios({
-        url: "/test",
+        url: "/get_live_result",
         method:'post',
         type: 'json',
         data: req

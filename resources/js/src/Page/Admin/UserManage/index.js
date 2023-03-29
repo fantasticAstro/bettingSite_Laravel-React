@@ -6,6 +6,7 @@ import BlockUi from 'react-block-ui';
 import { Loader} from 'react-loaders';
 import ATable from '../../../Component/ATable';
 import api from '../../../../api/admin/user_manage' ;
+import api_detail from '../../../../api/admin/user_detail' ;
 import CModal from '../../../Component/CModal' ;
 import Common from '../../../Utils/Common' ;
 import { Form, Button } from 'react-bootstrap';
@@ -14,11 +15,18 @@ function UserManage(props) {
     const [user_data, setUserData] = useState([]) ;
     const [blocking, setBlocking] = useState(false) ;
     const [add_user_modal, setAddUserModal] = useState(false) ;
-    const [credit_model, setCreditModal] = useState(false) ;
-
+    const [point_modal, setPointModal] = useState(false) ;
+    const [point_form, setPointForm] = useState(0) ;
     const [user_form, setUserForm] = useState({username:'', password:'', mobile:''}) ;
-    
+    const [sel_user_id, setUserId] = useState(-1) ;
+    const [modal_title, setModalTitle] = useState("Add Points") ;
+
     useEffect(() => {
+        getUserData() ;
+        return ;
+    }, 1);
+
+    const getUserData = () => {
         setBlocking(true) ;
         try {
             api.getUserData().then(result => {
@@ -28,9 +36,7 @@ function UserManage(props) {
         }catch(e) {
             setBlocking(false) ;
         }
-        return ;
-    }, 1);
-
+    }
     const openAddUserModal = () => {
         let _add_user_modal = add_user_modal ;
         setAddUserModal(!_add_user_modal) ;
@@ -41,6 +47,13 @@ function UserManage(props) {
         let _user_form = user_form ;
         _user_form[name] = value ;
         setUserForm(_user_form) ;
+    }
+
+    const openPointModal = (modal_title, id) => {
+        let _point_modal = point_modal ;
+        setUserId(id) ;
+        setModalTitle(modal_title) ;
+        setPointModal(!_point_modal) ;
     }
 
     const submitUerForm = () => {
@@ -77,8 +90,8 @@ function UserManage(props) {
                 points: item.point,
                 credit_debit: 
                     <div style={{padding: '5px'}}>
-                        <Button variant="primary" onClick={() => Credit(item.id) }>Credit</Button>
-                        <Button variant="success" onClick={() => Debit() }>Debit</Button>
+                        <Button variant="primary" onClick={() => openPointModal("Add Points", item.id) }>Credit</Button>
+                        <Button variant="success" onClick={() => openPointModal("Withdrwa Points", item.id) }>Debit</Button>
                     </div>,
                 view: <a href={`/admin/user_profile/${item.id}`}><i className='fa fa-eye' style={{fontSize: '20px', cursor: 'pointer'}}></i></a>,
 
@@ -127,7 +140,26 @@ function UserManage(props) {
     const renderTable = (val, row) => {
         console.log(val, row) ;
     }
-
+    const editPoint = () => {
+        try {
+            api_detail.editPoint(
+                {
+                    point: point_form, 
+                    id: sel_user_id,
+                    type: modal_title
+                }
+            ).then(result =>{
+                if(result.status =='200') {
+                    Common.toast("success", modal_title+" Successfully") ;
+                }
+                getUserData() ;
+            }) ;    
+        }catch(e) {
+            Common.toast("error", modal_title+" Failed") ;
+        }
+        
+    }
+    
     let columns = makeDataTableColums() ;
     let user_table_data = makeDataTableForm(user_data) ;
     
@@ -188,6 +220,32 @@ function UserManage(props) {
                     </div>
                 </Form>
             </CModal>
+            <CModal
+                open_modal = {point_modal} 
+                close_modal = {() => openPointModal('')}
+                title={modal_title}
+                width='40%'
+            >
+                <Form>
+                    <Form.Group controlId="formBasicUsername">
+                        <Form.Label>{modal_title}</Form.Label>
+                        <Form.Control 
+                            type="number" 
+                            name='point'
+                            value={point_form}
+                            onChange={(event)=>setPointForm(event.target.value)}
+                        />
+                    </Form.Group>
+                    <Form.Group controlId="formBasicUsername">
+                        <div align='right'>
+                            <Button variant='primary' onClick={editPoint}>Submit</Button>
+                            <Button variant='danger' onClick={() => openPointModal('', -``)}>Close</Button>    
+                        </div>
+                    </Form.Group>
+                    
+                </Form>
+            </CModal>
+
         </div>
     ) 
 }

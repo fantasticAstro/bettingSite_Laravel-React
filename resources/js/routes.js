@@ -23,6 +23,7 @@ const gameRates = React.lazy(() => import('./src/Page/Admin/GameManage/GameRates
 const userManage = React.lazy(() => import('./src/Page/Admin/userManage'));
 const userDetail = React.lazy(() => import('./src/Page/Admin/userManage/UserDetail'));
 const transaction = React.lazy(() => import('./src/Page/Admin/Transaction'));
+const declareResult = React.lazy(() => import('./src/Page/Admin/DeclareResult'));
 
 const routes = {
     user:[
@@ -43,6 +44,8 @@ const routes = {
         { path: '/admin/game_rates', exact: true, name: 'GAME LIST', component: gameRates },
         { path: '/admin/transaction', exact: true, name: 'GAME LIST', component: transaction },
         { path: '/admin/user_profile/:id', exact: true, name: 'User Detail', component: userDetail },
+        { path: '/admin/declare_result', exact: true, name: 'User Detail', component: declareResult },
+
     ]
 };
 

@@ -316,17 +316,17 @@ function Market(props) {
 }
 function BetField(props) {
   var type = props.type;
-  if (type == "single" || type == "single_patti" || type == "full_sangam" || type == "half_sangam") {
+  if (type == "single" || type == "single_patti") {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(SingleBet, {
       callback: props.callback,
       check_bet: props.check_bet
     });
-  } else if (type == "double_patti" || type == "jodi" || type == "full_sangam" || type == "half_sangam") {
+  } else if (type == "double_patti" || type == "jodi") {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(DoubleBet, {
       callback: props.callback,
       check_bet: props.check_bet
     });
-  } else if (type == "tripple_patti" || type == "full_sangam" || type == "half_sangam") {
+  } else if (type == "tripple_patti") {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(TrippleBet, {
       callback: props.callback,
       check_bet: props.check_bet
@@ -363,7 +363,12 @@ function SingleBet(props) {
 }
 function TrippleBet(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-    children: "DEVLOPE"
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("select", {
+      "class": "form-control",
+      style: {
+        width: '30%'
+      }
+    })
   });
 }
 function BetNumItem(props) {
