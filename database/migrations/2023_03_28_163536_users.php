@@ -13,15 +13,11 @@ class Users extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('email', 50);
+        Schema::table('users', function (Blueprint $table) {
             $table->string('username', 50);
-            $table->string('password', 100) ;
             $table->integer('point') ;
-            $table->enum('is_admin', array('Y','N'))->nullable()->change();            
-            $table->enum('is_block', array('Y','N'))->nullable()->change();
-            $table->timestamps();       
+            $table->enum('is_admin', array('Y','N'))->nullable();            
+            $table->enum('is_block', array('Y','N'))->nullable();      
         });
     }
 
@@ -32,6 +28,11 @@ class Users extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('username');
+            $table->dropColumn('point');
+            $table->dropColumn('is_admin');
+            $table->dropColumn('is_block');     
+        });
     }
 }

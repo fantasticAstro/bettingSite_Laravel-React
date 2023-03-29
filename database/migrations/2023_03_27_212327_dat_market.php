@@ -20,7 +20,6 @@ class DatMarket extends Migration
             $table->string('result', 30);
             $table->dateTime('open_time');
             $table->dateTime('close_time');
-            $table->dateTime('total_bid');
             $table->string('total_bid') ;
             $table->enum('check', array('Y','N'))->nullable()->change();
             $table->timestamps();
@@ -35,5 +34,6 @@ class DatMarket extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('dat_market');
     }
 }
