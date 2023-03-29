@@ -3459,6 +3459,9 @@ var userManage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function (
 var userDetail = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
   return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_userManage_UserDetail_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/userManage/UserDetail */ "./resources/js/src/Page/Admin/userManage/UserDetail.js"));
 });
+var transaction = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(function () {
+  return __webpack_require__.e(/*! import() */ "resources_js_src_Page_Admin_Transaction_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./src/Page/Admin/Transaction */ "./resources/js/src/Page/Admin/Transaction/index.js"));
+});
 var routes = {
   user: [{
     path: '/',
@@ -3480,6 +3483,11 @@ var routes = {
     exact: true,
     name: 'jodiBet',
     component: singlePattiBet
+  }, {
+    path: '/tripple_patti',
+    exact: true,
+    name: 'jodiBet',
+    component: tripplePattiBet
   }, {
     path: '/double_patti',
     exact: true,
@@ -3521,6 +3529,11 @@ var routes = {
     exact: true,
     name: 'GAME LIST',
     component: gameRates
+  }, {
+    path: '/admin/transaction',
+    exact: true,
+    name: 'GAME LIST',
+    component: transaction
   }, {
     path: '/admin/user_profile/:id',
     exact: true,

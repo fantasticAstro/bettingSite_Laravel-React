@@ -29,7 +29,6 @@ function Market(props) {
                 var _sel_market =result[0] ;
                 setMarket(_sel_market) ;
             }
-            // setBlocking(false) ;
         }) ;
         api.get_bet_info({name: props.type}).then(result =>{
             if(result.length > 0) {

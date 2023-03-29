@@ -67,6 +67,21 @@ export default {
         },
         {
             id: 'user',
+            title: 'Navigation',
+            type: 'group',
+            icon: 'icon-navigation',
+            children: [
+                {
+                    id: 'transaction',
+                    title: 'Transaction',
+                    type: 'item',
+                    url: '/admin/transaction',
+                    icon: 'fa fa-circle',
+                }
+            ]
+        },
+        {
+            id: 'user',
             title: 'Game Management',
             type: 'group',
             icon: 'icon-navigation',

@@ -139,6 +139,18 @@ __webpack_require__.r(__webpack_exports__);
     }]
   }, {
     id: 'user',
+    title: 'Navigation',
+    type: 'group',
+    icon: 'icon-navigation',
+    children: [{
+      id: 'transaction',
+      title: 'Transaction',
+      type: 'item',
+      url: '/admin/transaction',
+      icon: 'fa fa-circle'
+    }]
+  }, {
+    id: 'user',
     title: 'Game Management',
     type: 'group',
     icon: 'icon-navigation',
@@ -35628,7 +35640,7 @@ function invariant(condition, message) {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = function(chunkId) {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_src_Page_User_Layout_index_js":1,"resources_js_src_Page_Admin_Layout_index_js":1,"resources_js_src_Page_User_DashBoard_index_js":1,"resources_js_src_Page_User_SingleBet_index_js":1,"resources_js_src_Page_User_JodiBet_index_js":1,"resources_js_src_Page_User_SinglePattiBet_index_js":1,"resources_js_src_Page_User_DoublePattiBet_index_js":1,"resources_js_src_Page_User_HalfSangamBet_index_js":1,"resources_js_src_Page_User_FullSangamBet_index_js":1,"resources_js_src_Page_User_TripplePattiBet_index_js":1,"resources_js_src_Page_Admin_DashBoard_index_js":1,"resources_js_src_Page_Admin_GameManage_GameList_js":1,"resources_js_src_Page_Admin_GameManage_GameRates_js":1,"resources_js_src_Page_Admin_userManage_index_js":1,"resources_js_src_Page_Admin_userManage_UserDetail_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_src_Page_User_Layout_index_js":1,"resources_js_src_Page_Admin_Layout_index_js":1,"resources_js_src_Page_User_DashBoard_index_js":1,"resources_js_src_Page_User_SingleBet_index_js":1,"resources_js_src_Page_User_JodiBet_index_js":1,"resources_js_src_Page_User_SinglePattiBet_index_js":1,"resources_js_src_Page_User_DoublePattiBet_index_js":1,"resources_js_src_Page_User_HalfSangamBet_index_js":1,"resources_js_src_Page_User_FullSangamBet_index_js":1,"resources_js_src_Page_User_TripplePattiBet_index_js":1,"resources_js_src_Page_Admin_DashBoard_index_js":1,"resources_js_src_Page_Admin_GameManage_GameList_js":1,"resources_js_src_Page_Admin_GameManage_GameRates_js":1,"resources_js_src_Page_Admin_userManage_index_js":1,"resources_js_src_Page_Admin_userManage_UserDetail_js":1,"resources_js_src_Page_Admin_Transaction_index_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -208,9 +208,7 @@ function Market(props) {
         var _sel_market = result[0];
         setMarket(_sel_market);
       }
-      // setBlocking(false) ;
     });
-
     _api_market__WEBPACK_IMPORTED_MODULE_6__["default"].get_bet_info({
       name: props.type
     }).then(function (result) {
