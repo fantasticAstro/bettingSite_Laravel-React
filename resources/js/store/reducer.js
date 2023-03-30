@@ -6,14 +6,15 @@ const initialState = {
     isTrigger: [], //for active default menu, set blank for horizontal
     ...config,
     isFullScreen: false, // static can't change
-    bet_slip:[]
+    bet_slip:[],
+    user_auth:false
 };
 
 const reducer = (state = initialState, action) => {
     let trigger = [];
     let open = [];
-
-    switch (action.type) {
+    
+    switch (action.type) {  
         case actionTypes.COLLAPSE_MENU:
             return {
                 ...state,
@@ -88,6 +89,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 bet_slip: action.bet_slip
+            };
+        case actionTypes.USER_AUTH :
+            return {
+                ...state,
+                user_auth: action.state
             };
         default:
             return state;

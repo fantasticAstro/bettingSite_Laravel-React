@@ -7,3 +7,4 @@ export const NAV_CONTENT_LEAVE = 'NAV_CONTENT_LEAVE';
 export const NAV_COLLAPSE_LEAVE = 'NAV_COLLAPSE_LEAVE';
 export const ADD_BET_SLIP = 'ADD_BET_SLIP';
 export const REMOTE_BET_SLIP = 'REMOVE_BET_SLIP' ;
+export const USER_AUTH = 'USER_AUTH' ;

@@ -10,7 +10,7 @@ function CModal(props) {
     }
     
     function closeModal() {
-        setIsOpen(false);
+        // setIsOpen(false);
     }
     const model_style = {
         content: {
@@ -45,7 +45,7 @@ function CModal(props) {
                         <i 
                             className='fa fa-close' 
                             style={{cursor: 'pointer', marginBottom: '40px'}}
-                            onClick = {props.close_modal}
+                            onClick = {() => props.close_modal()}
                         >
                         </i>
                     </div>

@@ -18,6 +18,10 @@ const instance = axios.create({
 
 axios.interceptors.response.use(
     response => {
+        let data = response.data ;
+        if(Object.keys(data).includes("unlogged")) {
+            window.location.href = "/" ;
+        } 
         return response.data
     },
     function (error) {

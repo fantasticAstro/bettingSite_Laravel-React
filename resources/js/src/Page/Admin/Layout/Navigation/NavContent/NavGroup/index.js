@@ -22,7 +22,7 @@ const navGroup = (props) => {
 
     return (
         <Aux>
-            <li key={props.group.id} className="nav-item pcoded-menu-caption"><label>{props.group.title}</label></li>
+            {/* <li key={props.group.id} className="nav-item pcoded-menu-caption"><label>{props.group.title}</label></li> */}
             {navItems}
         </Aux>
     );

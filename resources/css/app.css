@@ -19,3 +19,7 @@ div,span,li,ul,table,tr,td,ol,h1,h2,h3,h4,h5,h6,p,br,tspan {
 .block-ui-container {
     min-height: 100px !important;
 }
+a{
+    text-decoration:none ;
+    color: black;
+}

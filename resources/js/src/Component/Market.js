@@ -1,12 +1,10 @@
 
 import '../../../css/component/market.css' ;
-import Dropdown from 'react-bootstrap/Dropdown';
 import { Col, Row } from 'react-bootstrap';
 import CButton from './CButton';
 import {useState, useEffect} from 'react' ;
 import * as actionTypes from '../../store/actions' ;
 import {connect} from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import Common from '../Utils/Common' ;
 import api from '../../api/market' ;
 
@@ -22,7 +20,6 @@ function Market(props) {
     const toggleDropdown = () => setOpen(!isOpen);
     
     useEffect(() => {
-        // setBlocking(true) ;
         api.get_market_list({type: props.type}).then(result =>{
             setMarketList(result) ;
             if(result.length > 0) {
@@ -145,7 +142,12 @@ function BetField(props) {
 function DoubleBet(props) {
     var list = [] ;
     for(var k = 0 ; k<100 ; k++) {
-        list.push(<BetNumItem number={k} is_check={false} callback={props.callback} check_state={props.check_bet[`${k}`]}/>) ;
+        let key = k.toString() ;
+        if(k < 10 ) {
+            key = ("0"+key).toString() ;
+        }
+       
+        list.push(<BetNumItem number={key.toString()} is_check={false} callback={props.callback} check_state={props.check_bet[`${key}`]}/>) ;
     }
     return (
         <Row>
