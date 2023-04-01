@@ -14,8 +14,17 @@ class AdminAuthenticate
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
+    
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if(Auth::guard("web")->check()) {
+            if(!Auth::guard("web"->is_admin)) {
+                abort(response()->json([
+                    'admin_unlogged' => 'false',], 200));
+            } else {
+                return $next($request);
+            }
+        }
+        
     }
 }

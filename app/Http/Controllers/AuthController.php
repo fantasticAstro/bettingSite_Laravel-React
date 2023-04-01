@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\TransctionLog;
+use App\Models\ScoreLog;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -59,14 +61,25 @@ class AuthController extends Controller
 
         if (Auth::guard("web")->attempt($credentials)) {
             $request->session()->regenerate();
-            return response()->json(array('status'=>"200", "Login Successfully"));    
+            return response()->json(
+                array(
+                    'status'=>"200", 
+                    "message"=>"Login Successfully", 
+                    "user_info"=>$this->userCredit()
+            ));    
         }
         
         return response()->json(array('status'=>"201", "message"=>"Incorrect username or password."));
     }
     public function checkLoginState(Request $request) {
+        
+        
         if(Auth()->check()) {
-            return response()->json(array('status'=>"200")) ;
+            return response()->json(
+                array(
+                    'status'=>"200",
+                    "user_info"=> $this->userCredit()
+                )) ;
         } else {
             return response()->json(array('status'=>"201")) ;
         }
@@ -74,6 +87,50 @@ class AuthController extends Controller
     public function signOut() {
         Auth::logout() ;
         return response()->json(array('status'=>"200", "message"=>"Success"));
+    }
+    public function userCredit() {
+        $username = Auth()->user()->username ;
+        $user_info = USER::where('username', $username)
+            ->select(["point"])
+            ->get()
+            ->toArray() ;
+        $now_point = $user_info[0]['point'] ;
+        $last_credit_point = 0 ;
+        $trans_info = ScoreLog::where("username", $username)
+            ->where("type", "credit")
+            ->select("*")
+            ->orderBy("updatetime", "desc")
+            ->get()
+            ->toArray() ;
+        if(count($trans_info) > 0) {
+            $last_credit_point = $trans_info[0]['point'] ;
+        }
+
+        return array(
+            "now_point"=>$now_point,
+            "last_credit_point"=>$last_credit_point
+        ) ;
+    }
+    public function AdminLogin(Request $request) {
+        $credentials = $request->validate([
+            'username' => ['required'],
+            'password' => ['required'],
+        ]);
+        $credentials['is_admin'] = 'Y' ;
+        if (Auth::guard("web")->attempt($credentials)) {
+            $request->session()->regenerate();
+            return response()->json(
+                array(
+                    'status'=>"200", 
+                    "message"=>"Login Successfully", 
+                    "user_info"=>$this->userCredit()
+            ));    
+        }
+        
+        return response()->json(array(
+            "status"=>"201",
+            "message"=>"Incorrect Username or Password"
+        )) ;
     }
 }
 

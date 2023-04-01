@@ -38,6 +38,7 @@ const routes = {
     ],
     admin:[
         { path: '/admin', exact: true, name: 'adminDashBoard', component: adminDashBoard },
+        { path: '/admin/login', exact: true, name: 'adminDashBoard', component: adminDashBoard },
         { path: '/admin/user_manage', exact: true, name: 'USER MANAGEMENT', component: userManage },
         { path: '/admin/game_list', exact: true, name: 'GAME LIST', component: gameList },
         { path: '/admin/game_rates', exact: true, name: 'GAME LIST', component: gameRates },

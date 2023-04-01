@@ -106,17 +106,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 /***/ }),
 
-/***/ "./resources/js/src/Utils/Common.js":
-/*!******************************************!*\
-  !*** ./resources/js/src/Utils/Common.js ***!
-  \******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-toastify */ \"./node_modules/react-toastify/dist/react-toastify.esm.mjs\");\n\nvar common = {\n  toast: function toast(type, text) {\n    react_toastify__WEBPACK_IMPORTED_MODULE_0__.toast[type](text);\n  }\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (common);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvanMvc3JjL1V0aWxzL0NvbW1vbi5qcy5qcyIsIm1hcHBpbmdzIjoiOztBQUF1QztBQUV2QyxJQUFJQyxNQUFNLEdBQUc7RUFDVEQsS0FBSyxFQUFFLFNBQUFBLE1BQVNFLElBQUksRUFBRUMsSUFBSSxFQUFFO0lBQ3hCSCxpREFBSyxDQUFDRSxJQUFJLENBQUMsQ0FBQ0MsSUFBSSxDQUFDO0VBQ3JCO0FBQ0osQ0FBQztBQUVELCtEQUFlRixNQUFNIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vZGF0dGEtYWJsZS1ydjE4LjAuNC8uL3Jlc291cmNlcy9qcy9zcmMvVXRpbHMvQ29tbW9uLmpzP2UzMWYiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdG9hc3QgfSBmcm9tICdyZWFjdC10b2FzdGlmeSc7XHJcblxyXG5sZXQgY29tbW9uID0ge1xyXG4gICAgdG9hc3Q6IGZ1bmN0aW9uKHR5cGUsIHRleHQpIHtcclxuICAgICAgICB0b2FzdFt0eXBlXSh0ZXh0KSA7XHJcbiAgICB9LFxyXG59XHJcblxyXG5leHBvcnQgZGVmYXVsdCBjb21tb24gOyJdLCJuYW1lcyI6WyJ0b2FzdCIsImNvbW1vbiIsInR5cGUiLCJ0ZXh0Il0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/js/src/Utils/Common.js\n");
-
-/***/ }),
-
 /***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-data-table-component-extensions/dist/index.css":
 /*!**************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-data-table-component-extensions/dist/index.css ***!

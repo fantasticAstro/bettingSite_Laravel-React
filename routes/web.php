@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\AdminAuthenticate;
 
 use App\Http\Controllers\User\DashController;
 use App\Http\Controllers\User\MarketController;
@@ -43,9 +44,10 @@ Route::middleware([Authenticate::class])->group(function () {
     Route::post('/save_bet', [MarketController::class, 'saveBet']);
 }) ;
 
+Route::post('/admin/log_in', [AuthController::class, 'adminLogin']);
 
 Route::prefix('admin')->group(function () {
-    Route::middleware([Authenticate::class])->group(function () {
+    Route::middleware([AdminAuthenticate::class])->group(function () {
         Route::post('/user/get_user_data', [AdminUsersController::class, 'getUserData']);
         Route::post('/user/add_user_data', [AdminUsersController::class, 'addUserData']);
         Route::post('/game/get_game_list', [AdminGameController::class, 'getGameList']);

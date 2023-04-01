@@ -22,7 +22,7 @@ function SignModal(props) {
             api.logIn(login_form).then(result => {
                 if(result.status == "200") {
                     Common.toast("success", result.message) ;
-                    props.userAuth(true) ;
+                    props.userAuth(result.user_info) ;
                     props.close_modal('') ;
                 } else {
                     Common.toast("error", result.message) ;

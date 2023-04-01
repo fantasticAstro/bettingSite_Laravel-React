@@ -21,7 +21,9 @@ axios.interceptors.response.use(
         let data = response.data ;
         if(Object.keys(data).includes("unlogged")) {
             window.location.href = "/" ;
-        } 
+        } else if(Object.keys(data).includes("admin_unlogged")) {
+            window.location.href = "/admin/login" ;
+        }
         return response.data
     },
     function (error) {

@@ -5,6 +5,7 @@ use App\Models\DatMarket;
 use App\Models\DatBet;
 use App\Models\MarketCategory;
 use App\Models\TransactionLog;
+use App\Models\User;
 
 
 use Illuminate\Support\Facades\DB;
@@ -20,21 +21,19 @@ class MarketController extends Controller
         $bet_type = $request->bet_type ;
 
         $dayBefore = (new Carbon())->modify('-1 day')->format('Y-m-d') ;
-        $dayafter = (new Carbon())->modify('+1 day')->format('Y-m-d') ;
-
+        $dayafter = (new Carbon())->modify('+1 day')->format('Y-m-d') ; 
         $ret = DatMarket::where("status", "N")
-        ->whereDate("date", ">", "$dayBefore")
-        ->whereDate("date", "<", "$dayafter")
+        ->whereBetween("date", [$dayBefore, $dayafter])
         ->select("*")
         ->get()
         ->toArray() ;
+
         $data_ = array() ;
-        
         foreach($ret as $item) {
             $type = "" ;
             $time="00:00" ;
             
-            $market_info = MarketCategory::where("id", $item["id"])
+            $market_info = MarketCategory::where("id", $item["category_id"])
             ->where("status", "Y")
             ->select(["name", "open_time", "close_time", "id"])
             ->get()
@@ -42,8 +41,10 @@ class MarketController extends Controller
             if(!$market_info)  {
                 continue ;
             }
-
+            
             $market_info = $market_info[0] ;
+            $market_info['date'] = $item['date'] ;
+
             $now = strtotime(date("Y-m-d H:i:s")) ;
             $open_time = strtotime(date("Y-m-d {$market_info['open_time']}")) ;
             $close_time = strtotime(date("Y-m-d {$market_info['close_time']}")) ;
@@ -73,8 +74,12 @@ class MarketController extends Controller
         $data = $request->data ;
         $market_id = $request->market_id;
         $bet_id = $request->bet_id ;
-        $username = 'mickjagger' ;
         
+        $username = Auth()->user()->username ; 
+        $user_info = User::where("username", $username)->select("point")->get()->toArray() ;
+        $user_point = $user_info[0]['point'] ;
+        
+
         $ret = DatBet::where("id", $bet_id)->select("*")->get()->toArray();
         $bet_amount = $ret[0]['value'] ;
 
@@ -89,18 +94,24 @@ class MarketController extends Controller
         }
 
         $points = $bet_amount * $check_bet_count ;
+        if($user_point < $points) {
+            return response()->json(array("status"=>"201", "message"=>"You don't have enough balance."));
+        } else {   
 
-        TransactionLog::insert([
-            "updatetime"=>date("Y-m-d H:i:s"),
-            "market_id"=>$market_id,
-            "bet_id"=>$bet_id,
-            "points"=>$points,
-            "username"=>$username,
-            "bet_data"=>json_encode($bet_data)
-        ]) ;
-
+            TransactionLog::insert([
+                "updatetime"=>date("Y-m-d H:i:s"),
+                "market_id"=>$market_id,
+                "bet_id"=>$bet_id,
+                "points"=>$points,
+                "username"=>$username,
+                "bet_data"=>json_encode($bet_data)
+            ]) ;
+            
+            Users::where("username", $username)->update([
+                "point"=>$user_point - $points
+            ]) ;
+        }
         return response()->json(array("status"=>"200"));
-
     }
 }
 

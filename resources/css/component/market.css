@@ -62,9 +62,6 @@
     font-size: 25px;
 }
 
-.market .market-content .col-sm-2 {
-    width: 50% !important ; 
-}
 .market .market-content .item .bet-check {
     width: 60%;
     text-align: center;

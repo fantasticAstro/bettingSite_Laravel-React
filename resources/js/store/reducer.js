@@ -6,7 +6,7 @@ const initialState = {
     isTrigger: [], //for active default menu, set blank for horizontal
     ...config,
     isFullScreen: false, // static can't change
-    bet_slip:[],
+    best_slip:[],
     user_auth:false
 };
 
@@ -85,10 +85,10 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 layout: action.layout
             };
-        case actionTypes.ADD_BET_SLIP :
+        case actionTypes.SET_BEST_SLIP :
             return {
                 ...state,
-                bet_slip: action.bet_slip
+                best_slip: action.best_slip
             };
         case actionTypes.USER_AUTH :
             return {

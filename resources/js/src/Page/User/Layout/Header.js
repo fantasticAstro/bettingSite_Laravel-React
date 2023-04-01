@@ -2,44 +2,60 @@
 import CButton from '../../../Component/CButton';
 import SearchBar from '../../../Component/SearchBar';
 import SignModal from '../../../Component/SignModal';
-import { useState } from 'react';
-import {connect} from 'react-redux';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import * as actionTypes from '../../../../store/actions' ;
 import api from '../../../../api/user/auth' ;
 import Common from '../../../Utils/Common';
+import {useSelector, useDispatch} from 'react-redux' ;
 
 function Header(props) {
 
     const [open_modal, setOpenModal] = useState(false) ;
     const [modal_title, setModalTitle] = useState('') ;
+    const redux_user_auth = useSelector(state => state.user_auth) ;
+    const [now_time, setNowTime] = useState('') ;
+    const dispatch = useDispatch() ;
 
     const openModal = (title) => {
         let _open_modal = open_modal
         setOpenModal(!_open_modal) ; 
         setModalTitle(title) ;
+        
     }
-    
+
     useEffect(() => {
         api.check_login_state().then(result =>{
             if(result.status=="200") {
-                props.userAuth(true) ;
+                dispatch({state:result.user_info, type: actionTypes.USER_AUTH}) ;
             } else {
-                props.userAuth(false) ;
+                dispatch({state:false, type: actionTypes.USER_AUTH}) ;
             }
         }) ;
+        calNowTime() ;
     }, 1);
     
     const SignOut = () => {
         try {
             api.signOut().then(result =>{
                 Common.toast("success", "Logout Successfully") ;
-                props.userAuth(false) ;
+                dispatch({state:false, type: actionTypes.USER_AUTH}) ;
             }) ;    
         }catch(e) {
             Common.toast("error", "Logout Failed") ;
         }
     }
+    
+    const calNowTime = () => {
+        setTimeout(function() {
+            let one_format_date = Date() ;
+            let now_date_arr = one_format_date.split("(") ;
+            let _now_date = now_date_arr[0] ;
+            _now_date.replace("GMT+", "") ;
+            setNowTime(_now_date) ;
+            calNowTime() ;
+        }, 1000) ;
+    }
+
     return (
         <div className='page-header'>
             <div className='desktop-header'>
@@ -47,11 +63,11 @@ function Header(props) {
                     <img src="/images/mark.png" />
                 </a>
                 <div className='now-time'>
-                    Mar
+                    {now_time}
                 </div>
                 <SearchBar />
                 {
-                    props.user_auth ?
+                    redux_user_auth ?
                     <div className='sign-field'>
                         <CButton
                             text='DEMO'
@@ -110,15 +126,5 @@ function Header(props) {
         </div>
     );
 }
-const mapStateToProps = state => {
-    return {
-        user_auth: state.user_auth
-    }
-};
 
-const mapDispatchToProps = dispatch => {
-    return {
-        userAuth: (state) => dispatch({type: actionTypes.USER_AUTH, state:state}),  
-    }
-};
-export default connect(mapStateToProps, mapDispatchToProps) (Header);
+export default Header ;

@@ -169,6 +169,12 @@
     width: 100%;
 }
 
+.page-content .right-part .bid-history .content .letter {
+    padding-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
 .page-footer {
     width: 100%;
     background: #3F7E68 ;
@@ -282,4 +288,9 @@
     .ReactModal__Content {
         width: 90% !important;
     }
+    
+    .market .market-content .col-sm-2 {
+        width: 50% !important ; 
+    }
+
 }
