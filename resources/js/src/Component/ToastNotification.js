@@ -1,6 +1,5 @@
 import { ToastContainer, toast } from 'react-toastify';
 import '../../../../node_modules/react-toastify/dist/ReactToastify.css' ;
-
 function ToastNotification(pros) {
     return (
         <ToastContainer
