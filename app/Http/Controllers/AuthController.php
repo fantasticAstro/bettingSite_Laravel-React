@@ -72,8 +72,6 @@ class AuthController extends Controller
         return response()->json(array('status'=>"201", "message"=>"Incorrect username or password."));
     }
     public function checkLoginState(Request $request) {
-        
-        
         if(Auth()->check()) {
             return response()->json(
                 array(

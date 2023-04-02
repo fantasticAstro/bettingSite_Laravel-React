@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-
+use Auth;
 class AdminAuthenticate
 {
     /**
@@ -18,7 +18,7 @@ class AdminAuthenticate
     public function handle(Request $request, Closure $next)
     {
         if(Auth::guard("web")->check()) {
-            if(!Auth::guard("web"->is_admin)) {
+            if(!Auth::guard("web")->user()->is_admin) {
                 abort(response()->json([
                     'admin_unlogged' => 'false',], 200));
             } else {
